@@ -1,4 +1,0 @@
-returncode=255
-	[4mGPU0	GPU1	GPU2	GPU3	CPU Affinity	NUMA Affinity	GPU NUMA ID[0m
-Failed to run topology matrix
-
