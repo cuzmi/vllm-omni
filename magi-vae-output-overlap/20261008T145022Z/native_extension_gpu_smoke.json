@@ -1,0 +1,11 @@
+{
+  "device": "NVIDIA H100 80GB HBM3",
+  "imports": {
+    "vllm._C_stable_libtorch": "/usr/local/lib/python3.12/dist-packages/vllm/_C_stable_libtorch.abi3.so",
+    "vllm._moe_C_stable_libtorch": "/usr/local/lib/python3.12/dist-packages/vllm/_moe_C_stable_libtorch.abi3.so"
+  },
+  "operator": "_C::rms_norm(Tensor($0! -> ) result, Tensor input, Tensor? weight, float epsilon) -> ()",
+  "rms_norm_correctness": "pass",
+  "max_abs": 2.384185791015625e-07,
+  "note": "Native operator smoke only; no full serving test"
+}

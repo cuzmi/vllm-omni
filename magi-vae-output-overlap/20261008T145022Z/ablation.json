@@ -1,0 +1,4 @@
+{
+  "C": "candidate plus immediate ready.synchronize() after ready.record(copy_stream)",
+  "source_sha256": "34cc242845d97c1515c5e2268ebe4b24fc991dd985d0b3768f071c4c0bd2817e"
+}

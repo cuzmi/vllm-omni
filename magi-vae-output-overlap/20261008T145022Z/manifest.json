@@ -1,0 +1,36 @@
+{
+  "model": "sand-ai/MAGI-2-preview",
+  "revision": "2dea51b64db47ee5b4402d36fd90829a0c58913b",
+  "model_path": "/__modal/volumes/vo-wgjXGINplC3Qw7t1CVi3PT/hub/models--sand-ai--MAGI-2-preview/snapshots/2dea51b64db47ee5b4402d36fd90829a0c58913b",
+  "files": {
+    "TurboV3-Wan22-TinyShallow_7_7.json": {
+      "bytes": 990,
+      "sha256": "f3e02e4eba5f1cb5bd3fffb7fa464029e87d0a3a26ec8dd419fe65182b3df103"
+    },
+    "checkpoint.ckpt": {
+      "bytes": 1870398651,
+      "sha256": "90a676de37f35f3acaca69bffe1955c9d94cfe6acf767b340e1b10f7e06938f7"
+    }
+  },
+  "image": "vllm-omni-dev:nightly-20261008-a61aed496126",
+  "source": {
+    "baseline_commit": "a46e9aae7bb5065a27a69e34ba3f2a09af17a5ce",
+    "branch": "perf/magi-vae-output-overlap",
+    "files": {
+      "candidate_turbo_vae.py": "fb1df841679057ebb72a224dd81a2dc3024b9201fe7911afc1828be924a4d017",
+      "baseline_turbo_vae.py": "61a410f9beabad6e717c7866d8afdb6f0756e92d219afcc553d428c123a3d8ad",
+      "test_turbo_vae_output_offload.py": "4a39220374ab25d8ac937b2a480780e4b189528ef7c259f676d9ebcdb3070907",
+      "baseline.tar": "e1301470f18a8538fc1d6180f95d333f3b91f182a0dd2564c20778f1c6727678"
+    },
+    "scope": "Local baseline plus only turbo_vae.py candidate replacement; image supplies binary dependencies",
+    "scripts": {
+      "benchmark.py": "1b79cd8ae93988e614d443f78b27d576276130ea7746b6b3b87a7264013eed72",
+      "run_modal.py": "cbe8bdb56c8a3f625b8e3b52c63c3f6dc3f85a3dea51ef92d19604df0f3fed86",
+      "analyze.py": "bfd864586348728dee2acf2d6eb8302c4ea61f4a959201e0d19c51eb47308336"
+    }
+  },
+  "scope": "real pretrained TurboVAE, fixed synthetic latent inputs; not full MAGI generation",
+  "gpu": "H100",
+  "gpu_timeout_s": 1200,
+  "run_id": "20261008T145022Z"
+}

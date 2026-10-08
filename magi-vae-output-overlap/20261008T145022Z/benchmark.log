@@ -1,0 +1,152 @@
+/workspace/vllm-omni/vllm_omni/__init__.py:22: RuntimeWarning: Failed to import version from _version.py: No module named 'vllm_omni._version'
+This typically happens in development mode before building.
+Using fallback version 'dev'.
+  from .version import __version__, __version_tuple__  # isort:skip # noqa: F401
+{
+  "torch": "2.13.0+cu130",
+  "cuda": "13.0",
+  "device": "NVIDIA H100 80GB HBM3",
+  "cudnn": 92000,
+  "threads": 8,
+  "candidate_module": "/usr/local/lib/python3.12/dist-packages/torch/utils/_contextlib.py",
+  "vllm_C": "ModuleNotFoundError(\"No module named 'vllm._C'\")",
+  "nvidia_smi": "Thu Oct  8 14:52:27 2026       \n+-----------------------------------------------------------------------------------------+\n| NVIDIA-SMI 580.95.05              Driver Version: 580.95.05      CUDA Version: 13.0     |\n+-----------------------------------------+------------------------+----------------------+\n| GPU  Name                 Persistence-M | Bus-Id          Disp.A | Volatile Uncorr. ECC |\n| Fan  Temp   Perf          Pwr:Usage/Cap |           Memory-Usage | GPU-Util  Compute M. |\n|                                         |                        |               MIG M. |\n|=========================================+========================+======================|\n|   0  NVIDIA H100 80GB HBM3          On  |   00000000:84:00.0 Off |                    0 |\n| N/A   34C    P0             68W /  700W |       4MiB /  81559MiB |      0%      Default |\n|                                         |                        |             Disabled |\n+-----------------------------------------+------------------------+----------------------+\n\n+-----------------------------------------------------------------------------------------+\n| Processes:                                                                              |\n|  GPU   GI   CI              PID   Type   Process name                        GPU Memory |\n|        ID   ID                                                               Usage      |\n|=========================================================================================|\n|  No running processes found                                                             |\n+-----------------------------------------------------------------------------------------+\n"
+}
+{"workload": "448x256_125frames", "arm": "A", "arm_index": 0, "repetition": 0, "latency_ms": 366.3604239999927, "peak_allocated_bytes": 2260431872, "input_sha256": "fe99b8883c374539710e62a188f15ed11c66c23ae303469ad3fc831d98579831", "output_sha256": "5c1c2a413385b62b56fe7da36103eda1ac964c7eaa9bcde2b94c911eca332815", "bit_equal": true}
+{"workload": "448x256_125frames", "arm": "A", "arm_index": 0, "repetition": 1, "latency_ms": 359.1490230000005, "peak_allocated_bytes": 2260431872, "input_sha256": "fe99b8883c374539710e62a188f15ed11c66c23ae303469ad3fc831d98579831", "output_sha256": "5c1c2a413385b62b56fe7da36103eda1ac964c7eaa9bcde2b94c911eca332815", "bit_equal": true}
+{"workload": "448x256_125frames", "arm": "A", "arm_index": 0, "repetition": 2, "latency_ms": 346.22224400000334, "peak_allocated_bytes": 2260431872, "input_sha256": "fe99b8883c374539710e62a188f15ed11c66c23ae303469ad3fc831d98579831", "output_sha256": "5c1c2a413385b62b56fe7da36103eda1ac964c7eaa9bcde2b94c911eca332815", "bit_equal": true}
+{"workload": "448x256_125frames", "arm": "B", "arm_index": 1, "repetition": 0, "latency_ms": 333.0031060000067, "peak_allocated_bytes": 2260431872, "input_sha256": "fe99b8883c374539710e62a188f15ed11c66c23ae303469ad3fc831d98579831", "output_sha256": "5c1c2a413385b62b56fe7da36103eda1ac964c7eaa9bcde2b94c911eca332815", "bit_equal": true}
+{"workload": "448x256_125frames", "arm": "B", "arm_index": 1, "repetition": 1, "latency_ms": 332.452822999997, "peak_allocated_bytes": 2260431872, "input_sha256": "fe99b8883c374539710e62a188f15ed11c66c23ae303469ad3fc831d98579831", "output_sha256": "5c1c2a413385b62b56fe7da36103eda1ac964c7eaa9bcde2b94c911eca332815", "bit_equal": true}
+{"workload": "448x256_125frames", "arm": "B", "arm_index": 1, "repetition": 2, "latency_ms": 332.74933399999895, "peak_allocated_bytes": 2260431872, "input_sha256": "fe99b8883c374539710e62a188f15ed11c66c23ae303469ad3fc831d98579831", "output_sha256": "5c1c2a413385b62b56fe7da36103eda1ac964c7eaa9bcde2b94c911eca332815", "bit_equal": true}
+{"workload": "448x256_125frames", "arm": "C", "arm_index": 2, "repetition": 0, "latency_ms": 345.02067100000033, "peak_allocated_bytes": 2260431872, "input_sha256": "fe99b8883c374539710e62a188f15ed11c66c23ae303469ad3fc831d98579831", "output_sha256": "5c1c2a413385b62b56fe7da36103eda1ac964c7eaa9bcde2b94c911eca332815", "bit_equal": true}
+{"workload": "448x256_125frames", "arm": "C", "arm_index": 2, "repetition": 1, "latency_ms": 348.0940540000006, "peak_allocated_bytes": 2260431872, "input_sha256": "fe99b8883c374539710e62a188f15ed11c66c23ae303469ad3fc831d98579831", "output_sha256": "5c1c2a413385b62b56fe7da36103eda1ac964c7eaa9bcde2b94c911eca332815", "bit_equal": true}
+{"workload": "448x256_125frames", "arm": "C", "arm_index": 2, "repetition": 2, "latency_ms": 345.1286049999993, "peak_allocated_bytes": 2260431872, "input_sha256": "fe99b8883c374539710e62a188f15ed11c66c23ae303469ad3fc831d98579831", "output_sha256": "5c1c2a413385b62b56fe7da36103eda1ac964c7eaa9bcde2b94c911eca332815", "bit_equal": true}
+{"workload": "448x256_125frames", "arm": "C", "arm_index": 3, "repetition": 0, "latency_ms": 344.6157019999987, "peak_allocated_bytes": 2260431872, "input_sha256": "fe99b8883c374539710e62a188f15ed11c66c23ae303469ad3fc831d98579831", "output_sha256": "5c1c2a413385b62b56fe7da36103eda1ac964c7eaa9bcde2b94c911eca332815", "bit_equal": true}
+{"workload": "448x256_125frames", "arm": "C", "arm_index": 3, "repetition": 1, "latency_ms": 343.60353299999247, "peak_allocated_bytes": 2260431872, "input_sha256": "fe99b8883c374539710e62a188f15ed11c66c23ae303469ad3fc831d98579831", "output_sha256": "5c1c2a413385b62b56fe7da36103eda1ac964c7eaa9bcde2b94c911eca332815", "bit_equal": true}
+{"workload": "448x256_125frames", "arm": "C", "arm_index": 3, "repetition": 2, "latency_ms": 342.9256109999983, "peak_allocated_bytes": 2260431872, "input_sha256": "fe99b8883c374539710e62a188f15ed11c66c23ae303469ad3fc831d98579831", "output_sha256": "5c1c2a413385b62b56fe7da36103eda1ac964c7eaa9bcde2b94c911eca332815", "bit_equal": true}
+{"workload": "448x256_125frames", "arm": "B", "arm_index": 4, "repetition": 0, "latency_ms": 332.98129700000345, "peak_allocated_bytes": 2260431872, "input_sha256": "fe99b8883c374539710e62a188f15ed11c66c23ae303469ad3fc831d98579831", "output_sha256": "5c1c2a413385b62b56fe7da36103eda1ac964c7eaa9bcde2b94c911eca332815", "bit_equal": true}
+{"workload": "448x256_125frames", "arm": "B", "arm_index": 4, "repetition": 1, "latency_ms": 332.15206399999886, "peak_allocated_bytes": 2260431872, "input_sha256": "fe99b8883c374539710e62a188f15ed11c66c23ae303469ad3fc831d98579831", "output_sha256": "5c1c2a413385b62b56fe7da36103eda1ac964c7eaa9bcde2b94c911eca332815", "bit_equal": true}
+{"workload": "448x256_125frames", "arm": "B", "arm_index": 4, "repetition": 2, "latency_ms": 333.1561920000041, "peak_allocated_bytes": 2260431872, "input_sha256": "fe99b8883c374539710e62a188f15ed11c66c23ae303469ad3fc831d98579831", "output_sha256": "5c1c2a413385b62b56fe7da36103eda1ac964c7eaa9bcde2b94c911eca332815", "bit_equal": true}
+{"workload": "448x256_125frames", "arm": "A", "arm_index": 5, "repetition": 0, "latency_ms": 360.7667330000055, "peak_allocated_bytes": 2260431872, "input_sha256": "fe99b8883c374539710e62a188f15ed11c66c23ae303469ad3fc831d98579831", "output_sha256": "5c1c2a413385b62b56fe7da36103eda1ac964c7eaa9bcde2b94c911eca332815", "bit_equal": true}
+{"workload": "448x256_125frames", "arm": "A", "arm_index": 5, "repetition": 1, "latency_ms": 359.6649269999972, "peak_allocated_bytes": 2260431872, "input_sha256": "fe99b8883c374539710e62a188f15ed11c66c23ae303469ad3fc831d98579831", "output_sha256": "5c1c2a413385b62b56fe7da36103eda1ac964c7eaa9bcde2b94c911eca332815", "bit_equal": true}
+{"workload": "448x256_125frames", "arm": "A", "arm_index": 5, "repetition": 2, "latency_ms": 359.93440699999724, "peak_allocated_bytes": 2260431872, "input_sha256": "fe99b8883c374539710e62a188f15ed11c66c23ae303469ad3fc831d98579831", "output_sha256": "5c1c2a413385b62b56fe7da36103eda1ac964c7eaa9bcde2b94c911eca332815", "bit_equal": true}
+{"workload": "448x256_125frames", "arm": "A", "arm_index": 6, "repetition": 0, "latency_ms": 359.9619299999972, "peak_allocated_bytes": 2260431872, "input_sha256": "fe99b8883c374539710e62a188f15ed11c66c23ae303469ad3fc831d98579831", "output_sha256": "5c1c2a413385b62b56fe7da36103eda1ac964c7eaa9bcde2b94c911eca332815", "bit_equal": true}
+{"workload": "448x256_125frames", "arm": "A", "arm_index": 6, "repetition": 1, "latency_ms": 358.31285999999807, "peak_allocated_bytes": 2260431872, "input_sha256": "fe99b8883c374539710e62a188f15ed11c66c23ae303469ad3fc831d98579831", "output_sha256": "5c1c2a413385b62b56fe7da36103eda1ac964c7eaa9bcde2b94c911eca332815", "bit_equal": true}
+{"workload": "448x256_125frames", "arm": "A", "arm_index": 6, "repetition": 2, "latency_ms": 362.1071849999993, "peak_allocated_bytes": 2260431872, "input_sha256": "fe99b8883c374539710e62a188f15ed11c66c23ae303469ad3fc831d98579831", "output_sha256": "5c1c2a413385b62b56fe7da36103eda1ac964c7eaa9bcde2b94c911eca332815", "bit_equal": true}
+{"workload": "448x256_125frames", "arm": "B", "arm_index": 7, "repetition": 0, "latency_ms": 333.562208999993, "peak_allocated_bytes": 2260431872, "input_sha256": "fe99b8883c374539710e62a188f15ed11c66c23ae303469ad3fc831d98579831", "output_sha256": "5c1c2a413385b62b56fe7da36103eda1ac964c7eaa9bcde2b94c911eca332815", "bit_equal": true}
+{"workload": "448x256_125frames", "arm": "B", "arm_index": 7, "repetition": 1, "latency_ms": 333.8007260000069, "peak_allocated_bytes": 2260431872, "input_sha256": "fe99b8883c374539710e62a188f15ed11c66c23ae303469ad3fc831d98579831", "output_sha256": "5c1c2a413385b62b56fe7da36103eda1ac964c7eaa9bcde2b94c911eca332815", "bit_equal": true}
+{"workload": "448x256_125frames", "arm": "B", "arm_index": 7, "repetition": 2, "latency_ms": 331.52077900000165, "peak_allocated_bytes": 2260431872, "input_sha256": "fe99b8883c374539710e62a188f15ed11c66c23ae303469ad3fc831d98579831", "output_sha256": "5c1c2a413385b62b56fe7da36103eda1ac964c7eaa9bcde2b94c911eca332815", "bit_equal": true}
+{"workload": "448x256_125frames", "arm": "C", "arm_index": 8, "repetition": 0, "latency_ms": 344.81184099999496, "peak_allocated_bytes": 2260431872, "input_sha256": "fe99b8883c374539710e62a188f15ed11c66c23ae303469ad3fc831d98579831", "output_sha256": "5c1c2a413385b62b56fe7da36103eda1ac964c7eaa9bcde2b94c911eca332815", "bit_equal": true}
+{"workload": "448x256_125frames", "arm": "C", "arm_index": 8, "repetition": 1, "latency_ms": 346.8691899999925, "peak_allocated_bytes": 2260431872, "input_sha256": "fe99b8883c374539710e62a188f15ed11c66c23ae303469ad3fc831d98579831", "output_sha256": "5c1c2a413385b62b56fe7da36103eda1ac964c7eaa9bcde2b94c911eca332815", "bit_equal": true}
+{"workload": "448x256_125frames", "arm": "C", "arm_index": 8, "repetition": 2, "latency_ms": 346.3945749999908, "peak_allocated_bytes": 2260431872, "input_sha256": "fe99b8883c374539710e62a188f15ed11c66c23ae303469ad3fc831d98579831", "output_sha256": "5c1c2a413385b62b56fe7da36103eda1ac964c7eaa9bcde2b94c911eca332815", "bit_equal": true}
+{"workload": "448x256_125frames", "arm": "C", "arm_index": 9, "repetition": 0, "latency_ms": 346.6536259999913, "peak_allocated_bytes": 2260431872, "input_sha256": "fe99b8883c374539710e62a188f15ed11c66c23ae303469ad3fc831d98579831", "output_sha256": "5c1c2a413385b62b56fe7da36103eda1ac964c7eaa9bcde2b94c911eca332815", "bit_equal": true}
+{"workload": "448x256_125frames", "arm": "C", "arm_index": 9, "repetition": 1, "latency_ms": 346.8896449999903, "peak_allocated_bytes": 2260431872, "input_sha256": "fe99b8883c374539710e62a188f15ed11c66c23ae303469ad3fc831d98579831", "output_sha256": "5c1c2a413385b62b56fe7da36103eda1ac964c7eaa9bcde2b94c911eca332815", "bit_equal": true}
+{"workload": "448x256_125frames", "arm": "C", "arm_index": 9, "repetition": 2, "latency_ms": 347.18450899998743, "peak_allocated_bytes": 2260431872, "input_sha256": "fe99b8883c374539710e62a188f15ed11c66c23ae303469ad3fc831d98579831", "output_sha256": "5c1c2a413385b62b56fe7da36103eda1ac964c7eaa9bcde2b94c911eca332815", "bit_equal": true}
+{"workload": "448x256_125frames", "arm": "B", "arm_index": 10, "repetition": 0, "latency_ms": 332.1548290000038, "peak_allocated_bytes": 2260431872, "input_sha256": "fe99b8883c374539710e62a188f15ed11c66c23ae303469ad3fc831d98579831", "output_sha256": "5c1c2a413385b62b56fe7da36103eda1ac964c7eaa9bcde2b94c911eca332815", "bit_equal": true}
+{"workload": "448x256_125frames", "arm": "B", "arm_index": 10, "repetition": 1, "latency_ms": 339.62835100000177, "peak_allocated_bytes": 2260431872, "input_sha256": "fe99b8883c374539710e62a188f15ed11c66c23ae303469ad3fc831d98579831", "output_sha256": "5c1c2a413385b62b56fe7da36103eda1ac964c7eaa9bcde2b94c911eca332815", "bit_equal": true}
+{"workload": "448x256_125frames", "arm": "B", "arm_index": 10, "repetition": 2, "latency_ms": 332.599395999992, "peak_allocated_bytes": 2260431872, "input_sha256": "fe99b8883c374539710e62a188f15ed11c66c23ae303469ad3fc831d98579831", "output_sha256": "5c1c2a413385b62b56fe7da36103eda1ac964c7eaa9bcde2b94c911eca332815", "bit_equal": true}
+{"workload": "448x256_125frames", "arm": "A", "arm_index": 11, "repetition": 0, "latency_ms": 360.42913, "peak_allocated_bytes": 2260431872, "input_sha256": "fe99b8883c374539710e62a188f15ed11c66c23ae303469ad3fc831d98579831", "output_sha256": "5c1c2a413385b62b56fe7da36103eda1ac964c7eaa9bcde2b94c911eca332815", "bit_equal": true}
+{"workload": "448x256_125frames", "arm": "A", "arm_index": 11, "repetition": 1, "latency_ms": 370.1014859999958, "peak_allocated_bytes": 2260431872, "input_sha256": "fe99b8883c374539710e62a188f15ed11c66c23ae303469ad3fc831d98579831", "output_sha256": "5c1c2a413385b62b56fe7da36103eda1ac964c7eaa9bcde2b94c911eca332815", "bit_equal": true}
+{"workload": "448x256_125frames", "arm": "A", "arm_index": 11, "repetition": 2, "latency_ms": 362.1749999999935, "peak_allocated_bytes": 2260431872, "input_sha256": "fe99b8883c374539710e62a188f15ed11c66c23ae303469ad3fc831d98579831", "output_sha256": "5c1c2a413385b62b56fe7da36103eda1ac964c7eaa9bcde2b94c911eca332815", "bit_equal": true}
+USDT:2026-10-08 14:53:09 68:68 SyncActivityProfilerHandler.cpp:52] profiler_start
+USDT:2026-10-08 14:53:10 68:68 SyncActivityProfilerHandler.cpp:59] profiler_stop
+USDT:2026-10-08 14:53:11 68:68 SyncActivityProfilerHandler.cpp:52] profiler_start
+USDT:2026-10-08 14:53:11 68:68 SyncActivityProfilerHandler.cpp:59] profiler_stop
+USDT:2026-10-08 14:53:12 68:68 SyncActivityProfilerHandler.cpp:52] profiler_start
+USDT:2026-10-08 14:53:12 68:68 SyncActivityProfilerHandler.cpp:59] profiler_stop
+{"workload": "896x512_125frames", "arm": "A", "arm_index": 0, "repetition": 0, "latency_ms": 1404.5702129999995, "peak_allocated_bytes": 8376900608, "input_sha256": "a0abd9af54c003ca14cf971212c054448df98da898e0cad7cccf260f66438339", "output_sha256": "6162f12031f819e2b4cd93760e5138a4cc2200d9daa5e20e8e4eedc3242d378f", "bit_equal": true}
+{"workload": "896x512_125frames", "arm": "A", "arm_index": 0, "repetition": 1, "latency_ms": 1403.1364359999827, "peak_allocated_bytes": 8376900608, "input_sha256": "a0abd9af54c003ca14cf971212c054448df98da898e0cad7cccf260f66438339", "output_sha256": "6162f12031f819e2b4cd93760e5138a4cc2200d9daa5e20e8e4eedc3242d378f", "bit_equal": true}
+{"workload": "896x512_125frames", "arm": "A", "arm_index": 0, "repetition": 2, "latency_ms": 1404.6280449999813, "peak_allocated_bytes": 8376900608, "input_sha256": "a0abd9af54c003ca14cf971212c054448df98da898e0cad7cccf260f66438339", "output_sha256": "6162f12031f819e2b4cd93760e5138a4cc2200d9daa5e20e8e4eedc3242d378f", "bit_equal": true}
+{"workload": "896x512_125frames", "arm": "B", "arm_index": 1, "repetition": 0, "latency_ms": 1264.7494170000186, "peak_allocated_bytes": 8376900608, "input_sha256": "a0abd9af54c003ca14cf971212c054448df98da898e0cad7cccf260f66438339", "output_sha256": "6162f12031f819e2b4cd93760e5138a4cc2200d9daa5e20e8e4eedc3242d378f", "bit_equal": true}
+{"workload": "896x512_125frames", "arm": "B", "arm_index": 1, "repetition": 1, "latency_ms": 1264.3012240000076, "peak_allocated_bytes": 8376900608, "input_sha256": "a0abd9af54c003ca14cf971212c054448df98da898e0cad7cccf260f66438339", "output_sha256": "6162f12031f819e2b4cd93760e5138a4cc2200d9daa5e20e8e4eedc3242d378f", "bit_equal": true}
+{"workload": "896x512_125frames", "arm": "B", "arm_index": 1, "repetition": 2, "latency_ms": 1263.7752669999998, "peak_allocated_bytes": 8376900608, "input_sha256": "a0abd9af54c003ca14cf971212c054448df98da898e0cad7cccf260f66438339", "output_sha256": "6162f12031f819e2b4cd93760e5138a4cc2200d9daa5e20e8e4eedc3242d378f", "bit_equal": true}
+{"workload": "896x512_125frames", "arm": "C", "arm_index": 2, "repetition": 0, "latency_ms": 1298.7586189999831, "peak_allocated_bytes": 8376900608, "input_sha256": "a0abd9af54c003ca14cf971212c054448df98da898e0cad7cccf260f66438339", "output_sha256": "6162f12031f819e2b4cd93760e5138a4cc2200d9daa5e20e8e4eedc3242d378f", "bit_equal": true}
+{"workload": "896x512_125frames", "arm": "C", "arm_index": 2, "repetition": 1, "latency_ms": 1298.3423040000162, "peak_allocated_bytes": 8376900608, "input_sha256": "a0abd9af54c003ca14cf971212c054448df98da898e0cad7cccf260f66438339", "output_sha256": "6162f12031f819e2b4cd93760e5138a4cc2200d9daa5e20e8e4eedc3242d378f", "bit_equal": true}
+{"workload": "896x512_125frames", "arm": "C", "arm_index": 2, "repetition": 2, "latency_ms": 1299.0866850000202, "peak_allocated_bytes": 8376900608, "input_sha256": "a0abd9af54c003ca14cf971212c054448df98da898e0cad7cccf260f66438339", "output_sha256": "6162f12031f819e2b4cd93760e5138a4cc2200d9daa5e20e8e4eedc3242d378f", "bit_equal": true}
+{"workload": "896x512_125frames", "arm": "C", "arm_index": 3, "repetition": 0, "latency_ms": 1297.0478809999975, "peak_allocated_bytes": 8376900608, "input_sha256": "a0abd9af54c003ca14cf971212c054448df98da898e0cad7cccf260f66438339", "output_sha256": "6162f12031f819e2b4cd93760e5138a4cc2200d9daa5e20e8e4eedc3242d378f", "bit_equal": true}
+{"workload": "896x512_125frames", "arm": "C", "arm_index": 3, "repetition": 1, "latency_ms": 1299.8681130000023, "peak_allocated_bytes": 8376900608, "input_sha256": "a0abd9af54c003ca14cf971212c054448df98da898e0cad7cccf260f66438339", "output_sha256": "6162f12031f819e2b4cd93760e5138a4cc2200d9daa5e20e8e4eedc3242d378f", "bit_equal": true}
+{"workload": "896x512_125frames", "arm": "C", "arm_index": 3, "repetition": 2, "latency_ms": 1299.3762739999966, "peak_allocated_bytes": 8376900608, "input_sha256": "a0abd9af54c003ca14cf971212c054448df98da898e0cad7cccf260f66438339", "output_sha256": "6162f12031f819e2b4cd93760e5138a4cc2200d9daa5e20e8e4eedc3242d378f", "bit_equal": true}
+{"workload": "896x512_125frames", "arm": "B", "arm_index": 4, "repetition": 0, "latency_ms": 1264.5884730000034, "peak_allocated_bytes": 8376900608, "input_sha256": "a0abd9af54c003ca14cf971212c054448df98da898e0cad7cccf260f66438339", "output_sha256": "6162f12031f819e2b4cd93760e5138a4cc2200d9daa5e20e8e4eedc3242d378f", "bit_equal": true}
+{"workload": "896x512_125frames", "arm": "B", "arm_index": 4, "repetition": 1, "latency_ms": 1264.438240000004, "peak_allocated_bytes": 8376900608, "input_sha256": "a0abd9af54c003ca14cf971212c054448df98da898e0cad7cccf260f66438339", "output_sha256": "6162f12031f819e2b4cd93760e5138a4cc2200d9daa5e20e8e4eedc3242d378f", "bit_equal": true}
+{"workload": "896x512_125frames", "arm": "B", "arm_index": 4, "repetition": 2, "latency_ms": 1263.376002000001, "peak_allocated_bytes": 8376900608, "input_sha256": "a0abd9af54c003ca14cf971212c054448df98da898e0cad7cccf260f66438339", "output_sha256": "6162f12031f819e2b4cd93760e5138a4cc2200d9daa5e20e8e4eedc3242d378f", "bit_equal": true}
+{"workload": "896x512_125frames", "arm": "A", "arm_index": 5, "repetition": 0, "latency_ms": 1402.6698829999873, "peak_allocated_bytes": 8376900608, "input_sha256": "a0abd9af54c003ca14cf971212c054448df98da898e0cad7cccf260f66438339", "output_sha256": "6162f12031f819e2b4cd93760e5138a4cc2200d9daa5e20e8e4eedc3242d378f", "bit_equal": true}
+{"workload": "896x512_125frames", "arm": "A", "arm_index": 5, "repetition": 1, "latency_ms": 1400.1254389999929, "peak_allocated_bytes": 8376900608, "input_sha256": "a0abd9af54c003ca14cf971212c054448df98da898e0cad7cccf260f66438339", "output_sha256": "6162f12031f819e2b4cd93760e5138a4cc2200d9daa5e20e8e4eedc3242d378f", "bit_equal": true}
+{"workload": "896x512_125frames", "arm": "A", "arm_index": 5, "repetition": 2, "latency_ms": 1397.9181619999963, "peak_allocated_bytes": 8376900608, "input_sha256": "a0abd9af54c003ca14cf971212c054448df98da898e0cad7cccf260f66438339", "output_sha256": "6162f12031f819e2b4cd93760e5138a4cc2200d9daa5e20e8e4eedc3242d378f", "bit_equal": true}
+{"workload": "896x512_125frames", "arm": "A", "arm_index": 6, "repetition": 0, "latency_ms": 1400.2115469999978, "peak_allocated_bytes": 8376900608, "input_sha256": "a0abd9af54c003ca14cf971212c054448df98da898e0cad7cccf260f66438339", "output_sha256": "6162f12031f819e2b4cd93760e5138a4cc2200d9daa5e20e8e4eedc3242d378f", "bit_equal": true}
+{"workload": "896x512_125frames", "arm": "A", "arm_index": 6, "repetition": 1, "latency_ms": 1405.0432390000083, "peak_allocated_bytes": 8376900608, "input_sha256": "a0abd9af54c003ca14cf971212c054448df98da898e0cad7cccf260f66438339", "output_sha256": "6162f12031f819e2b4cd93760e5138a4cc2200d9daa5e20e8e4eedc3242d378f", "bit_equal": true}
+{"workload": "896x512_125frames", "arm": "A", "arm_index": 6, "repetition": 2, "latency_ms": 1403.1179970000096, "peak_allocated_bytes": 8376900608, "input_sha256": "a0abd9af54c003ca14cf971212c054448df98da898e0cad7cccf260f66438339", "output_sha256": "6162f12031f819e2b4cd93760e5138a4cc2200d9daa5e20e8e4eedc3242d378f", "bit_equal": true}
+{"workload": "896x512_125frames", "arm": "B", "arm_index": 7, "repetition": 0, "latency_ms": 1265.7589259999895, "peak_allocated_bytes": 8376900608, "input_sha256": "a0abd9af54c003ca14cf971212c054448df98da898e0cad7cccf260f66438339", "output_sha256": "6162f12031f819e2b4cd93760e5138a4cc2200d9daa5e20e8e4eedc3242d378f", "bit_equal": true}
+{"workload": "896x512_125frames", "arm": "B", "arm_index": 7, "repetition": 1, "latency_ms": 1264.7451459999957, "peak_allocated_bytes": 8376900608, "input_sha256": "a0abd9af54c003ca14cf971212c054448df98da898e0cad7cccf260f66438339", "output_sha256": "6162f12031f819e2b4cd93760e5138a4cc2200d9daa5e20e8e4eedc3242d378f", "bit_equal": true}
+{"workload": "896x512_125frames", "arm": "B", "arm_index": 7, "repetition": 2, "latency_ms": 1264.532265000014, "peak_allocated_bytes": 8376900608, "input_sha256": "a0abd9af54c003ca14cf971212c054448df98da898e0cad7cccf260f66438339", "output_sha256": "6162f12031f819e2b4cd93760e5138a4cc2200d9daa5e20e8e4eedc3242d378f", "bit_equal": true}
+{"workload": "896x512_125frames", "arm": "C", "arm_index": 8, "repetition": 0, "latency_ms": 1298.454117999995, "peak_allocated_bytes": 8376900608, "input_sha256": "a0abd9af54c003ca14cf971212c054448df98da898e0cad7cccf260f66438339", "output_sha256": "6162f12031f819e2b4cd93760e5138a4cc2200d9daa5e20e8e4eedc3242d378f", "bit_equal": true}
+{"workload": "896x512_125frames", "arm": "C", "arm_index": 8, "repetition": 1, "latency_ms": 1298.9704459999984, "peak_allocated_bytes": 8376900608, "input_sha256": "a0abd9af54c003ca14cf971212c054448df98da898e0cad7cccf260f66438339", "output_sha256": "6162f12031f819e2b4cd93760e5138a4cc2200d9daa5e20e8e4eedc3242d378f", "bit_equal": true}
+{"workload": "896x512_125frames", "arm": "C", "arm_index": 8, "repetition": 2, "latency_ms": 1300.9378239999876, "peak_allocated_bytes": 8376900608, "input_sha256": "a0abd9af54c003ca14cf971212c054448df98da898e0cad7cccf260f66438339", "output_sha256": "6162f12031f819e2b4cd93760e5138a4cc2200d9daa5e20e8e4eedc3242d378f", "bit_equal": true}
+{"workload": "896x512_125frames", "arm": "C", "arm_index": 9, "repetition": 0, "latency_ms": 1301.9254639999929, "peak_allocated_bytes": 8376900608, "input_sha256": "a0abd9af54c003ca14cf971212c054448df98da898e0cad7cccf260f66438339", "output_sha256": "6162f12031f819e2b4cd93760e5138a4cc2200d9daa5e20e8e4eedc3242d378f", "bit_equal": true}
+{"workload": "896x512_125frames", "arm": "C", "arm_index": 9, "repetition": 1, "latency_ms": 1301.5558099999964, "peak_allocated_bytes": 8376900608, "input_sha256": "a0abd9af54c003ca14cf971212c054448df98da898e0cad7cccf260f66438339", "output_sha256": "6162f12031f819e2b4cd93760e5138a4cc2200d9daa5e20e8e4eedc3242d378f", "bit_equal": true}
+{"workload": "896x512_125frames", "arm": "C", "arm_index": 9, "repetition": 2, "latency_ms": 1298.0870089999996, "peak_allocated_bytes": 8376900608, "input_sha256": "a0abd9af54c003ca14cf971212c054448df98da898e0cad7cccf260f66438339", "output_sha256": "6162f12031f819e2b4cd93760e5138a4cc2200d9daa5e20e8e4eedc3242d378f", "bit_equal": true}
+{"workload": "896x512_125frames", "arm": "B", "arm_index": 10, "repetition": 0, "latency_ms": 1265.607578000015, "peak_allocated_bytes": 8376900608, "input_sha256": "a0abd9af54c003ca14cf971212c054448df98da898e0cad7cccf260f66438339", "output_sha256": "6162f12031f819e2b4cd93760e5138a4cc2200d9daa5e20e8e4eedc3242d378f", "bit_equal": true}
+{"workload": "896x512_125frames", "arm": "B", "arm_index": 10, "repetition": 1, "latency_ms": 1266.6977050000128, "peak_allocated_bytes": 8376900608, "input_sha256": "a0abd9af54c003ca14cf971212c054448df98da898e0cad7cccf260f66438339", "output_sha256": "6162f12031f819e2b4cd93760e5138a4cc2200d9daa5e20e8e4eedc3242d378f", "bit_equal": true}
+{"workload": "896x512_125frames", "arm": "B", "arm_index": 10, "repetition": 2, "latency_ms": 1264.1001110000047, "peak_allocated_bytes": 8376900608, "input_sha256": "a0abd9af54c003ca14cf971212c054448df98da898e0cad7cccf260f66438339", "output_sha256": "6162f12031f819e2b4cd93760e5138a4cc2200d9daa5e20e8e4eedc3242d378f", "bit_equal": true}
+{"workload": "896x512_125frames", "arm": "A", "arm_index": 11, "repetition": 0, "latency_ms": 1400.0681749999728, "peak_allocated_bytes": 8376900608, "input_sha256": "a0abd9af54c003ca14cf971212c054448df98da898e0cad7cccf260f66438339", "output_sha256": "6162f12031f819e2b4cd93760e5138a4cc2200d9daa5e20e8e4eedc3242d378f", "bit_equal": true}
+{"workload": "896x512_125frames", "arm": "A", "arm_index": 11, "repetition": 1, "latency_ms": 1401.860572000004, "peak_allocated_bytes": 8376900608, "input_sha256": "a0abd9af54c003ca14cf971212c054448df98da898e0cad7cccf260f66438339", "output_sha256": "6162f12031f819e2b4cd93760e5138a4cc2200d9daa5e20e8e4eedc3242d378f", "bit_equal": true}
+{"workload": "896x512_125frames", "arm": "A", "arm_index": 11, "repetition": 2, "latency_ms": 1400.1182940000092, "peak_allocated_bytes": 8376900608, "input_sha256": "a0abd9af54c003ca14cf971212c054448df98da898e0cad7cccf260f66438339", "output_sha256": "6162f12031f819e2b4cd93760e5138a4cc2200d9daa5e20e8e4eedc3242d378f", "bit_equal": true}
+USDT:2026-10-08 14:54:58 68:68 SyncActivityProfilerHandler.cpp:52] profiler_start
+USDT:2026-10-08 14:54:59 68:68 SyncActivityProfilerHandler.cpp:59] profiler_stop
+USDT:2026-10-08 14:55:00 68:68 SyncActivityProfilerHandler.cpp:52] profiler_start
+USDT:2026-10-08 14:55:01 68:68 SyncActivityProfilerHandler.cpp:59] profiler_stop
+USDT:2026-10-08 14:55:02 68:68 SyncActivityProfilerHandler.cpp:52] profiler_start
+USDT:2026-10-08 14:55:04 68:68 SyncActivityProfilerHandler.cpp:59] profiler_stop
+[
+  {
+    "workload": "448x256_125frames",
+    "mean_ms": {
+      "A": 360.432112416665,
+      "B": 333.3134255000007,
+      "C": 345.6826301666614
+    },
+    "arm_means_ms": [
+      357.24389699999887,
+      332.73508766666754,
+      346.0811100000001,
+      343.71494866666313,
+      332.76318433333546,
+      360.1220223333333,
+      360.12732499999817,
+      332.9612380000005,
+      346.02520199999276,
+      346.9092599999897,
+      334.7941919999992,
+      364.23520533332976
+    ],
+    "change_percent": -7.52393751345738,
+    "B_vs_C_percent": -3.5781967583089824,
+    "order": "ABCCBAABCCBA",
+    "scope": "whole VAE decode, D2H, CPU assembly; excludes DiT/encoding/serving"
+  },
+  {
+    "workload": "896x512_125frames",
+    "mean_ms": {
+      "A": 1401.9556668333285,
+      "B": 1264.7225295000055,
+      "C": 1299.3675455833322
+    },
+    "arm_means_ms": [
+      1404.1115646666544,
+      1264.2753026666753,
+      1298.7292026666732,
+      1298.764089333332,
+      1264.1342383333363,
+      1400.237827999992,
+      1402.790927666672,
+      1265.012112333333,
+      1299.454129333327,
+      1300.5227609999963,
+      1265.4684646666776,
+      1400.6823469999954
+    ],
+    "change_percent": -9.788693079239707,
+    "B_vs_C_percent": -2.6662984004093615,
+    "order": "ABCCBAABCCBA",
+    "scope": "whole VAE decode, D2H, CPU assembly; excludes DiT/encoding/serving"
+  }
+]

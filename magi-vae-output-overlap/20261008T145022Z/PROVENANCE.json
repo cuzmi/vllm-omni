@@ -1,0 +1,20 @@
+{
+  "implementation_commit": "b1224568a41a5774643ae7e0838ea849775d6983",
+  "implementation_branch": "perf/magi-vae-output-overlap",
+  "baseline_commit": "a46e9aae7bb5065a27a69e34ba3f2a09af17a5ce",
+  "implementation_url": "https://github.com/cuzmi/vllm-omni/commit/b1224568a41a5774643ae7e0838ea849775d6983",
+  "measured_candidate_sha256": "fb1df841679057ebb72a224dd81a2dc3024b9201fe7911afc1828be924a4d017",
+  "artifact_policy": "Evidence only. Source, executable benchmark scripts, model weights, source archives and patches are deliberately excluded. Their hashes in manifest.json identify external inputs, not local artifact files.",
+  "runtime_source": "baseline git archive unpacked at /workspace/vllm-omni; only turbo_vae.py replaced by candidate; PYTHONPATH selects this checkout. Baseline decode loaded by file from original source. Both methods use the same loaded pretrained decoder and GPU.",
+  "environment_note": "environment.json candidate_module identifies torch inference_mode decorator wrapper, not the model file. The model source is the pinned replacement described here and in manifest.json.",
+  "modal_run": "https://modal.com/apps/xinyuj2/main/ap-IzUAL3ZkSfYYhSbaJYYoUC",
+  "base_image_id": "im-Cs5lvlySDsB7FDGeMkPOJ3",
+  "experiment_image_id": "im-IoPzql422LFJH2a0fegFz2",
+  "base_registry_digest": "sha256:a61aed4961263c1ad4aa8108a78af151a0781eca98513db39354d3ecaee30f99",
+  "native_extension_followup": {
+    "modal_run": "https://modal.com/apps/xinyuj2/main/ap-i6Ixhk3MVZIn7rXF4KaOjN",
+    "base_image_id": "im-Cs5lvlySDsB7FDGeMkPOJ3",
+    "result": "Both stable libtorch native extensions loaded on H100; native RMSNorm numerical smoke passed. Old vllm._C import probe is obsolete for this CUDA build.",
+    "scope": "Native operator smoke, not full serving validation"
+  }
+}

@@ -1,0 +1,4108 @@
+[
+  {
+    "trace": "trace_448x256_125frames_A.json.gz",
+    "gpu_events": 3496,
+    "kernel_count": 3340,
+    "compute_stream": 7,
+    "kernel_stream_counts": {
+      "7": 3340
+    },
+    "d2h_count": 35,
+    "d2h_streams": [
+      7
+    ],
+    "d2h_union_ms": 7.382885131835938,
+    "d2h_compute_overlap_ms": 0.0,
+    "compute_busy_union_ms": 316.4352730712891,
+    "gpu_busy_union_ms": 323.95646020507814,
+    "top_kernels_sum_ms": [
+      [
+        "sm90_xmma_fprop_implicit_gemm_bf16bf16_bf16f32_f32_nhwckrsc_nhwc_tilesize256x128x64_warpgroupsize2x1x1_g1_execute_segment_k_off_kernel__5x_cudnn",
+        42.074892999999996
+      ],
+      [
+        "void at::native::elementwise_kernel<128, 4, at::native::gpu_kernel_impl<at::native::BinaryFunctor<float, float, float, at::native::binary_internal::MulFunctor<float> > >(at::TensorIteratorBase&, at::native::BinaryFunctor<float, float, float, at::native::binary_internal::MulFunctor<float> > const&)::{lambda(int)#1}>(int, at::native::gpu_kernel_impl<at::native::BinaryFunctor<float, float, float, at::native::binary_internal::MulFunctor<float> > >(at::TensorIteratorBase&, at::native::BinaryFunctor<float, float, float, at::native::binary_internal::MulFunctor<float> > const&)::{lambda(int)#1})",
+        37.59175700000002
+      ],
+      [
+        "void at::native::elementwise_kernel<128, 4, at::native::gpu_kernel_impl_nocast<at::native::CUDAFunctor_add<c10::BFloat16> >(at::TensorIteratorBase&, at::native::CUDAFunctor_add<c10::BFloat16> const&)::{lambda(int)#1}>(int, at::native::gpu_kernel_impl_nocast<at::native::CUDAFunctor_add<c10::BFloat16> >(at::TensorIteratorBase&, at::native::CUDAFunctor_add<c10::BFloat16> const&)::{lambda(int)#1})",
+        27.599597000000006
+      ],
+      [
+        "void at::native::unrolled_elementwise_kernel<at::native::direct_copy_kernel_cuda(at::TensorIteratorBase&)::{lambda()#3}::operator()() const::{lambda()#7}::operator()() const::{lambda(float)#1}, std::array<char*, 2ul>, 4, TrivialOffsetCalculator<1, unsigned int>, TrivialOffsetCalculator<1, unsigned int>, at::native::memory::LoadWithCast<1>, at::native::memory::StoreWithCast<1> >(int, at::native::direct_copy_kernel_cuda(at::TensorIteratorBase&)::{lambda()#3}::operator()() const::{lambda()#7}::operator()() const::{lambda(float)#1}, std::array<char*, 2ul>, TrivialOffsetCalculator<1, unsigned int>, TrivialOffsetCalculator<1, unsigned int>, at::native::memory::LoadWithCast<1>, at::native::memory::StoreWithCast<1>)",
+        26.65875199999999
+      ],
+      [
+        "sm90_xmma_fprop_implicit_gemm_bf16bf16_bf16f32_f32_nhwckrsc_nhwc_tilesize256x128x64_warpgroupsize2x1x1_g1_execute_segment_k_on_kernel__5x_cudnn",
+        25.601989999999994
+      ],
+      [
+        "void at::native::elementwise_kernel<128, 4, at::native::gpu_kernel_impl_nocast<at::native::direct_copy_kernel_cuda(at::TensorIteratorBase&)::{lambda()#3}::operator()() const::{lambda()#12}::operator()() const::{lambda(c10::BFloat16)#1}>(at::TensorIteratorBase&, at::native::direct_copy_kernel_cuda(at::TensorIteratorBase&)::{lambda()#3}::operator()() const::{lambda()#12}::operator()() const::{lambda(c10::BFloat16)#1} const&)::{lambda(int)#1}>(int, at::native::gpu_kernel_impl_nocast<at::native::direct_copy_kernel_cuda(at::TensorIteratorBase&)::{lambda()#3}::operator()() const::{lambda()#12}::operator()() const::{lambda(c10::BFloat16)#1}>(at::TensorIteratorBase&, at::native::direct_copy_kernel_cuda(at::TensorIteratorBase&)::{lambda()#3}::operator()() const::{lambda()#12}::operator()() const::{lambda(c10::BFloat16)#1} const&)::{lambda(int)#1})",
+        22.678348999999983
+      ],
+      [
+        "void at::native::vectorized_elementwise_kernel<4, at::native::(anonymous namespace)::pow_tensor_scalar_kernel_impl<float, float>(at::TensorIteratorBase&, float)::{lambda(float)#1}, std::array<char*, 2ul> >(int, at::native::(anonymous namespace)::pow_tensor_scalar_kernel_impl<float, float>(at::TensorIteratorBase&, float)::{lambda(float)#1}, std::array<char*, 2ul>)",
+        22.217508000000013
+      ],
+      [
+        "void cudnn::engines_precompiled::nchwToNhwcKernel<__nv_bfloat16, __nv_bfloat16, float, false, true, (cudnnKernelDataType_t)0>(cudnn::engines_precompiled::nchw2nhwc_params_t<float>, __nv_bfloat16 const*, __nv_bfloat16*)",
+        19.816395999999994
+      ]
+    ],
+    "copy_events": [
+      {
+        "name": "Memcpy DtoD (Device -> Device)",
+        "ts": 614163646833.526,
+        "dur": 2.976,
+        "args": {
+          "External id": 1022,
+          "device": 0,
+          "context": 1,
+          "stream": 7,
+          "correlation": 1815,
+          "bytes": 1835008,
+          "memory bandwidth (GB/s)": 616.6021505376344,
+          "graph id": 0,
+          "graph node id": 0,
+          "channel": 0,
+          "channel_type": 1
+        }
+      },
+      {
+        "name": "Memcpy DtoD (Device -> Device)",
+        "ts": 614163646837.59,
+        "dur": 1.696,
+        "args": {
+          "External id": 1062,
+          "device": 0,
+          "context": 1,
+          "stream": 7,
+          "correlation": 1830,
+          "bytes": 1835008,
+          "memory bandwidth (GB/s)": 1081.9622641509434,
+          "graph id": 0,
+          "graph node id": 0,
+          "channel": 0,
+          "channel_type": 1
+        }
+      },
+      {
+        "name": "Memcpy DtoD (Device -> Device)",
+        "ts": 614163657285.498,
+        "dur": 4.223,
+        "args": {
+          "External id": 2095,
+          "device": 0,
+          "context": 1,
+          "stream": 7,
+          "correlation": 3857,
+          "bytes": 3670016,
+          "memory bandwidth (GB/s)": 869.0542268529481,
+          "graph id": 0,
+          "graph node id": 0,
+          "channel": 0,
+          "channel_type": 1
+        }
+      },
+      {
+        "name": "Memcpy DtoD (Device -> Device)",
+        "ts": 614163657291.865,
+        "dur": 2.465,
+        "args": {
+          "External id": 2135,
+          "device": 0,
+          "context": 1,
+          "stream": 7,
+          "correlation": 3872,
+          "bytes": 3670016,
+          "memory bandwidth (GB/s)": 1488.8503042596349,
+          "graph id": 0,
+          "graph node id": 0,
+          "channel": 0,
+          "channel_type": 1
+        }
+      },
+      {
+        "name": "Memcpy DtoD (Device -> Device)",
+        "ts": 614163672964.575,
+        "dur": 6.592,
+        "args": {
+          "External id": 2831,
+          "device": 0,
+          "context": 1,
+          "stream": 7,
+          "correlation": 5348,
+          "bytes": 7340032,
+          "memory bandwidth (GB/s)": 1113.4757281553398,
+          "graph id": 0,
+          "graph node id": 0,
+          "channel": 0,
+          "channel_type": 1
+        }
+      },
+      {
+        "name": "Memcpy DtoD (Device -> Device)",
+        "ts": 614163672973.343,
+        "dur": 4.096,
+        "args": {
+          "External id": 2871,
+          "device": 0,
+          "context": 1,
+          "stream": 7,
+          "correlation": 5363,
+          "bytes": 7340032,
+          "memory bandwidth (GB/s)": 1792,
+          "graph id": 0,
+          "graph node id": 0,
+          "channel": 0,
+          "channel_type": 1
+        }
+      },
+      {
+        "name": "Memcpy DtoH (Device -> Pageable)",
+        "ts": 614163702204.297,
+        "dur": 1095.232,
+        "args": {
+          "External id": 4090,
+          "device": 0,
+          "context": 1,
+          "stream": 7,
+          "correlation": 7732,
+          "bytes": 17203200,
+          "memory bandwidth (GB/s)": 15.707356980073628,
+          "graph id": 0,
+          "graph node id": 0,
+          "channel": 12,
+          "channel_type": 2
+        }
+      },
+      {
+        "name": "Memcpy DtoD (Device -> Device)",
+        "ts": 614163707890.41,
+        "dur": 2.976,
+        "args": {
+          "External id": 5043,
+          "device": 0,
+          "context": 1,
+          "stream": 7,
+          "correlation": 9454,
+          "bytes": 1835008,
+          "memory bandwidth (GB/s)": 616.6021505376344,
+          "graph id": 0,
+          "graph node id": 0,
+          "channel": 0,
+          "channel_type": 1
+        }
+      },
+      {
+        "name": "Memcpy DtoD (Device -> Device)",
+        "ts": 614163707894.506,
+        "dur": 1.664,
+        "args": {
+          "External id": 5083,
+          "device": 0,
+          "context": 1,
+          "stream": 7,
+          "correlation": 9469,
+          "bytes": 1835008,
+          "memory bandwidth (GB/s)": 1102.7692307692307,
+          "graph id": 0,
+          "graph node id": 0,
+          "channel": 0,
+          "channel_type": 1
+        }
+      },
+      {
+        "name": "Memcpy DtoD (Device -> Device)",
+        "ts": 614163718149.87,
+        "dur": 4.352,
+        "args": {
+          "External id": 6114,
+          "device": 0,
+          "context": 1,
+          "stream": 7,
+          "correlation": 11493,
+          "bytes": 3670016,
+          "memory bandwidth (GB/s)": 843.2941176470588,
+          "graph id": 0,
+          "graph node id": 0,
+          "channel": 0,
+          "channel_type": 1
+        }
+      },
+      {
+        "name": "Memcpy DtoD (Device -> Device)",
+        "ts": 614163718158.446,
+        "dur": 2.208,
+        "args": {
+          "External id": 6154,
+          "device": 0,
+          "context": 1,
+          "stream": 7,
+          "correlation": 11508,
+          "bytes": 3670016,
+          "memory bandwidth (GB/s)": 1662.144927536232,
+          "graph id": 0,
+          "graph node id": 0,
+          "channel": 0,
+          "channel_type": 1
+        }
+      },
+      {
+        "name": "Memcpy DtoD (Device -> Device)",
+        "ts": 614163737489.076,
+        "dur": 6.88,
+        "args": {
+          "External id": 6850,
+          "device": 0,
+          "context": 1,
+          "stream": 7,
+          "correlation": 12984,
+          "bytes": 7340032,
+          "memory bandwidth (GB/s)": 1066.8651162790698,
+          "graph id": 0,
+          "graph node id": 0,
+          "channel": 0,
+          "channel_type": 1
+        }
+      },
+      {
+        "name": "Memcpy DtoD (Device -> Device)",
+        "ts": 614163737498.068,
+        "dur": 4.064,
+        "args": {
+          "External id": 6890,
+          "device": 0,
+          "context": 1,
+          "stream": 7,
+          "correlation": 12999,
+          "bytes": 7340032,
+          "memory bandwidth (GB/s)": 1806.1102362204724,
+          "graph id": 0,
+          "graph node id": 0,
+          "channel": 0,
+          "channel_type": 1
+        }
+      },
+      {
+        "name": "Memcpy DtoH (Device -> Pageable)",
+        "ts": 614163773489.024,
+        "dur": 1191.489,
+        "args": {
+          "External id": 8109,
+          "device": 0,
+          "context": 1,
+          "stream": 7,
+          "correlation": 15368,
+          "bytes": 19267584,
+          "memory bandwidth (GB/s)": 16.17101290905749,
+          "graph id": 0,
+          "graph node id": 0,
+          "channel": 12,
+          "channel_type": 2
+        }
+      },
+      {
+        "name": "Memcpy DtoD (Device -> Device)",
+        "ts": 614163779190.146,
+        "dur": 2.88,
+        "args": {
+          "External id": 9062,
+          "device": 0,
+          "context": 1,
+          "stream": 7,
+          "correlation": 17090,
+          "bytes": 1835008,
+          "memory bandwidth (GB/s)": 637.1555555555556,
+          "graph id": 0,
+          "graph node id": 0,
+          "channel": 0,
+          "channel_type": 1
+        }
+      },
+      {
+        "name": "Memcpy DtoD (Device -> Device)",
+        "ts": 614163779194.242,
+        "dur": 1.792,
+        "args": {
+          "External id": 9102,
+          "device": 0,
+          "context": 1,
+          "stream": 7,
+          "correlation": 17105,
+          "bytes": 1835008,
+          "memory bandwidth (GB/s)": 1024,
+          "graph id": 0,
+          "graph node id": 0,
+          "channel": 0,
+          "channel_type": 1
+        }
+      },
+      {
+        "name": "Memcpy DtoD (Device -> Device)",
+        "ts": 614163789262.086,
+        "dur": 4.32,
+        "args": {
+          "External id": 10133,
+          "device": 0,
+          "context": 1,
+          "stream": 7,
+          "correlation": 19129,
+          "bytes": 3670016,
+          "memory bandwidth (GB/s)": 849.5407407407407,
+          "graph id": 0,
+          "graph node id": 0,
+          "channel": 0,
+          "channel_type": 1
+        }
+      },
+      {
+        "name": "Memcpy DtoD (Device -> Device)",
+        "ts": 614163789268.422,
+        "dur": 2.4,
+        "args": {
+          "External id": 10173,
+          "device": 0,
+          "context": 1,
+          "stream": 7,
+          "correlation": 19144,
+          "bytes": 3670016,
+          "memory bandwidth (GB/s)": 1529.1733333333334,
+          "graph id": 0,
+          "graph node id": 0,
+          "channel": 0,
+          "channel_type": 1
+        }
+      },
+      {
+        "name": "Memcpy DtoD (Device -> Device)",
+        "ts": 614163808576.78,
+        "dur": 6.88,
+        "args": {
+          "External id": 10869,
+          "device": 0,
+          "context": 1,
+          "stream": 7,
+          "correlation": 20620,
+          "bytes": 7340032,
+          "memory bandwidth (GB/s)": 1066.8651162790698,
+          "graph id": 0,
+          "graph node id": 0,
+          "channel": 0,
+          "channel_type": 1
+        }
+      },
+      {
+        "name": "Memcpy DtoD (Device -> Device)",
+        "ts": 614163808588.236,
+        "dur": 4.16,
+        "args": {
+          "External id": 10909,
+          "device": 0,
+          "context": 1,
+          "stream": 7,
+          "correlation": 20635,
+          "bytes": 7340032,
+          "memory bandwidth (GB/s)": 1764.4307692307693,
+          "graph id": 0,
+          "graph node id": 0,
+          "channel": 0,
+          "channel_type": 1
+        }
+      },
+      {
+        "name": "Memcpy DtoH (Device -> Pageable)",
+        "ts": 614163844718.52,
+        "dur": 1185.249,
+        "args": {
+          "External id": 12128,
+          "device": 0,
+          "context": 1,
+          "stream": 7,
+          "correlation": 23004,
+          "bytes": 19267584,
+          "memory bandwidth (GB/s)": 16.256148707993002,
+          "graph id": 0,
+          "graph node id": 0,
+          "channel": 12,
+          "channel_type": 2
+        }
+      },
+      {
+        "name": "Memcpy DtoD (Device -> Device)",
+        "ts": 614163850286.138,
+        "dur": 3.04,
+        "args": {
+          "External id": 13081,
+          "device": 0,
+          "context": 1,
+          "stream": 7,
+          "correlation": 24726,
+          "bytes": 1835008,
+          "memory bandwidth (GB/s)": 603.6210526315789,
+          "graph id": 0,
+          "graph node id": 0,
+          "channel": 0,
+          "channel_type": 1
+        }
+      },
+      {
+        "name": "Memcpy DtoD (Device -> Device)",
+        "ts": 614163850290.266,
+        "dur": 1.664,
+        "args": {
+          "External id": 13121,
+          "device": 0,
+          "context": 1,
+          "stream": 7,
+          "correlation": 24741,
+          "bytes": 1835008,
+          "memory bandwidth (GB/s)": 1102.7692307692307,
+          "graph id": 0,
+          "graph node id": 0,
+          "channel": 0,
+          "channel_type": 1
+        }
+      },
+      {
+        "name": "Memcpy DtoD (Device -> Device)",
+        "ts": 614163860373.566,
+        "dur": 4.16,
+        "args": {
+          "External id": 14152,
+          "device": 0,
+          "context": 1,
+          "stream": 7,
+          "correlation": 26765,
+          "bytes": 3670016,
+          "memory bandwidth (GB/s)": 882.2153846153847,
+          "graph id": 0,
+          "graph node id": 0,
+          "channel": 0,
+          "channel_type": 1
+        }
+      },
+      {
+        "name": "Memcpy DtoD (Device -> Device)",
+        "ts": 614163860379.837,
+        "dur": 2.369,
+        "args": {
+          "External id": 14192,
+          "device": 0,
+          "context": 1,
+          "stream": 7,
+          "correlation": 26780,
+          "bytes": 3670016,
+          "memory bandwidth (GB/s)": 1549.1836217813423,
+          "graph id": 0,
+          "graph node id": 0,
+          "channel": 0,
+          "channel_type": 1
+        }
+      },
+      {
+        "name": "Memcpy DtoD (Device -> Device)",
+        "ts": 614163879672.292,
+        "dur": 6.976,
+        "args": {
+          "External id": 14888,
+          "device": 0,
+          "context": 1,
+          "stream": 7,
+          "correlation": 28256,
+          "bytes": 7340032,
+          "memory bandwidth (GB/s)": 1052.1834862385322,
+          "graph id": 0,
+          "graph node id": 0,
+          "channel": 0,
+          "channel_type": 1
+        }
+      },
+      {
+        "name": "Memcpy DtoD (Device -> Device)",
+        "ts": 614163879681.412,
+        "dur": 4.16,
+        "args": {
+          "External id": 14928,
+          "device": 0,
+          "context": 1,
+          "stream": 7,
+          "correlation": 28271,
+          "bytes": 7340032,
+          "memory bandwidth (GB/s)": 1764.4307692307693,
+          "graph id": 0,
+          "graph node id": 0,
+          "channel": 0,
+          "channel_type": 1
+        }
+      },
+      {
+        "name": "Memcpy DtoH (Device -> Pageable)",
+        "ts": 614163915879.376,
+        "dur": 1232.128,
+        "args": {
+          "External id": 16147,
+          "device": 0,
+          "context": 1,
+          "stream": 7,
+          "correlation": 30640,
+          "bytes": 19267584,
+          "memory bandwidth (GB/s)": 15.63764803656763,
+          "graph id": 0,
+          "graph node id": 0,
+          "channel": 12,
+          "channel_type": 2
+        }
+      },
+      {
+        "name": "Memcpy DtoD (Device -> Device)",
+        "ts": 614163922008.914,
+        "dur": 2.912,
+        "args": {
+          "External id": 17100,
+          "device": 0,
+          "context": 1,
+          "stream": 7,
+          "correlation": 32362,
+          "bytes": 1835008,
+          "memory bandwidth (GB/s)": 630.1538461538462,
+          "graph id": 0,
+          "graph node id": 0,
+          "channel": 0,
+          "channel_type": 1
+        }
+      },
+      {
+        "name": "Memcpy DtoD (Device -> Device)",
+        "ts": 614163922012.946,
+        "dur": 1.696,
+        "args": {
+          "External id": 17140,
+          "device": 0,
+          "context": 1,
+          "stream": 7,
+          "correlation": 32377,
+          "bytes": 1835008,
+          "memory bandwidth (GB/s)": 1081.9622641509434,
+          "graph id": 0,
+          "graph node id": 0,
+          "channel": 0,
+          "channel_type": 1
+        }
+      },
+      {
+        "name": "Memcpy DtoD (Device -> Device)",
+        "ts": 614163932819.094,
+        "dur": 4.352,
+        "args": {
+          "External id": 18171,
+          "device": 0,
+          "context": 1,
+          "stream": 7,
+          "correlation": 34401,
+          "bytes": 3670016,
+          "memory bandwidth (GB/s)": 843.2941176470588,
+          "graph id": 0,
+          "graph node id": 0,
+          "channel": 0,
+          "channel_type": 1
+        }
+      },
+      {
+        "name": "Memcpy DtoD (Device -> Device)",
+        "ts": 614163932824.534,
+        "dur": 2.528,
+        "args": {
+          "External id": 18211,
+          "device": 0,
+          "context": 1,
+          "stream": 7,
+          "correlation": 34416,
+          "bytes": 3670016,
+          "memory bandwidth (GB/s)": 1451.746835443038,
+          "graph id": 0,
+          "graph node id": 0,
+          "channel": 0,
+          "channel_type": 1
+        }
+      },
+      {
+        "name": "Memcpy DtoD (Device -> Device)",
+        "ts": 614163950034.011,
+        "dur": 6.849,
+        "args": {
+          "External id": 18907,
+          "device": 0,
+          "context": 1,
+          "stream": 7,
+          "correlation": 35892,
+          "bytes": 7340032,
+          "memory bandwidth (GB/s)": 1071.6939699226164,
+          "graph id": 0,
+          "graph node id": 0,
+          "channel": 0,
+          "channel_type": 1
+        }
+      },
+      {
+        "name": "Memcpy DtoD (Device -> Device)",
+        "ts": 614163950041.98,
+        "dur": 4.224,
+        "args": {
+          "External id": 18947,
+          "device": 0,
+          "context": 1,
+          "stream": 7,
+          "correlation": 35907,
+          "bytes": 7340032,
+          "memory bandwidth (GB/s)": 1737.6969696969697,
+          "graph id": 0,
+          "graph node id": 0,
+          "channel": 0,
+          "channel_type": 1
+        }
+      },
+      {
+        "name": "Memcpy DtoH (Device -> Pageable)",
+        "ts": 614163982212.102,
+        "dur": 2567.233,
+        "args": {
+          "External id": 20166,
+          "device": 0,
+          "context": 1,
+          "stream": 7,
+          "correlation": 38276,
+          "bytes": 19267584,
+          "memory bandwidth (GB/s)": 7.505194892711335,
+          "graph id": 0,
+          "graph node id": 0,
+          "channel": 12,
+          "channel_type": 2
+        }
+      }
+    ]
+  },
+  {
+    "trace": "trace_448x256_125frames_B.json.gz",
+    "gpu_events": 3496,
+    "kernel_count": 3340,
+    "compute_stream": 7,
+    "kernel_stream_counts": {
+      "7": 3335,
+      "37": 5
+    },
+    "d2h_count": 35,
+    "d2h_streams": [
+      37,
+      7
+    ],
+    "d2h_union_ms": 3.4169693603515623,
+    "d2h_compute_overlap_ms": 2.23777734375,
+    "compute_busy_union_ms": 315.82973986816404,
+    "gpu_busy_union_ms": 317.2510115966797,
+    "top_kernels_sum_ms": [
+      [
+        "sm90_xmma_fprop_implicit_gemm_bf16bf16_bf16f32_f32_nhwckrsc_nhwc_tilesize256x128x64_warpgroupsize2x1x1_g1_execute_segment_k_off_kernel__5x_cudnn",
+        42.010829
+      ],
+      [
+        "void at::native::elementwise_kernel<128, 4, at::native::gpu_kernel_impl<at::native::BinaryFunctor<float, float, float, at::native::binary_internal::MulFunctor<float> > >(at::TensorIteratorBase&, at::native::BinaryFunctor<float, float, float, at::native::binary_internal::MulFunctor<float> > const&)::{lambda(int)#1}>(int, at::native::gpu_kernel_impl<at::native::BinaryFunctor<float, float, float, at::native::binary_internal::MulFunctor<float> > >(at::TensorIteratorBase&, at::native::BinaryFunctor<float, float, float, at::native::binary_internal::MulFunctor<float> > const&)::{lambda(int)#1})",
+        37.45535499999998
+      ],
+      [
+        "void at::native::elementwise_kernel<128, 4, at::native::gpu_kernel_impl_nocast<at::native::CUDAFunctor_add<c10::BFloat16> >(at::TensorIteratorBase&, at::native::CUDAFunctor_add<c10::BFloat16> const&)::{lambda(int)#1}>(int, at::native::gpu_kernel_impl_nocast<at::native::CUDAFunctor_add<c10::BFloat16> >(at::TensorIteratorBase&, at::native::CUDAFunctor_add<c10::BFloat16> const&)::{lambda(int)#1})",
+        27.52293200000002
+      ],
+      [
+        "void at::native::unrolled_elementwise_kernel<at::native::direct_copy_kernel_cuda(at::TensorIteratorBase&)::{lambda()#3}::operator()() const::{lambda()#7}::operator()() const::{lambda(float)#1}, std::array<char*, 2ul>, 4, TrivialOffsetCalculator<1, unsigned int>, TrivialOffsetCalculator<1, unsigned int>, at::native::memory::LoadWithCast<1>, at::native::memory::StoreWithCast<1> >(int, at::native::direct_copy_kernel_cuda(at::TensorIteratorBase&)::{lambda()#3}::operator()() const::{lambda()#7}::operator()() const::{lambda(float)#1}, std::array<char*, 2ul>, TrivialOffsetCalculator<1, unsigned int>, TrivialOffsetCalculator<1, unsigned int>, at::native::memory::LoadWithCast<1>, at::native::memory::StoreWithCast<1>)",
+        26.619281000000004
+      ],
+      [
+        "sm90_xmma_fprop_implicit_gemm_bf16bf16_bf16f32_f32_nhwckrsc_nhwc_tilesize256x128x64_warpgroupsize2x1x1_g1_execute_segment_k_on_kernel__5x_cudnn",
+        25.572601000000002
+      ],
+      [
+        "void at::native::elementwise_kernel<128, 4, at::native::gpu_kernel_impl_nocast<at::native::direct_copy_kernel_cuda(at::TensorIteratorBase&)::{lambda()#3}::operator()() const::{lambda()#12}::operator()() const::{lambda(c10::BFloat16)#1}>(at::TensorIteratorBase&, at::native::direct_copy_kernel_cuda(at::TensorIteratorBase&)::{lambda()#3}::operator()() const::{lambda()#12}::operator()() const::{lambda(c10::BFloat16)#1} const&)::{lambda(int)#1}>(int, at::native::gpu_kernel_impl_nocast<at::native::direct_copy_kernel_cuda(at::TensorIteratorBase&)::{lambda()#3}::operator()() const::{lambda()#12}::operator()() const::{lambda(c10::BFloat16)#1}>(at::TensorIteratorBase&, at::native::direct_copy_kernel_cuda(at::TensorIteratorBase&)::{lambda()#3}::operator()() const::{lambda()#12}::operator()() const::{lambda(c10::BFloat16)#1} const&)::{lambda(int)#1})",
+        22.645753999999997
+      ],
+      [
+        "void at::native::vectorized_elementwise_kernel<4, at::native::(anonymous namespace)::pow_tensor_scalar_kernel_impl<float, float>(at::TensorIteratorBase&, float)::{lambda(float)#1}, std::array<char*, 2ul> >(int, at::native::(anonymous namespace)::pow_tensor_scalar_kernel_impl<float, float>(at::TensorIteratorBase&, float)::{lambda(float)#1}, std::array<char*, 2ul>)",
+        22.20901199999999
+      ],
+      [
+        "void cudnn::engines_precompiled::nchwToNhwcKernel<__nv_bfloat16, __nv_bfloat16, float, false, true, (cudnnKernelDataType_t)0>(cudnn::engines_precompiled::nchw2nhwc_params_t<float>, __nv_bfloat16 const*, __nv_bfloat16*)",
+        19.805519000000007
+      ]
+    ],
+    "copy_events": [
+      {
+        "name": "Memcpy DtoD (Device -> Device)",
+        "ts": 614165109373.972,
+        "dur": 2.816,
+        "args": {
+          "External id": 21502,
+          "device": 0,
+          "context": 1,
+          "stream": 7,
+          "correlation": 40109,
+          "bytes": 1835008,
+          "memory bandwidth (GB/s)": 651.6363636363636,
+          "graph id": 0,
+          "graph node id": 0,
+          "channel": 0,
+          "channel_type": 1
+        }
+      },
+      {
+        "name": "Memcpy DtoD (Device -> Device)",
+        "ts": 614165109425.173,
+        "dur": 1.792,
+        "args": {
+          "External id": 21542,
+          "device": 0,
+          "context": 1,
+          "stream": 7,
+          "correlation": 40124,
+          "bytes": 1835008,
+          "memory bandwidth (GB/s)": 1024,
+          "graph id": 0,
+          "graph node id": 0,
+          "channel": 0,
+          "channel_type": 1
+        }
+      },
+      {
+        "name": "Memcpy DtoD (Device -> Device)",
+        "ts": 614165119964.6,
+        "dur": 4.128,
+        "args": {
+          "External id": 22575,
+          "device": 0,
+          "context": 1,
+          "stream": 7,
+          "correlation": 42151,
+          "bytes": 3670016,
+          "memory bandwidth (GB/s)": 889.0542635658915,
+          "graph id": 0,
+          "graph node id": 0,
+          "channel": 0,
+          "channel_type": 1
+        }
+      },
+      {
+        "name": "Memcpy DtoD (Device -> Device)",
+        "ts": 614165119969.848,
+        "dur": 2.432,
+        "args": {
+          "External id": 22615,
+          "device": 0,
+          "context": 1,
+          "stream": 7,
+          "correlation": 42166,
+          "bytes": 3670016,
+          "memory bandwidth (GB/s)": 1509.0526315789473,
+          "graph id": 0,
+          "graph node id": 0,
+          "channel": 0,
+          "channel_type": 1
+        }
+      },
+      {
+        "name": "Memcpy DtoD (Device -> Device)",
+        "ts": 614165135623.802,
+        "dur": 6.56,
+        "args": {
+          "External id": 23311,
+          "device": 0,
+          "context": 1,
+          "stream": 7,
+          "correlation": 43642,
+          "bytes": 7340032,
+          "memory bandwidth (GB/s)": 1118.9073170731708,
+          "graph id": 0,
+          "graph node id": 0,
+          "channel": 0,
+          "channel_type": 1
+        }
+      },
+      {
+        "name": "Memcpy DtoD (Device -> Device)",
+        "ts": 614165135631.482,
+        "dur": 4.097,
+        "args": {
+          "External id": 23351,
+          "device": 0,
+          "context": 1,
+          "stream": 7,
+          "correlation": 43657,
+          "bytes": 7340032,
+          "memory bandwidth (GB/s)": 1791.5626067854528,
+          "graph id": 0,
+          "graph node id": 0,
+          "channel": 0,
+          "channel_type": 1
+        }
+      },
+      {
+        "name": "Memcpy DtoH (Device -> Pinned)",
+        "ts": 614165165028.2,
+        "dur": 603.655,
+        "args": {
+          "External id": 24569,
+          "device": 0,
+          "context": 1,
+          "stream": 37,
+          "correlation": 46053,
+          "bytes": 17203200,
+          "memory bandwidth (GB/s)": 28.498397263337502,
+          "graph id": 0,
+          "graph node id": 0,
+          "channel": 15,
+          "channel_type": 2
+        }
+      },
+      {
+        "name": "Memcpy DtoD (Device -> Device)",
+        "ts": 614165167183.235,
+        "dur": 3.008,
+        "args": {
+          "External id": 25522,
+          "device": 0,
+          "context": 1,
+          "stream": 7,
+          "correlation": 47785,
+          "bytes": 1835008,
+          "memory bandwidth (GB/s)": 610.0425531914893,
+          "graph id": 0,
+          "graph node id": 0,
+          "channel": 0,
+          "channel_type": 1
+        }
+      },
+      {
+        "name": "Memcpy DtoD (Device -> Device)",
+        "ts": 614165167187.619,
+        "dur": 1.728,
+        "args": {
+          "External id": 25562,
+          "device": 0,
+          "context": 1,
+          "stream": 7,
+          "correlation": 47800,
+          "bytes": 1835008,
+          "memory bandwidth (GB/s)": 1061.9259259259259,
+          "graph id": 0,
+          "graph node id": 0,
+          "channel": 0,
+          "channel_type": 1
+        }
+      },
+      {
+        "name": "Memcpy DtoD (Device -> Device)",
+        "ts": 614165177213.279,
+        "dur": 4.16,
+        "args": {
+          "External id": 26593,
+          "device": 0,
+          "context": 1,
+          "stream": 7,
+          "correlation": 49824,
+          "bytes": 3670016,
+          "memory bandwidth (GB/s)": 882.2153846153847,
+          "graph id": 0,
+          "graph node id": 0,
+          "channel": 0,
+          "channel_type": 1
+        }
+      },
+      {
+        "name": "Memcpy DtoD (Device -> Device)",
+        "ts": 614165177218.496,
+        "dur": 2.431,
+        "args": {
+          "External id": 26633,
+          "device": 0,
+          "context": 1,
+          "stream": 7,
+          "correlation": 49839,
+          "bytes": 3670016,
+          "memory bandwidth (GB/s)": 1509.6733854380914,
+          "graph id": 0,
+          "graph node id": 0,
+          "channel": 0,
+          "channel_type": 1
+        }
+      },
+      {
+        "name": "Memcpy DtoD (Device -> Device)",
+        "ts": 614165196375.373,
+        "dur": 6.849,
+        "args": {
+          "External id": 27329,
+          "device": 0,
+          "context": 1,
+          "stream": 7,
+          "correlation": 51315,
+          "bytes": 7340032,
+          "memory bandwidth (GB/s)": 1071.6939699226164,
+          "graph id": 0,
+          "graph node id": 0,
+          "channel": 0,
+          "channel_type": 1
+        }
+      },
+      {
+        "name": "Memcpy DtoD (Device -> Device)",
+        "ts": 614165196383.246,
+        "dur": 4.032,
+        "args": {
+          "External id": 27369,
+          "device": 0,
+          "context": 1,
+          "stream": 7,
+          "correlation": 51330,
+          "bytes": 7340032,
+          "memory bandwidth (GB/s)": 1820.4444444444443,
+          "graph id": 0,
+          "graph node id": 0,
+          "channel": 0,
+          "channel_type": 1
+        }
+      },
+      {
+        "name": "Memcpy DtoH (Device -> Pinned)",
+        "ts": 614165232244.939,
+        "dur": 675.817,
+        "args": {
+          "External id": 28587,
+          "device": 0,
+          "context": 1,
+          "stream": 37,
+          "correlation": 53723,
+          "bytes": 19267584,
+          "memory bandwidth (GB/s)": 28.510061155608692,
+          "graph id": 0,
+          "graph node id": 0,
+          "channel": 15,
+          "channel_type": 2
+        }
+      },
+      {
+        "name": "Memcpy DtoD (Device -> Device)",
+        "ts": 614165234381.734,
+        "dur": 3.008,
+        "args": {
+          "External id": 29542,
+          "device": 0,
+          "context": 1,
+          "stream": 7,
+          "correlation": 55460,
+          "bytes": 1835008,
+          "memory bandwidth (GB/s)": 610.0425531914893,
+          "graph id": 0,
+          "graph node id": 0,
+          "channel": 0,
+          "channel_type": 1
+        }
+      },
+      {
+        "name": "Memcpy DtoD (Device -> Device)",
+        "ts": 614165234385.734,
+        "dur": 1.728,
+        "args": {
+          "External id": 29582,
+          "device": 0,
+          "context": 1,
+          "stream": 7,
+          "correlation": 55475,
+          "bytes": 1835008,
+          "memory bandwidth (GB/s)": 1061.9259259259259,
+          "graph id": 0,
+          "graph node id": 0,
+          "channel": 0,
+          "channel_type": 1
+        }
+      },
+      {
+        "name": "Memcpy DtoD (Device -> Device)",
+        "ts": 614165244402.274,
+        "dur": 4.384,
+        "args": {
+          "External id": 30613,
+          "device": 0,
+          "context": 1,
+          "stream": 7,
+          "correlation": 57499,
+          "bytes": 3670016,
+          "memory bandwidth (GB/s)": 837.1386861313869,
+          "graph id": 0,
+          "graph node id": 0,
+          "channel": 0,
+          "channel_type": 1
+        }
+      },
+      {
+        "name": "Memcpy DtoD (Device -> Device)",
+        "ts": 614165244408.002,
+        "dur": 2.4,
+        "args": {
+          "External id": 30653,
+          "device": 0,
+          "context": 1,
+          "stream": 7,
+          "correlation": 57514,
+          "bytes": 3670016,
+          "memory bandwidth (GB/s)": 1529.1733333333334,
+          "graph id": 0,
+          "graph node id": 0,
+          "channel": 0,
+          "channel_type": 1
+        }
+      },
+      {
+        "name": "Memcpy DtoD (Device -> Device)",
+        "ts": 614165263700.754,
+        "dur": 6.656,
+        "args": {
+          "External id": 31349,
+          "device": 0,
+          "context": 1,
+          "stream": 7,
+          "correlation": 58990,
+          "bytes": 7340032,
+          "memory bandwidth (GB/s)": 1102.7692307692307,
+          "graph id": 0,
+          "graph node id": 0,
+          "channel": 0,
+          "channel_type": 1
+        }
+      },
+      {
+        "name": "Memcpy DtoD (Device -> Device)",
+        "ts": 614165263708.498,
+        "dur": 4.096,
+        "args": {
+          "External id": 31389,
+          "device": 0,
+          "context": 1,
+          "stream": 7,
+          "correlation": 59005,
+          "bytes": 7340032,
+          "memory bandwidth (GB/s)": 1792,
+          "graph id": 0,
+          "graph node id": 0,
+          "channel": 0,
+          "channel_type": 1
+        }
+      },
+      {
+        "name": "Memcpy DtoH (Device -> Pinned)",
+        "ts": 614165299654.577,
+        "dur": 676.136,
+        "args": {
+          "External id": 32607,
+          "device": 0,
+          "context": 1,
+          "stream": 37,
+          "correlation": 61406,
+          "bytes": 19267584,
+          "memory bandwidth (GB/s)": 28.49661014943739,
+          "graph id": 0,
+          "graph node id": 0,
+          "channel": 15,
+          "channel_type": 2
+        }
+      },
+      {
+        "name": "Memcpy DtoD (Device -> Device)",
+        "ts": 614165301826.892,
+        "dur": 2.848,
+        "args": {
+          "External id": 33562,
+          "device": 0,
+          "context": 1,
+          "stream": 7,
+          "correlation": 63143,
+          "bytes": 1835008,
+          "memory bandwidth (GB/s)": 644.314606741573,
+          "graph id": 0,
+          "graph node id": 0,
+          "channel": 0,
+          "channel_type": 1
+        }
+      },
+      {
+        "name": "Memcpy DtoD (Device -> Device)",
+        "ts": 614165301830.828,
+        "dur": 1.856,
+        "args": {
+          "External id": 33602,
+          "device": 0,
+          "context": 1,
+          "stream": 7,
+          "correlation": 63158,
+          "bytes": 1835008,
+          "memory bandwidth (GB/s)": 988.6896551724138,
+          "graph id": 0,
+          "graph node id": 0,
+          "channel": 0,
+          "channel_type": 1
+        }
+      },
+      {
+        "name": "Memcpy DtoD (Device -> Device)",
+        "ts": 614165311850.344,
+        "dur": 4.192,
+        "args": {
+          "External id": 34633,
+          "device": 0,
+          "context": 1,
+          "stream": 7,
+          "correlation": 65182,
+          "bytes": 3670016,
+          "memory bandwidth (GB/s)": 875.4809160305343,
+          "graph id": 0,
+          "graph node id": 0,
+          "channel": 0,
+          "channel_type": 1
+        }
+      },
+      {
+        "name": "Memcpy DtoD (Device -> Device)",
+        "ts": 614165311855.496,
+        "dur": 2.4,
+        "args": {
+          "External id": 34673,
+          "device": 0,
+          "context": 1,
+          "stream": 7,
+          "correlation": 65197,
+          "bytes": 3670016,
+          "memory bandwidth (GB/s)": 1529.1733333333334,
+          "graph id": 0,
+          "graph node id": 0,
+          "channel": 0,
+          "channel_type": 1
+        }
+      },
+      {
+        "name": "Memcpy DtoD (Device -> Device)",
+        "ts": 614165331118.68,
+        "dur": 6.752,
+        "args": {
+          "External id": 35369,
+          "device": 0,
+          "context": 1,
+          "stream": 7,
+          "correlation": 66673,
+          "bytes": 7340032,
+          "memory bandwidth (GB/s)": 1087.090047393365,
+          "graph id": 0,
+          "graph node id": 0,
+          "channel": 0,
+          "channel_type": 1
+        }
+      },
+      {
+        "name": "Memcpy DtoD (Device -> Device)",
+        "ts": 614165331127.608,
+        "dur": 4.288,
+        "args": {
+          "External id": 35409,
+          "device": 0,
+          "context": 1,
+          "stream": 7,
+          "correlation": 66688,
+          "bytes": 7340032,
+          "memory bandwidth (GB/s)": 1711.7611940298507,
+          "graph id": 0,
+          "graph node id": 0,
+          "channel": 0,
+          "channel_type": 1
+        }
+      },
+      {
+        "name": "Memcpy DtoH (Device -> Pinned)",
+        "ts": 614165367224.857,
+        "dur": 675.688,
+        "args": {
+          "External id": 36626,
+          "device": 0,
+          "context": 1,
+          "stream": 37,
+          "correlation": 69081,
+          "bytes": 19267584,
+          "memory bandwidth (GB/s)": 28.515504197203445,
+          "graph id": 0,
+          "graph node id": 0,
+          "channel": 15,
+          "channel_type": 2
+        }
+      },
+      {
+        "name": "Memcpy DtoD (Device -> Device)",
+        "ts": 614165369334.579,
+        "dur": 3.008,
+        "args": {
+          "External id": 37581,
+          "device": 0,
+          "context": 1,
+          "stream": 7,
+          "correlation": 70818,
+          "bytes": 1835008,
+          "memory bandwidth (GB/s)": 610.0425531914893,
+          "graph id": 0,
+          "graph node id": 0,
+          "channel": 0,
+          "channel_type": 1
+        }
+      },
+      {
+        "name": "Memcpy DtoD (Device -> Device)",
+        "ts": 614165369338.739,
+        "dur": 1.76,
+        "args": {
+          "External id": 37621,
+          "device": 0,
+          "context": 1,
+          "stream": 7,
+          "correlation": 70833,
+          "bytes": 1835008,
+          "memory bandwidth (GB/s)": 1042.6181818181817,
+          "graph id": 0,
+          "graph node id": 0,
+          "channel": 0,
+          "channel_type": 1
+        }
+      },
+      {
+        "name": "Memcpy DtoD (Device -> Device)",
+        "ts": 614165380114.937,
+        "dur": 4.256,
+        "args": {
+          "External id": 38652,
+          "device": 0,
+          "context": 1,
+          "stream": 7,
+          "correlation": 72857,
+          "bytes": 3670016,
+          "memory bandwidth (GB/s)": 862.3157894736842,
+          "graph id": 0,
+          "graph node id": 0,
+          "channel": 0,
+          "channel_type": 1
+        }
+      },
+      {
+        "name": "Memcpy DtoD (Device -> Device)",
+        "ts": 614165380121.337,
+        "dur": 2.368,
+        "args": {
+          "External id": 38692,
+          "device": 0,
+          "context": 1,
+          "stream": 7,
+          "correlation": 72872,
+          "bytes": 3670016,
+          "memory bandwidth (GB/s)": 1549.837837837838,
+          "graph id": 0,
+          "graph node id": 0,
+          "channel": 0,
+          "channel_type": 1
+        }
+      },
+      {
+        "name": "Memcpy DtoD (Device -> Device)",
+        "ts": 614165397299.726,
+        "dur": 6.752,
+        "args": {
+          "External id": 39388,
+          "device": 0,
+          "context": 1,
+          "stream": 7,
+          "correlation": 74348,
+          "bytes": 7340032,
+          "memory bandwidth (GB/s)": 1087.090047393365,
+          "graph id": 0,
+          "graph node id": 0,
+          "channel": 0,
+          "channel_type": 1
+        }
+      },
+      {
+        "name": "Memcpy DtoD (Device -> Device)",
+        "ts": 614165397307.694,
+        "dur": 4.032,
+        "args": {
+          "External id": 39428,
+          "device": 0,
+          "context": 1,
+          "stream": 7,
+          "correlation": 74363,
+          "bytes": 7340032,
+          "memory bandwidth (GB/s)": 1820.4444444444443,
+          "graph id": 0,
+          "graph node id": 0,
+          "channel": 0,
+          "channel_type": 1
+        }
+      },
+      {
+        "name": "Memcpy DtoH (Device -> Pinned)",
+        "ts": 614165429459.518,
+        "dur": 674.856,
+        "args": {
+          "External id": 40645,
+          "device": 0,
+          "context": 1,
+          "stream": 37,
+          "correlation": 76756,
+          "bytes": 19267584,
+          "memory bandwidth (GB/s)": 28.550659696290765,
+          "graph id": 0,
+          "graph node id": 0,
+          "channel": 15,
+          "channel_type": 2
+        }
+      }
+    ]
+  },
+  {
+    "trace": "trace_448x256_125frames_C.json.gz",
+    "gpu_events": 3496,
+    "kernel_count": 3340,
+    "compute_stream": 7,
+    "kernel_stream_counts": {
+      "7": 3335,
+      "41": 5
+    },
+    "d2h_count": 35,
+    "d2h_streams": [
+      41,
+      7
+    ],
+    "d2h_union_ms": 3.4910343017578125,
+    "d2h_compute_overlap_ms": 0.0,
+    "compute_busy_union_ms": 316.09549755859376,
+    "gpu_busy_union_ms": 319.8597371826172,
+    "top_kernels_sum_ms": [
+      [
+        "sm90_xmma_fprop_implicit_gemm_bf16bf16_bf16f32_f32_nhwckrsc_nhwc_tilesize256x128x64_warpgroupsize2x1x1_g1_execute_segment_k_off_kernel__5x_cudnn",
+        42.061663
+      ],
+      [
+        "void at::native::elementwise_kernel<128, 4, at::native::gpu_kernel_impl<at::native::BinaryFunctor<float, float, float, at::native::binary_internal::MulFunctor<float> > >(at::TensorIteratorBase&, at::native::BinaryFunctor<float, float, float, at::native::binary_internal::MulFunctor<float> > const&)::{lambda(int)#1}>(int, at::native::gpu_kernel_impl<at::native::BinaryFunctor<float, float, float, at::native::binary_internal::MulFunctor<float> > >(at::TensorIteratorBase&, at::native::BinaryFunctor<float, float, float, at::native::binary_internal::MulFunctor<float> > const&)::{lambda(int)#1})",
+        37.506673
+      ],
+      [
+        "void at::native::elementwise_kernel<128, 4, at::native::gpu_kernel_impl_nocast<at::native::CUDAFunctor_add<c10::BFloat16> >(at::TensorIteratorBase&, at::native::CUDAFunctor_add<c10::BFloat16> const&)::{lambda(int)#1}>(int, at::native::gpu_kernel_impl_nocast<at::native::CUDAFunctor_add<c10::BFloat16> >(at::TensorIteratorBase&, at::native::CUDAFunctor_add<c10::BFloat16> const&)::{lambda(int)#1})",
+        27.54926599999999
+      ],
+      [
+        "void at::native::unrolled_elementwise_kernel<at::native::direct_copy_kernel_cuda(at::TensorIteratorBase&)::{lambda()#3}::operator()() const::{lambda()#7}::operator()() const::{lambda(float)#1}, std::array<char*, 2ul>, 4, TrivialOffsetCalculator<1, unsigned int>, TrivialOffsetCalculator<1, unsigned int>, at::native::memory::LoadWithCast<1>, at::native::memory::StoreWithCast<1> >(int, at::native::direct_copy_kernel_cuda(at::TensorIteratorBase&)::{lambda()#3}::operator()() const::{lambda()#7}::operator()() const::{lambda(float)#1}, std::array<char*, 2ul>, TrivialOffsetCalculator<1, unsigned int>, TrivialOffsetCalculator<1, unsigned int>, at::native::memory::LoadWithCast<1>, at::native::memory::StoreWithCast<1>)",
+        26.63347600000001
+      ],
+      [
+        "sm90_xmma_fprop_implicit_gemm_bf16bf16_bf16f32_f32_nhwckrsc_nhwc_tilesize256x128x64_warpgroupsize2x1x1_g1_execute_segment_k_on_kernel__5x_cudnn",
+        25.61418900000001
+      ],
+      [
+        "void at::native::elementwise_kernel<128, 4, at::native::gpu_kernel_impl_nocast<at::native::direct_copy_kernel_cuda(at::TensorIteratorBase&)::{lambda()#3}::operator()() const::{lambda()#12}::operator()() const::{lambda(c10::BFloat16)#1}>(at::TensorIteratorBase&, at::native::direct_copy_kernel_cuda(at::TensorIteratorBase&)::{lambda()#3}::operator()() const::{lambda()#12}::operator()() const::{lambda(c10::BFloat16)#1} const&)::{lambda(int)#1}>(int, at::native::gpu_kernel_impl_nocast<at::native::direct_copy_kernel_cuda(at::TensorIteratorBase&)::{lambda()#3}::operator()() const::{lambda()#12}::operator()() const::{lambda(c10::BFloat16)#1}>(at::TensorIteratorBase&, at::native::direct_copy_kernel_cuda(at::TensorIteratorBase&)::{lambda()#3}::operator()() const::{lambda()#12}::operator()() const::{lambda(c10::BFloat16)#1} const&)::{lambda(int)#1})",
+        22.666661000000033
+      ],
+      [
+        "void at::native::vectorized_elementwise_kernel<4, at::native::(anonymous namespace)::pow_tensor_scalar_kernel_impl<float, float>(at::TensorIteratorBase&, float)::{lambda(float)#1}, std::array<char*, 2ul> >(int, at::native::(anonymous namespace)::pow_tensor_scalar_kernel_impl<float, float>(at::TensorIteratorBase&, float)::{lambda(float)#1}, std::array<char*, 2ul>)",
+        22.197929
+      ],
+      [
+        "void cudnn::engines_precompiled::nchwToNhwcKernel<__nv_bfloat16, __nv_bfloat16, float, false, true, (cudnnKernelDataType_t)0>(cudnn::engines_precompiled::nchw2nhwc_params_t<float>, __nv_bfloat16 const*, __nv_bfloat16*)",
+        19.805311999999997
+      ]
+    ],
+    "copy_events": [
+      {
+        "name": "Memcpy DtoD (Device -> Device)",
+        "ts": 614166519711.355,
+        "dur": 3.071,
+        "args": {
+          "External id": 41982,
+          "device": 0,
+          "context": 1,
+          "stream": 7,
+          "correlation": 78623,
+          "bytes": 1835008,
+          "memory bandwidth (GB/s)": 597.5278410941062,
+          "graph id": 0,
+          "graph node id": 0,
+          "channel": 0,
+          "channel_type": 1
+        }
+      },
+      {
+        "name": "Memcpy DtoD (Device -> Device)",
+        "ts": 614166519715.706,
+        "dur": 1.728,
+        "args": {
+          "External id": 42022,
+          "device": 0,
+          "context": 1,
+          "stream": 7,
+          "correlation": 78638,
+          "bytes": 1835008,
+          "memory bandwidth (GB/s)": 1061.9259259259259,
+          "graph id": 0,
+          "graph node id": 0,
+          "channel": 0,
+          "channel_type": 1
+        }
+      },
+      {
+        "name": "Memcpy DtoD (Device -> Device)",
+        "ts": 614166530312.095,
+        "dur": 4.191,
+        "args": {
+          "External id": 43055,
+          "device": 0,
+          "context": 1,
+          "stream": 7,
+          "correlation": 80665,
+          "bytes": 3670016,
+          "memory bandwidth (GB/s)": 875.6898115008352,
+          "graph id": 0,
+          "graph node id": 0,
+          "channel": 0,
+          "channel_type": 1
+        }
+      },
+      {
+        "name": "Memcpy DtoD (Device -> Device)",
+        "ts": 614166530320.926,
+        "dur": 2.463,
+        "args": {
+          "External id": 43095,
+          "device": 0,
+          "context": 1,
+          "stream": 7,
+          "correlation": 80680,
+          "bytes": 3670016,
+          "memory bandwidth (GB/s)": 1490.0592773041008,
+          "graph id": 0,
+          "graph node id": 0,
+          "channel": 0,
+          "channel_type": 1
+        }
+      },
+      {
+        "name": "Memcpy DtoD (Device -> Device)",
+        "ts": 614166546121.793,
+        "dur": 6.719,
+        "args": {
+          "External id": 43791,
+          "device": 0,
+          "context": 1,
+          "stream": 7,
+          "correlation": 82156,
+          "bytes": 7340032,
+          "memory bandwidth (GB/s)": 1092.429230540259,
+          "graph id": 0,
+          "graph node id": 0,
+          "channel": 0,
+          "channel_type": 1
+        }
+      },
+      {
+        "name": "Memcpy DtoD (Device -> Device)",
+        "ts": 614166546129.536,
+        "dur": 4.063,
+        "args": {
+          "External id": 43831,
+          "device": 0,
+          "context": 1,
+          "stream": 7,
+          "correlation": 82171,
+          "bytes": 7340032,
+          "memory bandwidth (GB/s)": 1806.5547624907704,
+          "graph id": 0,
+          "graph node id": 0,
+          "channel": 0,
+          "channel_type": 1
+        }
+      },
+      {
+        "name": "Memcpy DtoH (Device -> Pinned)",
+        "ts": 614166575368.76,
+        "dur": 609.905,
+        "args": {
+          "External id": 45049,
+          "device": 0,
+          "context": 1,
+          "stream": 41,
+          "correlation": 84567,
+          "bytes": 17203200,
+          "memory bandwidth (GB/s)": 28.206360006886317,
+          "graph id": 0,
+          "graph node id": 0,
+          "channel": 13,
+          "channel_type": 2
+        }
+      },
+      {
+        "name": "Memcpy DtoD (Device -> Device)",
+        "ts": 614166580199.207,
+        "dur": 3.007,
+        "args": {
+          "External id": 46002,
+          "device": 0,
+          "context": 1,
+          "stream": 7,
+          "correlation": 86300,
+          "bytes": 1835008,
+          "memory bandwidth (GB/s)": 610.2454273362155,
+          "graph id": 0,
+          "graph node id": 0,
+          "channel": 0,
+          "channel_type": 1
+        }
+      },
+      {
+        "name": "Memcpy DtoD (Device -> Device)",
+        "ts": 614166580203.462,
+        "dur": 1.792,
+        "args": {
+          "External id": 46042,
+          "device": 0,
+          "context": 1,
+          "stream": 7,
+          "correlation": 86315,
+          "bytes": 1835008,
+          "memory bandwidth (GB/s)": 1024,
+          "graph id": 0,
+          "graph node id": 0,
+          "channel": 0,
+          "channel_type": 1
+        }
+      },
+      {
+        "name": "Memcpy DtoD (Device -> Device)",
+        "ts": 614166590219.446,
+        "dur": 4.223,
+        "args": {
+          "External id": 47073,
+          "device": 0,
+          "context": 1,
+          "stream": 7,
+          "correlation": 88339,
+          "bytes": 3670016,
+          "memory bandwidth (GB/s)": 869.0542268529481,
+          "graph id": 0,
+          "graph node id": 0,
+          "channel": 0,
+          "channel_type": 1
+        }
+      },
+      {
+        "name": "Memcpy DtoD (Device -> Device)",
+        "ts": 614166590225.813,
+        "dur": 2.208,
+        "args": {
+          "External id": 47113,
+          "device": 0,
+          "context": 1,
+          "stream": 7,
+          "correlation": 88354,
+          "bytes": 3670016,
+          "memory bandwidth (GB/s)": 1662.144927536232,
+          "graph id": 0,
+          "graph node id": 0,
+          "channel": 0,
+          "channel_type": 1
+        }
+      },
+      {
+        "name": "Memcpy DtoD (Device -> Device)",
+        "ts": 614166609416.417,
+        "dur": 6.688,
+        "args": {
+          "External id": 47809,
+          "device": 0,
+          "context": 1,
+          "stream": 7,
+          "correlation": 89830,
+          "bytes": 7340032,
+          "memory bandwidth (GB/s)": 1097.4928229665072,
+          "graph id": 0,
+          "graph node id": 0,
+          "channel": 0,
+          "channel_type": 1
+        }
+      },
+      {
+        "name": "Memcpy DtoD (Device -> Device)",
+        "ts": 614166609425.216,
+        "dur": 4.128,
+        "args": {
+          "External id": 47849,
+          "device": 0,
+          "context": 1,
+          "stream": 7,
+          "correlation": 89845,
+          "bytes": 7340032,
+          "memory bandwidth (GB/s)": 1778.108527131783,
+          "graph id": 0,
+          "graph node id": 0,
+          "channel": 0,
+          "channel_type": 1
+        }
+      },
+      {
+        "name": "Memcpy DtoH (Device -> Pinned)",
+        "ts": 614166645459.497,
+        "dur": 675.753,
+        "args": {
+          "External id": 49067,
+          "device": 0,
+          "context": 1,
+          "stream": 41,
+          "correlation": 92238,
+          "bytes": 19267584,
+          "memory bandwidth (GB/s)": 28.512761319594585,
+          "graph id": 0,
+          "graph node id": 0,
+          "channel": 13,
+          "channel_type": 2
+        }
+      },
+      {
+        "name": "Memcpy DtoD (Device -> Device)",
+        "ts": 614166653286.676,
+        "dur": 3.008,
+        "args": {
+          "External id": 50022,
+          "device": 0,
+          "context": 1,
+          "stream": 7,
+          "correlation": 93976,
+          "bytes": 1835008,
+          "memory bandwidth (GB/s)": 610.0425531914893,
+          "graph id": 0,
+          "graph node id": 0,
+          "channel": 0,
+          "channel_type": 1
+        }
+      },
+      {
+        "name": "Memcpy DtoD (Device -> Device)",
+        "ts": 614166653290.803,
+        "dur": 1.728,
+        "args": {
+          "External id": 50062,
+          "device": 0,
+          "context": 1,
+          "stream": 7,
+          "correlation": 93991,
+          "bytes": 1835008,
+          "memory bandwidth (GB/s)": 1061.9259259259259,
+          "graph id": 0,
+          "graph node id": 0,
+          "channel": 0,
+          "channel_type": 1
+        }
+      },
+      {
+        "name": "Memcpy DtoD (Device -> Device)",
+        "ts": 614166663309.795,
+        "dur": 3.999,
+        "args": {
+          "External id": 51093,
+          "device": 0,
+          "context": 1,
+          "stream": 7,
+          "correlation": 96015,
+          "bytes": 3670016,
+          "memory bandwidth (GB/s)": 917.7334333583395,
+          "graph id": 0,
+          "graph node id": 0,
+          "channel": 0,
+          "channel_type": 1
+        }
+      },
+      {
+        "name": "Memcpy DtoD (Device -> Device)",
+        "ts": 614166663314.914,
+        "dur": 2.432,
+        "args": {
+          "External id": 51133,
+          "device": 0,
+          "context": 1,
+          "stream": 7,
+          "correlation": 96030,
+          "bytes": 3670016,
+          "memory bandwidth (GB/s)": 1509.0526315789473,
+          "graph id": 0,
+          "graph node id": 0,
+          "channel": 0,
+          "channel_type": 1
+        }
+      },
+      {
+        "name": "Memcpy DtoD (Device -> Device)",
+        "ts": 614166682502.831,
+        "dur": 6.911,
+        "args": {
+          "External id": 51829,
+          "device": 0,
+          "context": 1,
+          "stream": 7,
+          "correlation": 97506,
+          "bytes": 7340032,
+          "memory bandwidth (GB/s)": 1062.079583273043,
+          "graph id": 0,
+          "graph node id": 0,
+          "channel": 0,
+          "channel_type": 1
+        }
+      },
+      {
+        "name": "Memcpy DtoD (Device -> Device)",
+        "ts": 614166682510.83,
+        "dur": 4.223,
+        "args": {
+          "External id": 51869,
+          "device": 0,
+          "context": 1,
+          "stream": 7,
+          "correlation": 97521,
+          "bytes": 7340032,
+          "memory bandwidth (GB/s)": 1738.1084537058962,
+          "graph id": 0,
+          "graph node id": 0,
+          "channel": 0,
+          "channel_type": 1
+        }
+      },
+      {
+        "name": "Memcpy DtoH (Device -> Pinned)",
+        "ts": 614166718488.733,
+        "dur": 743.073,
+        "args": {
+          "External id": 53087,
+          "device": 0,
+          "context": 1,
+          "stream": 41,
+          "correlation": 99921,
+          "bytes": 19267584,
+          "memory bandwidth (GB/s)": 25.929597764957144,
+          "graph id": 0,
+          "graph node id": 0,
+          "channel": 13,
+          "channel_type": 2
+        }
+      },
+      {
+        "name": "Memcpy DtoD (Device -> Device)",
+        "ts": 614166726006.961,
+        "dur": 2.943,
+        "args": {
+          "External id": 54042,
+          "device": 0,
+          "context": 1,
+          "stream": 7,
+          "correlation": 101659,
+          "bytes": 1835008,
+          "memory bandwidth (GB/s)": 623.5161399932042,
+          "graph id": 0,
+          "graph node id": 0,
+          "channel": 0,
+          "channel_type": 1
+        }
+      },
+      {
+        "name": "Memcpy DtoD (Device -> Device)",
+        "ts": 614166726010.896,
+        "dur": 1.824,
+        "args": {
+          "External id": 54082,
+          "device": 0,
+          "context": 1,
+          "stream": 7,
+          "correlation": 101674,
+          "bytes": 1835008,
+          "memory bandwidth (GB/s)": 1006.0350877192982,
+          "graph id": 0,
+          "graph node id": 0,
+          "channel": 0,
+          "channel_type": 1
+        }
+      },
+      {
+        "name": "Memcpy DtoD (Device -> Device)",
+        "ts": 614166736324.825,
+        "dur": 4.096,
+        "args": {
+          "External id": 55113,
+          "device": 0,
+          "context": 1,
+          "stream": 7,
+          "correlation": 103698,
+          "bytes": 3670016,
+          "memory bandwidth (GB/s)": 896,
+          "graph id": 0,
+          "graph node id": 0,
+          "channel": 0,
+          "channel_type": 1
+        }
+      },
+      {
+        "name": "Memcpy DtoD (Device -> Device)",
+        "ts": 614166736330.041,
+        "dur": 2.271,
+        "args": {
+          "External id": 55153,
+          "device": 0,
+          "context": 1,
+          "stream": 7,
+          "correlation": 103713,
+          "bytes": 3670016,
+          "memory bandwidth (GB/s)": 1616.035226772347,
+          "graph id": 0,
+          "graph node id": 0,
+          "channel": 0,
+          "channel_type": 1
+        }
+      },
+      {
+        "name": "Memcpy DtoD (Device -> Device)",
+        "ts": 614166755598.171,
+        "dur": 6.719,
+        "args": {
+          "External id": 55849,
+          "device": 0,
+          "context": 1,
+          "stream": 7,
+          "correlation": 105189,
+          "bytes": 7340032,
+          "memory bandwidth (GB/s)": 1092.429230540259,
+          "graph id": 0,
+          "graph node id": 0,
+          "channel": 0,
+          "channel_type": 1
+        }
+      },
+      {
+        "name": "Memcpy DtoD (Device -> Device)",
+        "ts": 614166755606.01,
+        "dur": 4.0,
+        "args": {
+          "External id": 55889,
+          "device": 0,
+          "context": 1,
+          "stream": 7,
+          "correlation": 105204,
+          "bytes": 7340032,
+          "memory bandwidth (GB/s)": 1835.008,
+          "graph id": 0,
+          "graph node id": 0,
+          "channel": 0,
+          "channel_type": 1
+        }
+      },
+      {
+        "name": "Memcpy DtoH (Device -> Pinned)",
+        "ts": 614166791646.946,
+        "dur": 675.56,
+        "args": {
+          "External id": 57106,
+          "device": 0,
+          "context": 1,
+          "stream": 41,
+          "correlation": 107597,
+          "bytes": 19267584,
+          "memory bandwidth (GB/s)": 28.5209070992954,
+          "graph id": 0,
+          "graph node id": 0,
+          "channel": 13,
+          "channel_type": 2
+        }
+      },
+      {
+        "name": "Memcpy DtoD (Device -> Device)",
+        "ts": 614166800721.963,
+        "dur": 3.104,
+        "args": {
+          "External id": 58061,
+          "device": 0,
+          "context": 1,
+          "stream": 7,
+          "correlation": 109335,
+          "bytes": 1835008,
+          "memory bandwidth (GB/s)": 591.1752577319587,
+          "graph id": 0,
+          "graph node id": 0,
+          "channel": 0,
+          "channel_type": 1
+        }
+      },
+      {
+        "name": "Memcpy DtoD (Device -> Device)",
+        "ts": 614166800726.123,
+        "dur": 1.855,
+        "args": {
+          "External id": 58101,
+          "device": 0,
+          "context": 1,
+          "stream": 7,
+          "correlation": 109350,
+          "bytes": 1835008,
+          "memory bandwidth (GB/s)": 989.222641509434,
+          "graph id": 0,
+          "graph node id": 0,
+          "channel": 0,
+          "channel_type": 1
+        }
+      },
+      {
+        "name": "Memcpy DtoD (Device -> Device)",
+        "ts": 614166811683.105,
+        "dur": 4.287,
+        "args": {
+          "External id": 59132,
+          "device": 0,
+          "context": 1,
+          "stream": 7,
+          "correlation": 111374,
+          "bytes": 3670016,
+          "memory bandwidth (GB/s)": 856.0802425938886,
+          "graph id": 0,
+          "graph node id": 0,
+          "channel": 0,
+          "channel_type": 1
+        }
+      },
+      {
+        "name": "Memcpy DtoD (Device -> Device)",
+        "ts": 614166811688.832,
+        "dur": 2.4,
+        "args": {
+          "External id": 59172,
+          "device": 0,
+          "context": 1,
+          "stream": 7,
+          "correlation": 111389,
+          "bytes": 3670016,
+          "memory bandwidth (GB/s)": 1529.1733333333334,
+          "graph id": 0,
+          "graph node id": 0,
+          "channel": 0,
+          "channel_type": 1
+        }
+      },
+      {
+        "name": "Memcpy DtoD (Device -> Device)",
+        "ts": 614166829045.69,
+        "dur": 6.783,
+        "args": {
+          "External id": 59868,
+          "device": 0,
+          "context": 1,
+          "stream": 7,
+          "correlation": 112865,
+          "bytes": 7340032,
+          "memory bandwidth (GB/s)": 1082.1217750257997,
+          "graph id": 0,
+          "graph node id": 0,
+          "channel": 0,
+          "channel_type": 1
+        }
+      },
+      {
+        "name": "Memcpy DtoD (Device -> Device)",
+        "ts": 614166829053.593,
+        "dur": 4.223,
+        "args": {
+          "External id": 59908,
+          "device": 0,
+          "context": 1,
+          "stream": 7,
+          "correlation": 112880,
+          "bytes": 7340032,
+          "memory bandwidth (GB/s)": 1738.1084537058962,
+          "graph id": 0,
+          "graph node id": 0,
+          "channel": 0,
+          "channel_type": 1
+        }
+      },
+      {
+        "name": "Memcpy DtoH (Device -> Pinned)",
+        "ts": 614166861219.766,
+        "dur": 675.656,
+        "args": {
+          "External id": 61125,
+          "device": 0,
+          "context": 1,
+          "stream": 41,
+          "correlation": 115273,
+          "bytes": 19267584,
+          "memory bandwidth (GB/s)": 28.51685473080976,
+          "graph id": 0,
+          "graph node id": 0,
+          "channel": 13,
+          "channel_type": 2
+        }
+      }
+    ]
+  },
+  {
+    "trace": "trace_896x512_125frames_A.json.gz",
+    "gpu_events": 3486,
+    "kernel_count": 3321,
+    "compute_stream": 7,
+    "kernel_stream_counts": {
+      "7": 3321
+    },
+    "d2h_count": 35,
+    "d2h_streams": [
+      7
+    ],
+    "d2h_union_ms": 139.63629272460938,
+    "d2h_compute_overlap_ms": 0.0,
+    "compute_busy_union_ms": 1238.4953571777344,
+    "gpu_busy_union_ms": 1378.2942755126953,
+    "top_kernels_sum_ms": [
+      [
+        "void at::native::elementwise_kernel<128, 4, at::native::gpu_kernel_impl<at::native::BinaryFunctor<float, float, float, at::native::binary_internal::MulFunctor<float> > >(at::TensorIteratorBase&, at::native::BinaryFunctor<float, float, float, at::native::binary_internal::MulFunctor<float> > const&)::{lambda(int)#1}>(int, at::native::gpu_kernel_impl<at::native::BinaryFunctor<float, float, float, at::native::binary_internal::MulFunctor<float> > >(at::TensorIteratorBase&, at::native::BinaryFunctor<float, float, float, at::native::binary_internal::MulFunctor<float> > const&)::{lambda(int)#1})",
+        169.62019199999995
+      ],
+      [
+        "sm90_xmma_fprop_implicit_gemm_bf16bf16_bf16f32_f32_nhwckrsc_nhwc_tilesize256x128x64_warpgroupsize2x1x1_g1_execute_segment_k_off_kernel__5x_cudnn",
+        143.18809600000003
+      ],
+      [
+        "sm90_xmma_fprop_implicit_gemm_bf16bf16_bf16f32_f32_nhwckrsc_nhwc_tilesize256x128x64_warpgroupsize2x1x1_g1_execute_segment_k_on_kernel__5x_cudnn",
+        119.65486999999999
+      ],
+      [
+        "void at::native::elementwise_kernel<128, 4, at::native::gpu_kernel_impl_nocast<at::native::CUDAFunctor_add<c10::BFloat16> >(at::TensorIteratorBase&, at::native::CUDAFunctor_add<c10::BFloat16> const&)::{lambda(int)#1}>(int, at::native::gpu_kernel_impl_nocast<at::native::CUDAFunctor_add<c10::BFloat16> >(at::TensorIteratorBase&, at::native::CUDAFunctor_add<c10::BFloat16> const&)::{lambda(int)#1})",
+        110.04764499999997
+      ],
+      [
+        "void at::native::unrolled_elementwise_kernel<at::native::direct_copy_kernel_cuda(at::TensorIteratorBase&)::{lambda()#3}::operator()() const::{lambda()#7}::operator()() const::{lambda(float)#1}, std::array<char*, 2ul>, 4, TrivialOffsetCalculator<1, unsigned int>, TrivialOffsetCalculator<1, unsigned int>, at::native::memory::LoadWithCast<1>, at::native::memory::StoreWithCast<1> >(int, at::native::direct_copy_kernel_cuda(at::TensorIteratorBase&)::{lambda()#3}::operator()() const::{lambda()#7}::operator()() const::{lambda(float)#1}, std::array<char*, 2ul>, TrivialOffsetCalculator<1, unsigned int>, TrivialOffsetCalculator<1, unsigned int>, at::native::memory::LoadWithCast<1>, at::native::memory::StoreWithCast<1>)",
+        105.86977199999997
+      ],
+      [
+        "void at::native::vectorized_elementwise_kernel<4, at::native::(anonymous namespace)::pow_tensor_scalar_kernel_impl<float, float>(at::TensorIteratorBase&, float)::{lambda(float)#1}, std::array<char*, 2ul> >(int, at::native::(anonymous namespace)::pow_tensor_scalar_kernel_impl<float, float>(at::TensorIteratorBase&, float)::{lambda(float)#1}, std::array<char*, 2ul>)",
+        88.17858900000003
+      ],
+      [
+        "void at::native::elementwise_kernel<128, 4, at::native::gpu_kernel_impl_nocast<at::native::direct_copy_kernel_cuda(at::TensorIteratorBase&)::{lambda()#3}::operator()() const::{lambda()#12}::operator()() const::{lambda(c10::BFloat16)#1}>(at::TensorIteratorBase&, at::native::direct_copy_kernel_cuda(at::TensorIteratorBase&)::{lambda()#3}::operator()() const::{lambda()#12}::operator()() const::{lambda(c10::BFloat16)#1} const&)::{lambda(int)#1}>(int, at::native::gpu_kernel_impl_nocast<at::native::direct_copy_kernel_cuda(at::TensorIteratorBase&)::{lambda()#3}::operator()() const::{lambda()#12}::operator()() const::{lambda(c10::BFloat16)#1}>(at::TensorIteratorBase&, at::native::direct_copy_kernel_cuda(at::TensorIteratorBase&)::{lambda()#3}::operator()() const::{lambda()#12}::operator()() const::{lambda(c10::BFloat16)#1} const&)::{lambda(int)#1})",
+        86.16719800000004
+      ],
+      [
+        "void cudnn::engines_precompiled::nchwToNhwcKernel<__nv_bfloat16, __nv_bfloat16, float, false, true, (cudnnKernelDataType_t)0>(cudnn::engines_precompiled::nchw2nhwc_params_t<float>, __nv_bfloat16 const*, __nv_bfloat16*)",
+        74.33338000000005
+      ]
+    ],
+    "copy_events": [
+      {
+        "name": "Memcpy DtoD (Device -> Device)",
+        "ts": 614272146709.433,
+        "dur": 6.622,
+        "args": {
+          "External id": 62462,
+          "device": 0,
+          "context": 1,
+          "stream": 7,
+          "correlation": 1494859,
+          "bytes": 7340032,
+          "memory bandwidth (GB/s)": 1108.431289640592,
+          "graph id": 0,
+          "graph node id": 0,
+          "channel": 0,
+          "channel_type": 1
+        }
+      },
+      {
+        "name": "Memcpy DtoD (Device -> Device)",
+        "ts": 614272146717.079,
+        "dur": 3.904,
+        "args": {
+          "External id": 62502,
+          "device": 0,
+          "context": 1,
+          "stream": 7,
+          "correlation": 1494874,
+          "bytes": 7340032,
+          "memory bandwidth (GB/s)": 1880.1311475409836,
+          "graph id": 0,
+          "graph node id": 0,
+          "channel": 0,
+          "channel_type": 1
+        }
+      },
+      {
+        "name": "Memcpy DtoD (Device -> Device)",
+        "ts": 614272178192.308,
+        "dur": 11.582,
+        "args": {
+          "External id": 63535,
+          "device": 0,
+          "context": 1,
+          "stream": 7,
+          "correlation": 1496904,
+          "bytes": 14680064,
+          "memory bandwidth (GB/s)": 1267.489552754274,
+          "graph id": 0,
+          "graph node id": 0,
+          "channel": 0,
+          "channel_type": 1
+        }
+      },
+      {
+        "name": "Memcpy DtoD (Device -> Device)",
+        "ts": 614272178205.874,
+        "dur": 11.965,
+        "args": {
+          "External id": 63575,
+          "device": 0,
+          "context": 1,
+          "stream": 7,
+          "correlation": 1496919,
+          "bytes": 14680064,
+          "memory bandwidth (GB/s)": 1226.9171750940243,
+          "graph id": 0,
+          "graph node id": 0,
+          "channel": 0,
+          "channel_type": 1
+        }
+      },
+      {
+        "name": "Memcpy DtoD (Device -> Device)",
+        "ts": 614272238839.967,
+        "dur": 20.86,
+        "args": {
+          "External id": 64271,
+          "device": 0,
+          "context": 1,
+          "stream": 7,
+          "correlation": 1498395,
+          "bytes": 29360128,
+          "memory bandwidth (GB/s)": 1407.4845637583892,
+          "graph id": 0,
+          "graph node id": 0,
+          "channel": 0,
+          "channel_type": 1
+        }
+      },
+      {
+        "name": "Memcpy DtoD (Device -> Device)",
+        "ts": 614272238862.33,
+        "dur": 20.828,
+        "args": {
+          "External id": 64311,
+          "device": 0,
+          "context": 1,
+          "stream": 7,
+          "correlation": 1498410,
+          "bytes": 29360128,
+          "memory bandwidth (GB/s)": 1409.6470136354908,
+          "graph id": 0,
+          "graph node id": 0,
+          "channel": 0,
+          "channel_type": 1
+        }
+      },
+      {
+        "name": "Memcpy DtoH (Device -> Pageable)",
+        "ts": 614272355098.866,
+        "dur": 24679.031,
+        "args": {
+          "External id": 65530,
+          "device": 0,
+          "context": 1,
+          "stream": 7,
+          "correlation": 1500779,
+          "bytes": 68812800,
+          "memory bandwidth (GB/s)": 2.788310448655784,
+          "graph id": 0,
+          "graph node id": 0,
+          "channel": 12,
+          "channel_type": 2
+        }
+      },
+      {
+        "name": "Memcpy DtoD (Device -> Device)",
+        "ts": 614272388685.256,
+        "dur": 6.815,
+        "args": {
+          "External id": 66483,
+          "device": 0,
+          "context": 1,
+          "stream": 7,
+          "correlation": 1502496,
+          "bytes": 7340032,
+          "memory bandwidth (GB/s)": 1077.0406456346295,
+          "graph id": 0,
+          "graph node id": 0,
+          "channel": 0,
+          "channel_type": 1
+        }
+      },
+      {
+        "name": "Memcpy DtoD (Device -> Device)",
+        "ts": 614272388693.19,
+        "dur": 4.031,
+        "args": {
+          "External id": 66523,
+          "device": 0,
+          "context": 1,
+          "stream": 7,
+          "correlation": 1502511,
+          "bytes": 7340032,
+          "memory bandwidth (GB/s)": 1820.8960555693377,
+          "graph id": 0,
+          "graph node id": 0,
+          "channel": 0,
+          "channel_type": 1
+        }
+      },
+      {
+        "name": "Memcpy DtoD (Device -> Device)",
+        "ts": 614272426639.568,
+        "dur": 11.549,
+        "args": {
+          "External id": 67554,
+          "device": 0,
+          "context": 1,
+          "stream": 7,
+          "correlation": 1504538,
+          "bytes": 14680064,
+          "memory bandwidth (GB/s)": 1271.1112650445925,
+          "graph id": 0,
+          "graph node id": 0,
+          "channel": 0,
+          "channel_type": 1
+        }
+      },
+      {
+        "name": "Memcpy DtoD (Device -> Device)",
+        "ts": 614272426652.269,
+        "dur": 10.366,
+        "args": {
+          "External id": 67594,
+          "device": 0,
+          "context": 1,
+          "stream": 7,
+          "correlation": 1504553,
+          "bytes": 14680064,
+          "memory bandwidth (GB/s)": 1416.1744163611809,
+          "graph id": 0,
+          "graph node id": 0,
+          "channel": 0,
+          "channel_type": 1
+        }
+      },
+      {
+        "name": "Memcpy DtoD (Device -> Device)",
+        "ts": 614272501986.009,
+        "dur": 20.955,
+        "args": {
+          "External id": 68290,
+          "device": 0,
+          "context": 1,
+          "stream": 7,
+          "correlation": 1506029,
+          "bytes": 29360128,
+          "memory bandwidth (GB/s)": 1401.1036984013363,
+          "graph id": 0,
+          "graph node id": 0,
+          "channel": 0,
+          "channel_type": 1
+        }
+      },
+      {
+        "name": "Memcpy DtoD (Device -> Device)",
+        "ts": 614272502008.404,
+        "dur": 22.203,
+        "args": {
+          "External id": 68330,
+          "device": 0,
+          "context": 1,
+          "stream": 7,
+          "correlation": 1506044,
+          "bytes": 29360128,
+          "memory bandwidth (GB/s)": 1322.3495923974237,
+          "graph id": 0,
+          "graph node id": 0,
+          "channel": 0,
+          "channel_type": 1
+        }
+      },
+      {
+        "name": "Memcpy DtoH (Device -> Pageable)",
+        "ts": 614272647290.549,
+        "dur": 28499.455,
+        "args": {
+          "External id": 69549,
+          "device": 0,
+          "context": 1,
+          "stream": 7,
+          "correlation": 1508413,
+          "bytes": 77070336,
+          "memory bandwidth (GB/s)": 2.704274029099855,
+          "graph id": 0,
+          "graph node id": 0,
+          "channel": 12,
+          "channel_type": 2
+        }
+      },
+      {
+        "name": "Memcpy DtoD (Device -> Device)",
+        "ts": 614272684696.499,
+        "dur": 6.591,
+        "args": {
+          "External id": 70502,
+          "device": 0,
+          "context": 1,
+          "stream": 7,
+          "correlation": 1510130,
+          "bytes": 7340032,
+          "memory bandwidth (GB/s)": 1113.6446669701108,
+          "graph id": 0,
+          "graph node id": 0,
+          "channel": 0,
+          "channel_type": 1
+        }
+      },
+      {
+        "name": "Memcpy DtoD (Device -> Device)",
+        "ts": 614272684704.274,
+        "dur": 3.871,
+        "args": {
+          "External id": 70542,
+          "device": 0,
+          "context": 1,
+          "stream": 7,
+          "correlation": 1510145,
+          "bytes": 7340032,
+          "memory bandwidth (GB/s)": 1896.1591320072332,
+          "graph id": 0,
+          "graph node id": 0,
+          "channel": 0,
+          "channel_type": 1
+        }
+      },
+      {
+        "name": "Memcpy DtoD (Device -> Device)",
+        "ts": 614272722729.067,
+        "dur": 11.229,
+        "args": {
+          "External id": 71573,
+          "device": 0,
+          "context": 1,
+          "stream": 7,
+          "correlation": 1512172,
+          "bytes": 14680064,
+          "memory bandwidth (GB/s)": 1307.3349363255854,
+          "graph id": 0,
+          "graph node id": 0,
+          "channel": 0,
+          "channel_type": 1
+        }
+      },
+      {
+        "name": "Memcpy DtoD (Device -> Device)",
+        "ts": 614272722742.344,
+        "dur": 10.27,
+        "args": {
+          "External id": 71613,
+          "device": 0,
+          "context": 1,
+          "stream": 7,
+          "correlation": 1512187,
+          "bytes": 14680064,
+          "memory bandwidth (GB/s)": 1429.4122687439144,
+          "graph id": 0,
+          "graph node id": 0,
+          "channel": 0,
+          "channel_type": 1
+        }
+      },
+      {
+        "name": "Memcpy DtoD (Device -> Device)",
+        "ts": 614272798075.028,
+        "dur": 22.427,
+        "args": {
+          "External id": 72309,
+          "device": 0,
+          "context": 1,
+          "stream": 7,
+          "correlation": 1513663,
+          "bytes": 29360128,
+          "memory bandwidth (GB/s)": 1309.1420163196146,
+          "graph id": 0,
+          "graph node id": 0,
+          "channel": 0,
+          "channel_type": 1
+        }
+      },
+      {
+        "name": "Memcpy DtoD (Device -> Device)",
+        "ts": 614272798099.087,
+        "dur": 21.019,
+        "args": {
+          "External id": 72349,
+          "device": 0,
+          "context": 1,
+          "stream": 7,
+          "correlation": 1513678,
+          "bytes": 29360128,
+          "memory bandwidth (GB/s)": 1396.8375279509016,
+          "graph id": 0,
+          "graph node id": 0,
+          "channel": 0,
+          "channel_type": 1
+        }
+      },
+      {
+        "name": "Memcpy DtoH (Device -> Pageable)",
+        "ts": 614272943583.844,
+        "dur": 27831.343,
+        "args": {
+          "External id": 73568,
+          "device": 0,
+          "context": 1,
+          "stream": 7,
+          "correlation": 1516047,
+          "bytes": 77070336,
+          "memory bandwidth (GB/s)": 2.769192129894702,
+          "graph id": 0,
+          "graph node id": 0,
+          "channel": 12,
+          "channel_type": 2
+        }
+      },
+      {
+        "name": "Memcpy DtoD (Device -> Device)",
+        "ts": 614272980045.166,
+        "dur": 6.527,
+        "args": {
+          "External id": 74521,
+          "device": 0,
+          "context": 1,
+          "stream": 7,
+          "correlation": 1517764,
+          "bytes": 7340032,
+          "memory bandwidth (GB/s)": 1124.5644246974107,
+          "graph id": 0,
+          "graph node id": 0,
+          "channel": 0,
+          "channel_type": 1
+        }
+      },
+      {
+        "name": "Memcpy DtoD (Device -> Device)",
+        "ts": 614272980052.812,
+        "dur": 4.256,
+        "args": {
+          "External id": 74561,
+          "device": 0,
+          "context": 1,
+          "stream": 7,
+          "correlation": 1517779,
+          "bytes": 7340032,
+          "memory bandwidth (GB/s)": 1724.6315789473683,
+          "graph id": 0,
+          "graph node id": 0,
+          "channel": 0,
+          "channel_type": 1
+        }
+      },
+      {
+        "name": "Memcpy DtoD (Device -> Device)",
+        "ts": 614273018124.859,
+        "dur": 11.389,
+        "args": {
+          "External id": 75592,
+          "device": 0,
+          "context": 1,
+          "stream": 7,
+          "correlation": 1519806,
+          "bytes": 14680064,
+          "memory bandwidth (GB/s)": 1288.9686539643515,
+          "graph id": 0,
+          "graph node id": 0,
+          "channel": 0,
+          "channel_type": 1
+        }
+      },
+      {
+        "name": "Memcpy DtoD (Device -> Device)",
+        "ts": 614273018138.36,
+        "dur": 10.366,
+        "args": {
+          "External id": 75632,
+          "device": 0,
+          "context": 1,
+          "stream": 7,
+          "correlation": 1519821,
+          "bytes": 14680064,
+          "memory bandwidth (GB/s)": 1416.1744163611809,
+          "graph id": 0,
+          "graph node id": 0,
+          "channel": 0,
+          "channel_type": 1
+        }
+      },
+      {
+        "name": "Memcpy DtoD (Device -> Device)",
+        "ts": 614273093393.109,
+        "dur": 20.763,
+        "args": {
+          "External id": 76328,
+          "device": 0,
+          "context": 1,
+          "stream": 7,
+          "correlation": 1521297,
+          "bytes": 29360128,
+          "memory bandwidth (GB/s)": 1414.0600105957712,
+          "graph id": 0,
+          "graph node id": 0,
+          "channel": 0,
+          "channel_type": 1
+        }
+      },
+      {
+        "name": "Memcpy DtoD (Device -> Device)",
+        "ts": 614273093415.184,
+        "dur": 20.796,
+        "args": {
+          "External id": 76368,
+          "device": 0,
+          "context": 1,
+          "stream": 7,
+          "correlation": 1521312,
+          "bytes": 29360128,
+          "memory bandwidth (GB/s)": 1411.8161184843239,
+          "graph id": 0,
+          "graph node id": 0,
+          "channel": 0,
+          "channel_type": 1
+        }
+      },
+      {
+        "name": "Memcpy DtoH (Device -> Pageable)",
+        "ts": 614273238687.955,
+        "dur": 27731.205,
+        "args": {
+          "External id": 77587,
+          "device": 0,
+          "context": 1,
+          "stream": 7,
+          "correlation": 1523681,
+          "bytes": 77070336,
+          "memory bandwidth (GB/s)": 2.779191744462601,
+          "graph id": 0,
+          "graph node id": 0,
+          "channel": 12,
+          "channel_type": 2
+        }
+      },
+      {
+        "name": "Memcpy DtoD (Device -> Device)",
+        "ts": 614273274021.392,
+        "dur": 6.527,
+        "args": {
+          "External id": 78540,
+          "device": 0,
+          "context": 1,
+          "stream": 7,
+          "correlation": 1525398,
+          "bytes": 7340032,
+          "memory bandwidth (GB/s)": 1124.5644246974107,
+          "graph id": 0,
+          "graph node id": 0,
+          "channel": 0,
+          "channel_type": 1
+        }
+      },
+      {
+        "name": "Memcpy DtoD (Device -> Device)",
+        "ts": 614273274029.167,
+        "dur": 4.223,
+        "args": {
+          "External id": 78580,
+          "device": 0,
+          "context": 1,
+          "stream": 7,
+          "correlation": 1525413,
+          "bytes": 7340032,
+          "memory bandwidth (GB/s)": 1738.1084537058962,
+          "graph id": 0,
+          "graph node id": 0,
+          "channel": 0,
+          "channel_type": 1
+        }
+      },
+      {
+        "name": "Memcpy DtoD (Device -> Device)",
+        "ts": 614273308037.065,
+        "dur": 12.734,
+        "args": {
+          "External id": 79611,
+          "device": 0,
+          "context": 1,
+          "stream": 7,
+          "correlation": 1527440,
+          "bytes": 14680064,
+          "memory bandwidth (GB/s)": 1152.824250039265,
+          "graph id": 0,
+          "graph node id": 0,
+          "channel": 0,
+          "channel_type": 1
+        }
+      },
+      {
+        "name": "Memcpy DtoD (Device -> Device)",
+        "ts": 614273308051.175,
+        "dur": 10.269,
+        "args": {
+          "External id": 79651,
+          "device": 0,
+          "context": 1,
+          "stream": 7,
+          "correlation": 1527455,
+          "bytes": 14680064,
+          "memory bandwidth (GB/s)": 1429.5514655760055,
+          "graph id": 0,
+          "graph node id": 0,
+          "channel": 0,
+          "channel_type": 1
+        }
+      },
+      {
+        "name": "Memcpy DtoD (Device -> Device)",
+        "ts": 614273375082.641,
+        "dur": 20.763,
+        "args": {
+          "External id": 80347,
+          "device": 0,
+          "context": 1,
+          "stream": 7,
+          "correlation": 1528931,
+          "bytes": 29360128,
+          "memory bandwidth (GB/s)": 1414.0600105957712,
+          "graph id": 0,
+          "graph node id": 0,
+          "channel": 0,
+          "channel_type": 1
+        }
+      },
+      {
+        "name": "Memcpy DtoD (Device -> Device)",
+        "ts": 614273375108.043,
+        "dur": 22.363,
+        "args": {
+          "External id": 80387,
+          "device": 0,
+          "context": 1,
+          "stream": 7,
+          "correlation": 1528946,
+          "bytes": 29360128,
+          "memory bandwidth (GB/s)": 1312.8886106515226,
+          "graph id": 0,
+          "graph node id": 0,
+          "channel": 0,
+          "channel_type": 1
+        }
+      },
+      {
+        "name": "Memcpy DtoH (Device -> Pageable)",
+        "ts": 614273504211.213,
+        "dur": 30517.196,
+        "args": {
+          "External id": 81606,
+          "device": 0,
+          "context": 1,
+          "stream": 7,
+          "correlation": 1531315,
+          "bytes": 77070336,
+          "memory bandwidth (GB/s)": 2.525472392679852,
+          "graph id": 0,
+          "graph node id": 0,
+          "channel": 12,
+          "channel_type": 2
+        }
+      }
+    ]
+  },
+  {
+    "trace": "trace_896x512_125frames_B.json.gz",
+    "gpu_events": 3486,
+    "kernel_count": 3321,
+    "compute_stream": 7,
+    "kernel_stream_counts": {
+      "7": 3316,
+      "29": 5
+    },
+    "d2h_count": 35,
+    "d2h_streams": [
+      29,
+      7
+    ],
+    "d2h_union_ms": 13.861292114257813,
+    "d2h_compute_overlap_ms": 9.250703247070312,
+    "compute_busy_union_ms": 1238.1390001220702,
+    "gpu_busy_union_ms": 1243.3909294433595,
+    "top_kernels_sum_ms": [
+      [
+        "void at::native::elementwise_kernel<128, 4, at::native::gpu_kernel_impl<at::native::BinaryFunctor<float, float, float, at::native::binary_internal::MulFunctor<float> > >(at::TensorIteratorBase&, at::native::BinaryFunctor<float, float, float, at::native::binary_internal::MulFunctor<float> > const&)::{lambda(int)#1}>(int, at::native::gpu_kernel_impl<at::native::BinaryFunctor<float, float, float, at::native::binary_internal::MulFunctor<float> > >(at::TensorIteratorBase&, at::native::BinaryFunctor<float, float, float, at::native::binary_internal::MulFunctor<float> > const&)::{lambda(int)#1})",
+        169.50232599999993
+      ],
+      [
+        "sm90_xmma_fprop_implicit_gemm_bf16bf16_bf16f32_f32_nhwckrsc_nhwc_tilesize256x128x64_warpgroupsize2x1x1_g1_execute_segment_k_off_kernel__5x_cudnn",
+        143.247231
+      ],
+      [
+        "sm90_xmma_fprop_implicit_gemm_bf16bf16_bf16f32_f32_nhwckrsc_nhwc_tilesize256x128x64_warpgroupsize2x1x1_g1_execute_segment_k_on_kernel__5x_cudnn",
+        119.75544300000001
+      ],
+      [
+        "void at::native::elementwise_kernel<128, 4, at::native::gpu_kernel_impl_nocast<at::native::CUDAFunctor_add<c10::BFloat16> >(at::TensorIteratorBase&, at::native::CUDAFunctor_add<c10::BFloat16> const&)::{lambda(int)#1}>(int, at::native::gpu_kernel_impl_nocast<at::native::CUDAFunctor_add<c10::BFloat16> >(at::TensorIteratorBase&, at::native::CUDAFunctor_add<c10::BFloat16> const&)::{lambda(int)#1})",
+        109.983188
+      ],
+      [
+        "void at::native::unrolled_elementwise_kernel<at::native::direct_copy_kernel_cuda(at::TensorIteratorBase&)::{lambda()#3}::operator()() const::{lambda()#7}::operator()() const::{lambda(float)#1}, std::array<char*, 2ul>, 4, TrivialOffsetCalculator<1, unsigned int>, TrivialOffsetCalculator<1, unsigned int>, at::native::memory::LoadWithCast<1>, at::native::memory::StoreWithCast<1> >(int, at::native::direct_copy_kernel_cuda(at::TensorIteratorBase&)::{lambda()#3}::operator()() const::{lambda()#7}::operator()() const::{lambda(float)#1}, std::array<char*, 2ul>, TrivialOffsetCalculator<1, unsigned int>, TrivialOffsetCalculator<1, unsigned int>, at::native::memory::LoadWithCast<1>, at::native::memory::StoreWithCast<1>)",
+        105.80825299999995
+      ],
+      [
+        "void at::native::vectorized_elementwise_kernel<4, at::native::(anonymous namespace)::pow_tensor_scalar_kernel_impl<float, float>(at::TensorIteratorBase&, float)::{lambda(float)#1}, std::array<char*, 2ul> >(int, at::native::(anonymous namespace)::pow_tensor_scalar_kernel_impl<float, float>(at::TensorIteratorBase&, float)::{lambda(float)#1}, std::array<char*, 2ul>)",
+        88.26733700000003
+      ],
+      [
+        "void at::native::elementwise_kernel<128, 4, at::native::gpu_kernel_impl_nocast<at::native::direct_copy_kernel_cuda(at::TensorIteratorBase&)::{lambda()#3}::operator()() const::{lambda()#12}::operator()() const::{lambda(c10::BFloat16)#1}>(at::TensorIteratorBase&, at::native::direct_copy_kernel_cuda(at::TensorIteratorBase&)::{lambda()#3}::operator()() const::{lambda()#12}::operator()() const::{lambda(c10::BFloat16)#1} const&)::{lambda(int)#1}>(int, at::native::gpu_kernel_impl_nocast<at::native::direct_copy_kernel_cuda(at::TensorIteratorBase&)::{lambda()#3}::operator()() const::{lambda()#12}::operator()() const::{lambda(c10::BFloat16)#1}>(at::TensorIteratorBase&, at::native::direct_copy_kernel_cuda(at::TensorIteratorBase&)::{lambda()#3}::operator()() const::{lambda()#12}::operator()() const::{lambda(c10::BFloat16)#1} const&)::{lambda(int)#1})",
+        86.12257700000002
+      ],
+      [
+        "void cudnn::engines_precompiled::nchwToNhwcKernel<__nv_bfloat16, __nv_bfloat16, float, false, true, (cudnnKernelDataType_t)0>(cudnn::engines_precompiled::nchw2nhwc_params_t<float>, __nv_bfloat16 const*, __nv_bfloat16*)",
+        74.30739599999998
+      ]
+    ],
+    "copy_events": [
+      {
+        "name": "Memcpy DtoD (Device -> Device)",
+        "ts": 614274677729.693,
+        "dur": 6.624,
+        "args": {
+          "External id": 82942,
+          "device": 0,
+          "context": 1,
+          "stream": 7,
+          "correlation": 1533141,
+          "bytes": 7340032,
+          "memory bandwidth (GB/s)": 1108.0966183574878,
+          "graph id": 0,
+          "graph node id": 0,
+          "channel": 0,
+          "channel_type": 1
+        }
+      },
+      {
+        "name": "Memcpy DtoD (Device -> Device)",
+        "ts": 614274677737.533,
+        "dur": 3.968,
+        "args": {
+          "External id": 82982,
+          "device": 0,
+          "context": 1,
+          "stream": 7,
+          "correlation": 1533156,
+          "bytes": 7340032,
+          "memory bandwidth (GB/s)": 1849.8064516129032,
+          "graph id": 0,
+          "graph node id": 0,
+          "channel": 0,
+          "channel_type": 1
+        }
+      },
+      {
+        "name": "Memcpy DtoD (Device -> Device)",
+        "ts": 614274709408.976,
+        "dur": 11.52,
+        "args": {
+          "External id": 84015,
+          "device": 0,
+          "context": 1,
+          "stream": 7,
+          "correlation": 1535186,
+          "bytes": 14680064,
+          "memory bandwidth (GB/s)": 1274.3111111111111,
+          "graph id": 0,
+          "graph node id": 0,
+          "channel": 0,
+          "channel_type": 1
+        }
+      },
+      {
+        "name": "Memcpy DtoD (Device -> Device)",
+        "ts": 614274709425.744,
+        "dur": 10.176,
+        "args": {
+          "External id": 84055,
+          "device": 0,
+          "context": 1,
+          "stream": 7,
+          "correlation": 1535201,
+          "bytes": 14680064,
+          "memory bandwidth (GB/s)": 1442.6163522012578,
+          "graph id": 0,
+          "graph node id": 0,
+          "channel": 0,
+          "channel_type": 1
+        }
+      },
+      {
+        "name": "Memcpy DtoD (Device -> Device)",
+        "ts": 614274770398.813,
+        "dur": 20.992,
+        "args": {
+          "External id": 84751,
+          "device": 0,
+          "context": 1,
+          "stream": 7,
+          "correlation": 1536677,
+          "bytes": 29360128,
+          "memory bandwidth (GB/s)": 1398.6341463414635,
+          "graph id": 0,
+          "graph node id": 0,
+          "channel": 0,
+          "channel_type": 1
+        }
+      },
+      {
+        "name": "Memcpy DtoD (Device -> Device)",
+        "ts": 614274770422.461,
+        "dur": 20.768,
+        "args": {
+          "External id": 84791,
+          "device": 0,
+          "context": 1,
+          "stream": 7,
+          "correlation": 1536692,
+          "bytes": 29360128,
+          "memory bandwidth (GB/s)": 1413.7195685670263,
+          "graph id": 0,
+          "graph node id": 0,
+          "channel": 0,
+          "channel_type": 1
+        }
+      },
+      {
+        "name": "Memcpy DtoH (Device -> Pinned)",
+        "ts": 614274886266.133,
+        "dur": 2476.762,
+        "args": {
+          "External id": 86009,
+          "device": 0,
+          "context": 1,
+          "stream": 29,
+          "correlation": 1539092,
+          "bytes": 68812800,
+          "memory bandwidth (GB/s)": 27.783371999408907,
+          "graph id": 0,
+          "graph node id": 0,
+          "channel": 14,
+          "channel_type": 2
+        }
+      },
+      {
+        "name": "Memcpy DtoD (Device -> Device)",
+        "ts": 614274892979.581,
+        "dur": 6.848,
+        "args": {
+          "External id": 86962,
+          "device": 0,
+          "context": 1,
+          "stream": 7,
+          "correlation": 1540819,
+          "bytes": 7340032,
+          "memory bandwidth (GB/s)": 1071.8504672897195,
+          "graph id": 0,
+          "graph node id": 0,
+          "channel": 0,
+          "channel_type": 1
+        }
+      },
+      {
+        "name": "Memcpy DtoD (Device -> Device)",
+        "ts": 614274892994.173,
+        "dur": 4.0,
+        "args": {
+          "External id": 87002,
+          "device": 0,
+          "context": 1,
+          "stream": 7,
+          "correlation": 1540834,
+          "bytes": 7340032,
+          "memory bandwidth (GB/s)": 1835.008,
+          "graph id": 0,
+          "graph node id": 0,
+          "channel": 0,
+          "channel_type": 1
+        }
+      },
+      {
+        "name": "Memcpy DtoD (Device -> Device)",
+        "ts": 614274931225.334,
+        "dur": 11.264,
+        "args": {
+          "External id": 88033,
+          "device": 0,
+          "context": 1,
+          "stream": 7,
+          "correlation": 1542861,
+          "bytes": 14680064,
+          "memory bandwidth (GB/s)": 1303.2727272727273,
+          "graph id": 0,
+          "graph node id": 0,
+          "channel": 0,
+          "channel_type": 1
+        }
+      },
+      {
+        "name": "Memcpy DtoD (Device -> Device)",
+        "ts": 614274931238.646,
+        "dur": 10.528,
+        "args": {
+          "External id": 88073,
+          "device": 0,
+          "context": 1,
+          "stream": 7,
+          "correlation": 1542876,
+          "bytes": 14680064,
+          "memory bandwidth (GB/s)": 1394.3829787234042,
+          "graph id": 0,
+          "graph node id": 0,
+          "channel": 0,
+          "channel_type": 1
+        }
+      },
+      {
+        "name": "Memcpy DtoD (Device -> Device)",
+        "ts": 614275006477.98,
+        "dur": 20.928,
+        "args": {
+          "External id": 88769,
+          "device": 0,
+          "context": 1,
+          "stream": 7,
+          "correlation": 1544352,
+          "bytes": 29360128,
+          "memory bandwidth (GB/s)": 1402.9113149847094,
+          "graph id": 0,
+          "graph node id": 0,
+          "channel": 0,
+          "channel_type": 1
+        }
+      },
+      {
+        "name": "Memcpy DtoD (Device -> Device)",
+        "ts": 614275006501.884,
+        "dur": 22.56,
+        "args": {
+          "External id": 88809,
+          "device": 0,
+          "context": 1,
+          "stream": 7,
+          "correlation": 1544367,
+          "bytes": 29360128,
+          "memory bandwidth (GB/s)": 1301.4241134751774,
+          "graph id": 0,
+          "graph node id": 0,
+          "channel": 0,
+          "channel_type": 1
+        }
+      },
+      {
+        "name": "Memcpy DtoH (Device -> Pinned)",
+        "ts": 614275152300.34,
+        "dur": 2770.942,
+        "args": {
+          "External id": 90027,
+          "device": 0,
+          "context": 1,
+          "stream": 29,
+          "correlation": 1546764,
+          "bytes": 77070336,
+          "memory bandwidth (GB/s)": 27.813767303682287,
+          "graph id": 0,
+          "graph node id": 0,
+          "channel": 14,
+          "channel_type": 2
+        }
+      },
+      {
+        "name": "Memcpy DtoD (Device -> Device)",
+        "ts": 614275159073.597,
+        "dur": 6.592,
+        "args": {
+          "External id": 90982,
+          "device": 0,
+          "context": 1,
+          "stream": 7,
+          "correlation": 1548496,
+          "bytes": 7340032,
+          "memory bandwidth (GB/s)": 1113.4757281553398,
+          "graph id": 0,
+          "graph node id": 0,
+          "channel": 0,
+          "channel_type": 1
+        }
+      },
+      {
+        "name": "Memcpy DtoD (Device -> Device)",
+        "ts": 614275159082.813,
+        "dur": 3.872,
+        "args": {
+          "External id": 91022,
+          "device": 0,
+          "context": 1,
+          "stream": 7,
+          "correlation": 1548511,
+          "bytes": 7340032,
+          "memory bandwidth (GB/s)": 1895.6694214876034,
+          "graph id": 0,
+          "graph node id": 0,
+          "channel": 0,
+          "channel_type": 1
+        }
+      },
+      {
+        "name": "Memcpy DtoD (Device -> Device)",
+        "ts": 614275197597.882,
+        "dur": 10.975,
+        "args": {
+          "External id": 92053,
+          "device": 0,
+          "context": 1,
+          "stream": 7,
+          "correlation": 1550538,
+          "bytes": 14680064,
+          "memory bandwidth (GB/s)": 1337.5912528473805,
+          "graph id": 0,
+          "graph node id": 0,
+          "channel": 0,
+          "channel_type": 1
+        }
+      },
+      {
+        "name": "Memcpy DtoD (Device -> Device)",
+        "ts": 614275197613.274,
+        "dur": 10.08,
+        "args": {
+          "External id": 92093,
+          "device": 0,
+          "context": 1,
+          "stream": 7,
+          "correlation": 1550553,
+          "bytes": 14680064,
+          "memory bandwidth (GB/s)": 1456.3555555555556,
+          "graph id": 0,
+          "graph node id": 0,
+          "channel": 0,
+          "channel_type": 1
+        }
+      },
+      {
+        "name": "Memcpy DtoD (Device -> Device)",
+        "ts": 614275273116.034,
+        "dur": 21.12,
+        "args": {
+          "External id": 92789,
+          "device": 0,
+          "context": 1,
+          "stream": 7,
+          "correlation": 1552029,
+          "bytes": 29360128,
+          "memory bandwidth (GB/s)": 1390.1575757575758,
+          "graph id": 0,
+          "graph node id": 0,
+          "channel": 0,
+          "channel_type": 1
+        }
+      },
+      {
+        "name": "Memcpy DtoD (Device -> Device)",
+        "ts": 614275273140.034,
+        "dur": 20.64,
+        "args": {
+          "External id": 92829,
+          "device": 0,
+          "context": 1,
+          "stream": 7,
+          "correlation": 1552044,
+          "bytes": 29360128,
+          "memory bandwidth (GB/s)": 1422.4868217054263,
+          "graph id": 0,
+          "graph node id": 0,
+          "channel": 0,
+          "channel_type": 1
+        }
+      },
+      {
+        "name": "Memcpy DtoH (Device -> Pinned)",
+        "ts": 614275418862.042,
+        "dur": 2777.566,
+        "args": {
+          "External id": 94047,
+          "device": 0,
+          "context": 1,
+          "stream": 29,
+          "correlation": 1554445,
+          "bytes": 77070336,
+          "memory bandwidth (GB/s)": 27.74743642455301,
+          "graph id": 0,
+          "graph node id": 0,
+          "channel": 14,
+          "channel_type": 2
+        }
+      },
+      {
+        "name": "Memcpy DtoD (Device -> Device)",
+        "ts": 614275425641.155,
+        "dur": 6.592,
+        "args": {
+          "External id": 95002,
+          "device": 0,
+          "context": 1,
+          "stream": 7,
+          "correlation": 1556177,
+          "bytes": 7340032,
+          "memory bandwidth (GB/s)": 1113.4757281553398,
+          "graph id": 0,
+          "graph node id": 0,
+          "channel": 0,
+          "channel_type": 1
+        }
+      },
+      {
+        "name": "Memcpy DtoD (Device -> Device)",
+        "ts": 614275425650.211,
+        "dur": 4.096,
+        "args": {
+          "External id": 95042,
+          "device": 0,
+          "context": 1,
+          "stream": 7,
+          "correlation": 1556192,
+          "bytes": 7340032,
+          "memory bandwidth (GB/s)": 1792,
+          "graph id": 0,
+          "graph node id": 0,
+          "channel": 0,
+          "channel_type": 1
+        }
+      },
+      {
+        "name": "Memcpy DtoD (Device -> Device)",
+        "ts": 614275463793.467,
+        "dur": 11.104,
+        "args": {
+          "External id": 96073,
+          "device": 0,
+          "context": 1,
+          "stream": 7,
+          "correlation": 1558219,
+          "bytes": 14680064,
+          "memory bandwidth (GB/s)": 1322.0518731988473,
+          "graph id": 0,
+          "graph node id": 0,
+          "channel": 0,
+          "channel_type": 1
+        }
+      },
+      {
+        "name": "Memcpy DtoD (Device -> Device)",
+        "ts": 614275463807.195,
+        "dur": 10.72,
+        "args": {
+          "External id": 96113,
+          "device": 0,
+          "context": 1,
+          "stream": 7,
+          "correlation": 1558234,
+          "bytes": 14680064,
+          "memory bandwidth (GB/s)": 1369.4089552238806,
+          "graph id": 0,
+          "graph node id": 0,
+          "channel": 0,
+          "channel_type": 1
+        }
+      },
+      {
+        "name": "Memcpy DtoD (Device -> Device)",
+        "ts": 614275539394.02,
+        "dur": 22.432,
+        "args": {
+          "External id": 96809,
+          "device": 0,
+          "context": 1,
+          "stream": 7,
+          "correlation": 1559710,
+          "bytes": 29360128,
+          "memory bandwidth (GB/s)": 1308.8502139800285,
+          "graph id": 0,
+          "graph node id": 0,
+          "channel": 0,
+          "channel_type": 1
+        }
+      },
+      {
+        "name": "Memcpy DtoD (Device -> Device)",
+        "ts": 614275539418.661,
+        "dur": 20.48,
+        "args": {
+          "External id": 96849,
+          "device": 0,
+          "context": 1,
+          "stream": 7,
+          "correlation": 1559725,
+          "bytes": 29360128,
+          "memory bandwidth (GB/s)": 1433.6,
+          "graph id": 0,
+          "graph node id": 0,
+          "channel": 0,
+          "channel_type": 1
+        }
+      },
+      {
+        "name": "Memcpy DtoH (Device -> Pinned)",
+        "ts": 614275685330.242,
+        "dur": 2764.316,
+        "args": {
+          "External id": 98066,
+          "device": 0,
+          "context": 1,
+          "stream": 29,
+          "correlation": 1562118,
+          "bytes": 77070336,
+          "memory bandwidth (GB/s)": 27.880436245349664,
+          "graph id": 0,
+          "graph node id": 0,
+          "channel": 14,
+          "channel_type": 2
+        }
+      },
+      {
+        "name": "Memcpy DtoD (Device -> Device)",
+        "ts": 614275691540.688,
+        "dur": 6.688,
+        "args": {
+          "External id": 99021,
+          "device": 0,
+          "context": 1,
+          "stream": 7,
+          "correlation": 1563850,
+          "bytes": 7340032,
+          "memory bandwidth (GB/s)": 1097.4928229665072,
+          "graph id": 0,
+          "graph node id": 0,
+          "channel": 0,
+          "channel_type": 1
+        }
+      },
+      {
+        "name": "Memcpy DtoD (Device -> Device)",
+        "ts": 614275691549.968,
+        "dur": 4.128,
+        "args": {
+          "External id": 99061,
+          "device": 0,
+          "context": 1,
+          "stream": 7,
+          "correlation": 1563865,
+          "bytes": 7340032,
+          "memory bandwidth (GB/s)": 1778.108527131783,
+          "graph id": 0,
+          "graph node id": 0,
+          "channel": 0,
+          "channel_type": 1
+        }
+      },
+      {
+        "name": "Memcpy DtoD (Device -> Device)",
+        "ts": 614275725707.978,
+        "dur": 11.04,
+        "args": {
+          "External id": 100092,
+          "device": 0,
+          "context": 1,
+          "stream": 7,
+          "correlation": 1565892,
+          "bytes": 14680064,
+          "memory bandwidth (GB/s)": 1329.7159420289854,
+          "graph id": 0,
+          "graph node id": 0,
+          "channel": 0,
+          "channel_type": 1
+        }
+      },
+      {
+        "name": "Memcpy DtoD (Device -> Device)",
+        "ts": 614275725721.194,
+        "dur": 10.176,
+        "args": {
+          "External id": 100132,
+          "device": 0,
+          "context": 1,
+          "stream": 7,
+          "correlation": 1565907,
+          "bytes": 14680064,
+          "memory bandwidth (GB/s)": 1442.6163522012578,
+          "graph id": 0,
+          "graph node id": 0,
+          "channel": 0,
+          "channel_type": 1
+        }
+      },
+      {
+        "name": "Memcpy DtoD (Device -> Device)",
+        "ts": 614275793220.267,
+        "dur": 20.895,
+        "args": {
+          "External id": 100828,
+          "device": 0,
+          "context": 1,
+          "stream": 7,
+          "correlation": 1567383,
+          "bytes": 29360128,
+          "memory bandwidth (GB/s)": 1405.1269681742044,
+          "graph id": 0,
+          "graph node id": 0,
+          "channel": 0,
+          "channel_type": 1
+        }
+      },
+      {
+        "name": "Memcpy DtoD (Device -> Device)",
+        "ts": 614275793243.786,
+        "dur": 20.864,
+        "args": {
+          "External id": 100868,
+          "device": 0,
+          "context": 1,
+          "stream": 7,
+          "correlation": 1567398,
+          "bytes": 29360128,
+          "memory bandwidth (GB/s)": 1407.2147239263804,
+          "graph id": 0,
+          "graph node id": 0,
+          "channel": 0,
+          "channel_type": 1
+        }
+      },
+      {
+        "name": "Memcpy DtoH (Device -> Pinned)",
+        "ts": 614275922826.451,
+        "dur": 2699.036,
+        "args": {
+          "External id": 102085,
+          "device": 0,
+          "context": 1,
+          "stream": 29,
+          "correlation": 1569791,
+          "bytes": 77070336,
+          "memory bandwidth (GB/s)": 28.554763997219748,
+          "graph id": 0,
+          "graph node id": 0,
+          "channel": 14,
+          "channel_type": 2
+        }
+      }
+    ]
+  },
+  {
+    "trace": "trace_896x512_125frames_C.json.gz",
+    "gpu_events": 3486,
+    "kernel_count": 3321,
+    "compute_stream": 7,
+    "kernel_stream_counts": {
+      "7": 3316,
+      "33": 5
+    },
+    "d2h_count": 35,
+    "d2h_streams": [
+      33,
+      7
+    ],
+    "d2h_union_ms": 13.846403198242188,
+    "d2h_compute_overlap_ms": 0.0,
+    "compute_busy_union_ms": 1238.864113647461,
+    "gpu_busy_union_ms": 1253.366503540039,
+    "top_kernels_sum_ms": [
+      [
+        "void at::native::elementwise_kernel<128, 4, at::native::gpu_kernel_impl<at::native::BinaryFunctor<float, float, float, at::native::binary_internal::MulFunctor<float> > >(at::TensorIteratorBase&, at::native::BinaryFunctor<float, float, float, at::native::binary_internal::MulFunctor<float> > const&)::{lambda(int)#1}>(int, at::native::gpu_kernel_impl<at::native::BinaryFunctor<float, float, float, at::native::binary_internal::MulFunctor<float> > >(at::TensorIteratorBase&, at::native::BinaryFunctor<float, float, float, at::native::binary_internal::MulFunctor<float> > const&)::{lambda(int)#1})",
+        169.90265100000005
+      ],
+      [
+        "sm90_xmma_fprop_implicit_gemm_bf16bf16_bf16f32_f32_nhwckrsc_nhwc_tilesize256x128x64_warpgroupsize2x1x1_g1_execute_segment_k_off_kernel__5x_cudnn",
+        143.24626999999998
+      ],
+      [
+        "sm90_xmma_fprop_implicit_gemm_bf16bf16_bf16f32_f32_nhwckrsc_nhwc_tilesize256x128x64_warpgroupsize2x1x1_g1_execute_segment_k_on_kernel__5x_cudnn",
+        119.72484200000001
+      ],
+      [
+        "void at::native::elementwise_kernel<128, 4, at::native::gpu_kernel_impl_nocast<at::native::CUDAFunctor_add<c10::BFloat16> >(at::TensorIteratorBase&, at::native::CUDAFunctor_add<c10::BFloat16> const&)::{lambda(int)#1}>(int, at::native::gpu_kernel_impl_nocast<at::native::CUDAFunctor_add<c10::BFloat16> >(at::TensorIteratorBase&, at::native::CUDAFunctor_add<c10::BFloat16> const&)::{lambda(int)#1})",
+        110.18542000000002
+      ],
+      [
+        "void at::native::unrolled_elementwise_kernel<at::native::direct_copy_kernel_cuda(at::TensorIteratorBase&)::{lambda()#3}::operator()() const::{lambda()#7}::operator()() const::{lambda(float)#1}, std::array<char*, 2ul>, 4, TrivialOffsetCalculator<1, unsigned int>, TrivialOffsetCalculator<1, unsigned int>, at::native::memory::LoadWithCast<1>, at::native::memory::StoreWithCast<1> >(int, at::native::direct_copy_kernel_cuda(at::TensorIteratorBase&)::{lambda()#3}::operator()() const::{lambda()#7}::operator()() const::{lambda(float)#1}, std::array<char*, 2ul>, TrivialOffsetCalculator<1, unsigned int>, TrivialOffsetCalculator<1, unsigned int>, at::native::memory::LoadWithCast<1>, at::native::memory::StoreWithCast<1>)",
+        105.97516899999997
+      ],
+      [
+        "void at::native::vectorized_elementwise_kernel<4, at::native::(anonymous namespace)::pow_tensor_scalar_kernel_impl<float, float>(at::TensorIteratorBase&, float)::{lambda(float)#1}, std::array<char*, 2ul> >(int, at::native::(anonymous namespace)::pow_tensor_scalar_kernel_impl<float, float>(at::TensorIteratorBase&, float)::{lambda(float)#1}, std::array<char*, 2ul>)",
+        88.19424700000002
+      ],
+      [
+        "void at::native::elementwise_kernel<128, 4, at::native::gpu_kernel_impl_nocast<at::native::direct_copy_kernel_cuda(at::TensorIteratorBase&)::{lambda()#3}::operator()() const::{lambda()#12}::operator()() const::{lambda(c10::BFloat16)#1}>(at::TensorIteratorBase&, at::native::direct_copy_kernel_cuda(at::TensorIteratorBase&)::{lambda()#3}::operator()() const::{lambda()#12}::operator()() const::{lambda(c10::BFloat16)#1} const&)::{lambda(int)#1}>(int, at::native::gpu_kernel_impl_nocast<at::native::direct_copy_kernel_cuda(at::TensorIteratorBase&)::{lambda()#3}::operator()() const::{lambda()#12}::operator()() const::{lambda(c10::BFloat16)#1}>(at::TensorIteratorBase&, at::native::direct_copy_kernel_cuda(at::TensorIteratorBase&)::{lambda()#3}::operator()() const::{lambda()#12}::operator()() const::{lambda(c10::BFloat16)#1} const&)::{lambda(int)#1})",
+        86.25401500000007
+      ],
+      [
+        "void cudnn::engines_precompiled::nchwToNhwcKernel<__nv_bfloat16, __nv_bfloat16, float, false, true, (cudnnKernelDataType_t)0>(cudnn::engines_precompiled::nchw2nhwc_params_t<float>, __nv_bfloat16 const*, __nv_bfloat16*)",
+        74.35881599999995
+      ]
+    ],
+    "copy_events": [
+      {
+        "name": "Memcpy DtoD (Device -> Device)",
+        "ts": 614277034592.425,
+        "dur": 6.687,
+        "args": {
+          "External id": 103422,
+          "device": 0,
+          "context": 1,
+          "stream": 7,
+          "correlation": 1571653,
+          "bytes": 7340032,
+          "memory bandwidth (GB/s)": 1097.656946313743,
+          "graph id": 0,
+          "graph node id": 0,
+          "channel": 0,
+          "channel_type": 1
+        }
+      },
+      {
+        "name": "Memcpy DtoD (Device -> Device)",
+        "ts": 614277034600.295,
+        "dur": 3.84,
+        "args": {
+          "External id": 103462,
+          "device": 0,
+          "context": 1,
+          "stream": 7,
+          "correlation": 1571668,
+          "bytes": 7340032,
+          "memory bandwidth (GB/s)": 1911.4666666666667,
+          "graph id": 0,
+          "graph node id": 0,
+          "channel": 0,
+          "channel_type": 1
+        }
+      },
+      {
+        "name": "Memcpy DtoD (Device -> Device)",
+        "ts": 614277066177.673,
+        "dur": 11.582,
+        "args": {
+          "External id": 104495,
+          "device": 0,
+          "context": 1,
+          "stream": 7,
+          "correlation": 1573698,
+          "bytes": 14680064,
+          "memory bandwidth (GB/s)": 1267.489552754274,
+          "graph id": 0,
+          "graph node id": 0,
+          "channel": 0,
+          "channel_type": 1
+        }
+      },
+      {
+        "name": "Memcpy DtoD (Device -> Device)",
+        "ts": 614277066190.375,
+        "dur": 10.271,
+        "args": {
+          "External id": 104535,
+          "device": 0,
+          "context": 1,
+          "stream": 7,
+          "correlation": 1573713,
+          "bytes": 14680064,
+          "memory bandwidth (GB/s)": 1429.2730990166488,
+          "graph id": 0,
+          "graph node id": 0,
+          "channel": 0,
+          "channel_type": 1
+        }
+      },
+      {
+        "name": "Memcpy DtoD (Device -> Device)",
+        "ts": 614277126709.472,
+        "dur": 21.053,
+        "args": {
+          "External id": 105231,
+          "device": 0,
+          "context": 1,
+          "stream": 7,
+          "correlation": 1575189,
+          "bytes": 29360128,
+          "memory bandwidth (GB/s)": 1394.5816748206908,
+          "graph id": 0,
+          "graph node id": 0,
+          "channel": 0,
+          "channel_type": 1
+        }
+      },
+      {
+        "name": "Memcpy DtoD (Device -> Device)",
+        "ts": 614277126732.861,
+        "dur": 20.83,
+        "args": {
+          "External id": 105271,
+          "device": 0,
+          "context": 1,
+          "stream": 7,
+          "correlation": 1575204,
+          "bytes": 29360128,
+          "memory bandwidth (GB/s)": 1409.5116658665386,
+          "graph id": 0,
+          "graph node id": 0,
+          "channel": 0,
+          "channel_type": 1
+        }
+      },
+      {
+        "name": "Memcpy DtoH (Device -> Pinned)",
+        "ts": 614277242815.156,
+        "dur": 2642.889,
+        "args": {
+          "External id": 106489,
+          "device": 0,
+          "context": 1,
+          "stream": 33,
+          "correlation": 1577604,
+          "bytes": 68812800,
+          "memory bandwidth (GB/s)": 26.036961824730437,
+          "graph id": 0,
+          "graph node id": 0,
+          "channel": 15,
+          "channel_type": 2
+        }
+      },
+      {
+        "name": "Memcpy DtoD (Device -> Device)",
+        "ts": 614277253234.86,
+        "dur": 6.655,
+        "args": {
+          "External id": 107442,
+          "device": 0,
+          "context": 1,
+          "stream": 7,
+          "correlation": 1579332,
+          "bytes": 7340032,
+          "memory bandwidth (GB/s)": 1102.934936138242,
+          "graph id": 0,
+          "graph node id": 0,
+          "channel": 0,
+          "channel_type": 1
+        }
+      },
+      {
+        "name": "Memcpy DtoD (Device -> Device)",
+        "ts": 614277253243.659,
+        "dur": 3.935,
+        "args": {
+          "External id": 107482,
+          "device": 0,
+          "context": 1,
+          "stream": 7,
+          "correlation": 1579347,
+          "bytes": 7340032,
+          "memory bandwidth (GB/s)": 1865.3194409148666,
+          "graph id": 0,
+          "graph node id": 0,
+          "channel": 0,
+          "channel_type": 1
+        }
+      },
+      {
+        "name": "Memcpy DtoD (Device -> Device)",
+        "ts": 614277291134.822,
+        "dur": 11.743,
+        "args": {
+          "External id": 108513,
+          "device": 0,
+          "context": 1,
+          "stream": 7,
+          "correlation": 1581374,
+          "bytes": 14680064,
+          "memory bandwidth (GB/s)": 1250.1118964489483,
+          "graph id": 0,
+          "graph node id": 0,
+          "channel": 0,
+          "channel_type": 1
+        }
+      },
+      {
+        "name": "Memcpy DtoD (Device -> Device)",
+        "ts": 614277291147.62,
+        "dur": 12.063,
+        "args": {
+          "External id": 108553,
+          "device": 0,
+          "context": 1,
+          "stream": 7,
+          "correlation": 1581389,
+          "bytes": 14680064,
+          "memory bandwidth (GB/s)": 1216.9496808422448,
+          "graph id": 0,
+          "graph node id": 0,
+          "channel": 0,
+          "channel_type": 1
+        }
+      },
+      {
+        "name": "Memcpy DtoD (Device -> Device)",
+        "ts": 614277366436.021,
+        "dur": 20.67,
+        "args": {
+          "External id": 109249,
+          "device": 0,
+          "context": 1,
+          "stream": 7,
+          "correlation": 1582865,
+          "bytes": 29360128,
+          "memory bandwidth (GB/s)": 1420.4222544750846,
+          "graph id": 0,
+          "graph node id": 0,
+          "channel": 0,
+          "channel_type": 1
+        }
+      },
+      {
+        "name": "Memcpy DtoD (Device -> Device)",
+        "ts": 614277366459.475,
+        "dur": 20.701,
+        "args": {
+          "External id": 109289,
+          "device": 0,
+          "context": 1,
+          "stream": 7,
+          "correlation": 1582880,
+          "bytes": 29360128,
+          "memory bandwidth (GB/s)": 1418.2951548234385,
+          "graph id": 0,
+          "graph node id": 0,
+          "channel": 0,
+          "channel_type": 1
+        }
+      },
+      {
+        "name": "Memcpy DtoH (Device -> Pinned)",
+        "ts": 614277511884.114,
+        "dur": 2703.01,
+        "args": {
+          "External id": 110507,
+          "device": 0,
+          "context": 1,
+          "stream": 33,
+          "correlation": 1585277,
+          "bytes": 77070336,
+          "memory bandwidth (GB/s)": 28.51278241663923,
+          "graph id": 0,
+          "graph node id": 0,
+          "channel": 15,
+          "channel_type": 2
+        }
+      },
+      {
+        "name": "Memcpy DtoD (Device -> Device)",
+        "ts": 614277528011.435,
+        "dur": 6.655,
+        "args": {
+          "External id": 111462,
+          "device": 0,
+          "context": 1,
+          "stream": 7,
+          "correlation": 1587010,
+          "bytes": 7340032,
+          "memory bandwidth (GB/s)": 1102.934936138242,
+          "graph id": 0,
+          "graph node id": 0,
+          "channel": 0,
+          "channel_type": 1
+        }
+      },
+      {
+        "name": "Memcpy DtoD (Device -> Device)",
+        "ts": 614277528019.177,
+        "dur": 3.904,
+        "args": {
+          "External id": 111502,
+          "device": 0,
+          "context": 1,
+          "stream": 7,
+          "correlation": 1587025,
+          "bytes": 7340032,
+          "memory bandwidth (GB/s)": 1880.1311475409836,
+          "graph id": 0,
+          "graph node id": 0,
+          "channel": 0,
+          "channel_type": 1
+        }
+      },
+      {
+        "name": "Memcpy DtoD (Device -> Device)",
+        "ts": 614277566023.448,
+        "dur": 12.67,
+        "args": {
+          "External id": 112533,
+          "device": 0,
+          "context": 1,
+          "stream": 7,
+          "correlation": 1589052,
+          "bytes": 14680064,
+          "memory bandwidth (GB/s)": 1158.6475138121548,
+          "graph id": 0,
+          "graph node id": 0,
+          "channel": 0,
+          "channel_type": 1
+        }
+      },
+      {
+        "name": "Memcpy DtoD (Device -> Device)",
+        "ts": 614277566037.558,
+        "dur": 10.207,
+        "args": {
+          "External id": 112573,
+          "device": 0,
+          "context": 1,
+          "stream": 7,
+          "correlation": 1589067,
+          "bytes": 14680064,
+          "memory bandwidth (GB/s)": 1438.234936808073,
+          "graph id": 0,
+          "graph node id": 0,
+          "channel": 0,
+          "channel_type": 1
+        }
+      },
+      {
+        "name": "Memcpy DtoD (Device -> Device)",
+        "ts": 614277641422.651,
+        "dur": 22.558,
+        "args": {
+          "External id": 113269,
+          "device": 0,
+          "context": 1,
+          "stream": 7,
+          "correlation": 1590543,
+          "bytes": 29360128,
+          "memory bandwidth (GB/s)": 1301.539498182463,
+          "graph id": 0,
+          "graph node id": 0,
+          "channel": 0,
+          "channel_type": 1
+        }
+      },
+      {
+        "name": "Memcpy DtoD (Device -> Device)",
+        "ts": 614277641446.713,
+        "dur": 20.861,
+        "args": {
+          "External id": 113309,
+          "device": 0,
+          "context": 1,
+          "stream": 7,
+          "correlation": 1590558,
+          "bytes": 29360128,
+          "memory bandwidth (GB/s)": 1407.4170940990364,
+          "graph id": 0,
+          "graph node id": 0,
+          "channel": 0,
+          "channel_type": 1
+        }
+      },
+      {
+        "name": "Memcpy DtoH (Device -> Pinned)",
+        "ts": 614277786821.629,
+        "dur": 2714.85,
+        "args": {
+          "External id": 114527,
+          "device": 0,
+          "context": 1,
+          "stream": 33,
+          "correlation": 1592958,
+          "bytes": 77070336,
+          "memory bandwidth (GB/s)": 28.38843251008343,
+          "graph id": 0,
+          "graph node id": 0,
+          "channel": 15,
+          "channel_type": 2
+        }
+      },
+      {
+        "name": "Memcpy DtoD (Device -> Device)",
+        "ts": 614277803344.552,
+        "dur": 6.591,
+        "args": {
+          "External id": 115482,
+          "device": 0,
+          "context": 1,
+          "stream": 7,
+          "correlation": 1594691,
+          "bytes": 7340032,
+          "memory bandwidth (GB/s)": 1113.6446669701108,
+          "graph id": 0,
+          "graph node id": 0,
+          "channel": 0,
+          "channel_type": 1
+        }
+      },
+      {
+        "name": "Memcpy DtoD (Device -> Device)",
+        "ts": 614277803352.327,
+        "dur": 5.567,
+        "args": {
+          "External id": 115522,
+          "device": 0,
+          "context": 1,
+          "stream": 7,
+          "correlation": 1594706,
+          "bytes": 7340032,
+          "memory bandwidth (GB/s)": 1318.489671277169,
+          "graph id": 0,
+          "graph node id": 0,
+          "channel": 0,
+          "channel_type": 1
+        }
+      },
+      {
+        "name": "Memcpy DtoD (Device -> Device)",
+        "ts": 614277841437.996,
+        "dur": 11.326,
+        "args": {
+          "External id": 116553,
+          "device": 0,
+          "context": 1,
+          "stream": 7,
+          "correlation": 1596733,
+          "bytes": 14680064,
+          "memory bandwidth (GB/s)": 1296.1384425216315,
+          "graph id": 0,
+          "graph node id": 0,
+          "channel": 0,
+          "channel_type": 1
+        }
+      },
+      {
+        "name": "Memcpy DtoD (Device -> Device)",
+        "ts": 614277841450.506,
+        "dur": 10.879,
+        "args": {
+          "External id": 116593,
+          "device": 0,
+          "context": 1,
+          "stream": 7,
+          "correlation": 1596748,
+          "bytes": 14680064,
+          "memory bandwidth (GB/s)": 1349.3946134755033,
+          "graph id": 0,
+          "graph node id": 0,
+          "channel": 0,
+          "channel_type": 1
+        }
+      },
+      {
+        "name": "Memcpy DtoD (Device -> Device)",
+        "ts": 614277916981.438,
+        "dur": 20.83,
+        "args": {
+          "External id": 117289,
+          "device": 0,
+          "context": 1,
+          "stream": 7,
+          "correlation": 1598224,
+          "bytes": 29360128,
+          "memory bandwidth (GB/s)": 1409.5116658665386,
+          "graph id": 0,
+          "graph node id": 0,
+          "channel": 0,
+          "channel_type": 1
+        }
+      },
+      {
+        "name": "Memcpy DtoD (Device -> Device)",
+        "ts": 614277917003.708,
+        "dur": 22.429,
+        "args": {
+          "External id": 117329,
+          "device": 0,
+          "context": 1,
+          "stream": 7,
+          "correlation": 1598239,
+          "bytes": 29360128,
+          "memory bandwidth (GB/s)": 1309.0252797717242,
+          "graph id": 0,
+          "graph node id": 0,
+          "channel": 0,
+          "channel_type": 1
+        }
+      },
+      {
+        "name": "Memcpy DtoH (Device -> Pinned)",
+        "ts": 614278062416.028,
+        "dur": 2702.882,
+        "args": {
+          "External id": 118546,
+          "device": 0,
+          "context": 1,
+          "stream": 33,
+          "correlation": 1600632,
+          "bytes": 77070336,
+          "memory bandwidth (GB/s)": 28.514132692437183,
+          "graph id": 0,
+          "graph node id": 0,
+          "channel": 15,
+          "channel_type": 2
+        }
+      },
+      {
+        "name": "Memcpy DtoD (Device -> Device)",
+        "ts": 614278077495.12,
+        "dur": 6.591,
+        "args": {
+          "External id": 119501,
+          "device": 0,
+          "context": 1,
+          "stream": 7,
+          "correlation": 1602365,
+          "bytes": 7340032,
+          "memory bandwidth (GB/s)": 1113.6446669701108,
+          "graph id": 0,
+          "graph node id": 0,
+          "channel": 0,
+          "channel_type": 1
+        }
+      },
+      {
+        "name": "Memcpy DtoD (Device -> Device)",
+        "ts": 614278077503.887,
+        "dur": 4.224,
+        "args": {
+          "External id": 119541,
+          "device": 0,
+          "context": 1,
+          "stream": 7,
+          "correlation": 1602380,
+          "bytes": 7340032,
+          "memory bandwidth (GB/s)": 1737.6969696969697,
+          "graph id": 0,
+          "graph node id": 0,
+          "channel": 0,
+          "channel_type": 1
+        }
+      },
+      {
+        "name": "Memcpy DtoD (Device -> Device)",
+        "ts": 614278111600.233,
+        "dur": 11.55,
+        "args": {
+          "External id": 120572,
+          "device": 0,
+          "context": 1,
+          "stream": 7,
+          "correlation": 1604407,
+          "bytes": 14680064,
+          "memory bandwidth (GB/s)": 1271.0012121212121,
+          "graph id": 0,
+          "graph node id": 0,
+          "channel": 0,
+          "channel_type": 1
+        }
+      },
+      {
+        "name": "Memcpy DtoD (Device -> Device)",
+        "ts": 614278111612.903,
+        "dur": 10.143,
+        "args": {
+          "External id": 120612,
+          "device": 0,
+          "context": 1,
+          "stream": 7,
+          "correlation": 1604422,
+          "bytes": 14680064,
+          "memory bandwidth (GB/s)": 1447.3098688750863,
+          "graph id": 0,
+          "graph node id": 0,
+          "channel": 0,
+          "channel_type": 1
+        }
+      },
+      {
+        "name": "Memcpy DtoD (Device -> Device)",
+        "ts": 614278178751.318,
+        "dur": 22.269,
+        "args": {
+          "External id": 121308,
+          "device": 0,
+          "context": 1,
+          "stream": 7,
+          "correlation": 1605898,
+          "bytes": 29360128,
+          "memory bandwidth (GB/s)": 1318.4304638735462,
+          "graph id": 0,
+          "graph node id": 0,
+          "channel": 0,
+          "channel_type": 1
+        }
+      },
+      {
+        "name": "Memcpy DtoD (Device -> Device)",
+        "ts": 614278178775.251,
+        "dur": 20.797,
+        "args": {
+          "External id": 121348,
+          "device": 0,
+          "context": 1,
+          "stream": 7,
+          "correlation": 1605913,
+          "bytes": 29360128,
+          "memory bandwidth (GB/s)": 1411.7482329182094,
+          "graph id": 0,
+          "graph node id": 0,
+          "channel": 0,
+          "channel_type": 1
+        }
+      },
+      {
+        "name": "Memcpy DtoH (Device -> Pinned)",
+        "ts": 614278307900.653,
+        "dur": 2702.691,
+        "args": {
+          "External id": 122565,
+          "device": 0,
+          "context": 1,
+          "stream": 33,
+          "correlation": 1608306,
+          "bytes": 77070336,
+          "memory bandwidth (GB/s)": 28.516147794919952,
+          "graph id": 0,
+          "graph node id": 0,
+          "channel": 15,
+          "channel_type": 2
+        }
+      }
+    ]
+  }
+]

@@ -1,0 +1,62 @@
+[
+  {
+    "frames": 1,
+    "shape": [
+      1,
+      3,
+      1,
+      128,
+      128
+    ],
+    "sha256": "dcc7d6665d5bb4661c75ffce1c7ff341a07ae3038bdc47daf9b0c0b2af166465",
+    "bit_equal": true
+  },
+  {
+    "frames": 7,
+    "shape": [
+      1,
+      3,
+      25,
+      128,
+      128
+    ],
+    "sha256": "2556abbe8e9ce5a0ba5be2d77a91d807345474703a5396329f2705b75cb04b18",
+    "bit_equal": true
+  },
+  {
+    "frames": 8,
+    "shape": [
+      1,
+      3,
+      29,
+      128,
+      128
+    ],
+    "sha256": "77a4084066f3f3f13106b00fb32f4beb77df69137b36a31b3e2eac15f5b08608",
+    "bit_equal": true
+  },
+  {
+    "frames": 14,
+    "shape": [
+      1,
+      3,
+      53,
+      128,
+      128
+    ],
+    "sha256": "b6b1412bf447d7597c3f19fc73d06139242773489cba16323ca895c6610c83ef",
+    "bit_equal": true
+  },
+  {
+    "frames": 32,
+    "shape": [
+      1,
+      3,
+      125,
+      128,
+      128
+    ],
+    "sha256": "87560373135c220d15d58693af4fdbab5ab8e286d9a43ace382922352f313ce5",
+    "bit_equal": true
+  }
+]

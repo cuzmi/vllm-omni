@@ -1,0 +1,38 @@
+........................                                                 [100%]
+=============================== warnings summary ===============================
+vllm_omni/__init__.py:22
+  /workspace/vllm-omni/vllm_omni/__init__.py:22: RuntimeWarning: Failed to import version from _version.py: No module named 'vllm_omni._version'
+  This typically happens in development mode before building.
+  Using fallback version 'dev'.
+    from .version import __version__, __version_tuple__  # isort:skip # noqa: F401
+
+../../usr/local/lib/python3.12/dist-packages/torch/jit/_script.py:365: 14 warnings
+  /usr/local/lib/python3.12/dist-packages/torch/jit/_script.py:365: DeprecationWarning: `torch.jit.script_method` is deprecated. Please switch to `torch.compile` or `torch.export`.
+    warnings.warn(
+
+../../experiment/test_output_offload.py:13
+  /experiment/test_output_offload.py:13: PytestUnknownMarkWarning: Unknown pytest.mark.diffusion - is this a typo?  You can register custom marks to avoid this warning - for details, see https://docs.pytest.org/en/stable/how-to/mark.html
+    pytestmark = [pytest.mark.diffusion, pytest.mark.cuda, pytest.mark.core_model]
+
+../../experiment/test_output_offload.py:13
+  /experiment/test_output_offload.py:13: PytestUnknownMarkWarning: Unknown pytest.mark.cuda - is this a typo?  You can register custom marks to avoid this warning - for details, see https://docs.pytest.org/en/stable/how-to/mark.html
+    pytestmark = [pytest.mark.diffusion, pytest.mark.cuda, pytest.mark.core_model]
+
+../../experiment/test_output_offload.py:13
+  /experiment/test_output_offload.py:13: PytestUnknownMarkWarning: Unknown pytest.mark.core_model - is this a typo?  You can register custom marks to avoid this warning - for details, see https://docs.pytest.org/en/stable/how-to/mark.html
+    pytestmark = [pytest.mark.diffusion, pytest.mark.cuda, pytest.mark.core_model]
+
+../../experiment/test_existing_turbo_vae.py:16
+  /experiment/test_existing_turbo_vae.py:16: PytestUnknownMarkWarning: Unknown pytest.mark.diffusion - is this a typo?  You can register custom marks to avoid this warning - for details, see https://docs.pytest.org/en/stable/how-to/mark.html
+    pytestmark = [pytest.mark.diffusion, pytest.mark.cpu, pytest.mark.core_model]
+
+../../experiment/test_existing_turbo_vae.py:16
+  /experiment/test_existing_turbo_vae.py:16: PytestUnknownMarkWarning: Unknown pytest.mark.cpu - is this a typo?  You can register custom marks to avoid this warning - for details, see https://docs.pytest.org/en/stable/how-to/mark.html
+    pytestmark = [pytest.mark.diffusion, pytest.mark.cpu, pytest.mark.core_model]
+
+../../experiment/test_existing_turbo_vae.py:16
+  /experiment/test_existing_turbo_vae.py:16: PytestUnknownMarkWarning: Unknown pytest.mark.core_model - is this a typo?  You can register custom marks to avoid this warning - for details, see https://docs.pytest.org/en/stable/how-to/mark.html
+    pytestmark = [pytest.mark.diffusion, pytest.mark.cpu, pytest.mark.core_model]
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+24 passed, 21 warnings in 41.35s
