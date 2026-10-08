@@ -1,0 +1,229 @@
+{
+  "run_status": "failed",
+  "planned_run_complete": false,
+  "completed_request_counts": {
+    "smoke": 1,
+    "warmup": 8,
+    "measured": 14,
+    "correctness": 2
+  },
+  "272p": {
+    "arm_means": {
+      "0A": {
+        "n": 2,
+        "generate_s": 92.961355062,
+        "offline_e2e_s": 93.85253653899997,
+        "postprocess_encode_s": 0.8911814769999751,
+        "vae_decode_s": 0.3356233850000194
+      },
+      "1B": {
+        "n": 2,
+        "generate_s": 93.09725805599987,
+        "offline_e2e_s": 94.00814352949988,
+        "postprocess_encode_s": 0.9108854735000023,
+        "vae_decode_s": 0.32567715849995693
+      },
+      "2B": {
+        "n": 2,
+        "generate_s": 94.69870992200003,
+        "offline_e2e_s": 95.58226962249955,
+        "postprocess_encode_s": 0.8835597004995179,
+        "vae_decode_s": 0.3085910509998939
+      },
+      "3A": {
+        "n": 2,
+        "generate_s": 92.69102418299963,
+        "offline_e2e_s": 93.60867637049978,
+        "postprocess_encode_s": 0.9176521875001526,
+        "vae_decode_s": 0.3340810380000221
+      }
+    },
+    "exact_output_parity": {
+      "video_sha256": true,
+      "audio_sha256": true
+    },
+    "complete_planned_coverage": true,
+    "matched_work": true,
+    "matched_work_and_coverage": true,
+    "comparison_status": "planned_resolution_coverage_complete_in_interrupted_run",
+    "generate_s": {
+      "A_mean": 92.82618962249981,
+      "B_mean": 93.89798398899995,
+      "B_vs_A_percent": 1.1546249726061664,
+      "B_minus_A_s": 1.0717943665001428,
+      "A_sample_range_s": 0.6144790720001083,
+      "B_sample_range_s": 3.246869063000304,
+      "A_samples": [
+        93.22292664600002,
+        92.69978347799997,
+        92.60844757399991,
+        92.77360079199934
+      ],
+      "B_samples": [
+        93.17681412499996,
+        93.01770198699978,
+        93.13284879399998,
+        96.26457105000009
+      ],
+      "A_late_vs_early_percent": -0.2907992023352901,
+      "B_second_vs_first_percent": 1.7201923015142562
+    },
+    "offline_e2e_s": {
+      "A_mean": 93.73060645474987,
+      "B_mean": 94.79520657599971,
+      "B_vs_A_percent": 1.135808421087936,
+      "B_minus_A_s": 1.064600121249839,
+      "A_sample_range_s": 0.5771939140000768,
+      "B_sample_range_s": 3.2187975549995826,
+      "A_samples": [
+        94.09615971799997,
+        93.60891335999997,
+        93.51896580399989,
+        93.69838693699967
+      ],
+      "B_samples": [
+        94.10255256099981,
+        93.91373449799994,
+        94.03200719199958,
+        97.13253205299952
+      ],
+      "A_late_vs_early_percent": -0.2598333273590936,
+      "B_second_vs_first_percent": 1.674457162858145
+    },
+    "vae_decode_s": {
+      "A_mean": 0.33485221150002076,
+      "B_mean": 0.3171341047499254,
+      "B_vs_A_percent": -5.2913214073529335,
+      "B_minus_A_s": -0.01771810675009533,
+      "A_sample_range_s": 0.006680877999883705,
+      "B_sample_range_s": 0.02162414299982629,
+      "A_samples": [
+        0.33806564799999705,
+        0.3331811220000418,
+        0.33677730599993083,
+        0.33138477000011335
+      ],
+      "B_samples": [
+        0.32282302700014043,
+        0.32853128999977343,
+        0.30690714699994714,
+        0.3102749549998407
+      ],
+      "A_late_vs_early_percent": -0.4595469412827846,
+      "B_second_vs_first_percent": -5.246332772847895
+    }
+  },
+  "540p": {
+    "arm_means": {
+      "0A": {
+        "n": 2,
+        "generate_s": 376.0011199165,
+        "offline_e2e_s": 377.24744720700005,
+        "postprocess_encode_s": 1.2463272905000622,
+        "vae_decode_s": 1.1892356169998948
+      },
+      "1B": {
+        "n": 2,
+        "generate_s": 376.26235598350013,
+        "offline_e2e_s": 377.4978975915001,
+        "postprocess_encode_s": 1.2355416079999486,
+        "vae_decode_s": 1.1630703744999664
+      },
+      "2B": {
+        "n": 2,
+        "generate_s": 375.4328887880001,
+        "offline_e2e_s": 376.6464353480005,
+        "postprocess_encode_s": 1.2135465600003954,
+        "vae_decode_s": 1.16332222849951
+      },
+      "3A": {
+        "n": 0,
+        "generate_s": null,
+        "offline_e2e_s": null,
+        "postprocess_encode_s": null,
+        "vae_decode_s": null
+      }
+    },
+    "exact_output_parity": {
+      "video_sha256": true,
+      "audio_sha256": true
+    },
+    "complete_planned_coverage": false,
+    "matched_work": true,
+    "matched_work_and_coverage": false,
+    "comparison_status": "incomplete_unbalanced_descriptive_only",
+    "generate_s": {
+      "A_mean": 376.0011199165,
+      "B_mean": 375.8476223857501,
+      "B_vs_A_percent": -0.04082368977622597,
+      "B_minus_A_s": -0.15349753074985983,
+      "A_sample_range_s": 0.546652598999799,
+      "B_sample_range_s": 1.2738140540000131,
+      "A_samples": [
+        376.2744462159999,
+        375.7277936170001
+      ],
+      "B_samples": [
+        376.40536267200014,
+        376.1193492950001,
+        375.73422895800013,
+        375.1315486180001
+      ]
+    },
+    "offline_e2e_s": {
+      "A_mean": 377.24744720700005,
+      "B_mean": 377.0721664697503,
+      "B_vs_A_percent": -0.04646306782125631,
+      "B_minus_A_s": -0.17528073724975002,
+      "A_sample_range_s": 0.5748709899999085,
+      "B_sample_range_s": 1.3130085609996058,
+      "A_samples": [
+        377.534882702,
+        376.9600117120001
+      ],
+      "B_samples": [
+        377.6607740260001,
+        377.335021157,
+        376.9451052310005,
+        376.3477654650005
+      ]
+    },
+    "vae_decode_s": {
+      "A_mean": 1.1892356169998948,
+      "B_mean": 1.1631963014997382,
+      "B_vs_A_percent": -2.1895842277114497,
+      "B_minus_A_s": -0.02603931550015659,
+      "A_sample_range_s": 0.007052548000046954,
+      "B_sample_range_s": 0.00528867299999547,
+      "A_samples": [
+        1.1857093429998713,
+        1.1927618909999183
+      ],
+      "B_samples": [
+        1.1615653659996497,
+        1.1645753830002832,
+        1.1606778919995122,
+        1.1659665649995077
+      ]
+    }
+  },
+  "i2va_correctness": {
+    "outputs": {
+      "0A": {
+        "task": "i2va",
+        "resolution": "272p",
+        "video_sha256": "50e4f86c45f60b2f29589cd8e9ab2dcbfc25c6dab064de20c0390c285bdc928d",
+        "audio_sha256": "a2d2ba7a28bb34f1cbc59b7a86be6b08a0a2f45e0f30b2d954043404113dd123"
+      },
+      "1B": {
+        "task": "i2va",
+        "resolution": "272p",
+        "video_sha256": "50e4f86c45f60b2f29589cd8e9ab2dcbfc25c6dab064de20c0390c285bdc928d",
+        "audio_sha256": "a2d2ba7a28bb34f1cbc59b7a86be6b08a0a2f45e0f30b2d954043404113dd123"
+      }
+    },
+    "complete": true,
+    "exact_output_parity": true
+  },
+  "scope": "Offline generation and MP4 encoding, no HTTP serving latency. The overall run was interrupted by the platform. 272p planned resolution coverage is complete; 540p is unbalanced and incomplete. Raw unbalanced aggregates are descriptive only, not performance attribution. No complete-run pass or E2E speedup claim."
+}

@@ -1,0 +1,20 @@
+{
+  "status": "platform_interrupted",
+  "planned_run_complete": false,
+  "app_stopped_at_utc": "2026-10-08T17:44:47Z",
+  "runner_error": "KeyboardInterrupt()",
+  "subsequent_download_error": "ConflictError: workspace is disabled (opaque workspace ID omitted)",
+  "specific_disable_reason": "unconfirmed",
+  "recovery": "Direct Modal Volume download succeeded without new compute",
+  "completed_measured_requests": 14,
+  "planned_measured_requests": 16,
+  "missing": [
+    "3A measured 540p request 1",
+    "3A measured 540p request 2",
+    "diagA",
+    "diagB"
+  ],
+  "related_apps_observed_stopped": true,
+  "related_app_tasks_observed": 0,
+  "other_workspace_compute_started": false
+}

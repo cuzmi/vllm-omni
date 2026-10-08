@@ -1,0 +1,6 @@
+{
+  "status": "harness_preflight_failure",
+  "error": "nvidia-smi topo -m returned 255; model not loaded, no inference samples",
+  "run_url": "https://modal.com/apps/simon-weijie/main/ap-puD24J5T3R8i1YADYYJdQG",
+  "repair": "Record optional topology probe result without aborting"
+}

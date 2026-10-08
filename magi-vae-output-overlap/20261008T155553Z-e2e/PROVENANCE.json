@@ -1,0 +1,23 @@
+{
+  "recorded_at_utc": "2026-10-08T17:53:40.684483+00:00",
+  "model_revision": "2dea51b64db47ee5b4402d36fd90829a0c58913b",
+  "baseline_commit": "a46e9aae7bb5065a27a69e34ba3f2a09af17a5ce",
+  "candidate_commit": "b1224568a41a5774643ae7e0838ea849775d6983",
+  "registry_digest": "vllm/vllm-omni@sha256:a61aed4961263c1ad4aa8108a78af151a0781eca98513db39354d3ecaee30f99",
+  "named_image": "vllm-omni-dev:nightly-20261008-a61aed496126",
+  "named_base_image_id": "im-CHGer4pC6kfIdGLELJqTlS",
+  "runtime_source_selection": "Separate immutable source archives, selected with PYTHONPATH for each arm",
+  "driver_sha256": "fc6b0dbe6c1d80005a89fd86b734aa8e667e0215fc81c4cc9d5ab82e5abea11a",
+  "instrumentation_sha256": "78fa8db59939a65ac3b5bfaa3a2e5b8e01775a96d1ba2d8bdb13da266f18afb3",
+  "analysis_sha256": "e3b211f1e71d4efe93d7efad3590f571d3bcf7e77be25817ea1e2b5fcebcea77",
+  "experiment_source_policy": "Drivers and source archives retained locally and omitted from this results branch as requested",
+  "model_download_validation": "Pinned revision and expected aggregate file size matched; expected upstream LFS hashes are retained as metadata, not a claim of an independent full-file hash audit",
+  "overall_run_complete": false,
+  "completed_coverage": "272p ABBA, 540p ABB, 272p I2VA A/B",
+  "media_validation": "All 17 recovered payload hashes matched, and all 17 fully decoded without errors on local CPU",
+  "billing_policy": "Private billing/account records excluded",
+  "source_change_scope": [
+    "vllm_omni/diffusion/models/magi2/turbo_vae.py",
+    "tests/diffusion/models/magi2/test_turbo_vae_output_offload.py"
+  ]
+}

@@ -1,0 +1,199 @@
+/workspace/baseline/vllm-omni-a46e9aae7bb5065a27a69e34ba3f2a09af17a5ce/vllm_omni/__init__.py:22: RuntimeWarning: Failed to import version from _version.py: No module named 'vllm_omni._version'
+This typically happens in development mode before building.
+Using fallback version 'dev'.
+  from .version import __version__, __version_tuple__  # isort:skip # noqa: F401
+/workspace/baseline/vllm-omni-a46e9aae7bb5065a27a69e34ba3f2a09af17a5ce/vllm_omni/__init__.py:22: RuntimeWarning: Failed to import version from _version.py: No module named 'vllm_omni._version'
+This typically happens in development mode before building.
+Using fallback version 'dev'.
+  from .version import __version__, __version_tuple__  # isort:skip # noqa: F401
+/workspace/baseline/vllm-omni-a46e9aae7bb5065a27a69e34ba3f2a09af17a5ce/vllm_omni/__init__.py:22: RuntimeWarning: Failed to import version from _version.py: No module named 'vllm_omni._version'
+This typically happens in development mode before building.
+Using fallback version 'dev'.
+  from .version import __version__, __version_tuple__  # isort:skip # noqa: F401
+/workspace/baseline/vllm-omni-a46e9aae7bb5065a27a69e34ba3f2a09af17a5ce/vllm_omni/__init__.py:22: RuntimeWarning: Failed to import version from _version.py: No module named 'vllm_omni._version'
+This typically happens in development mode before building.
+Using fallback version 'dev'.
+  from .version import __version__, __version_tuple__  # isort:skip # noqa: F401
+/workspace/baseline/vllm-omni-a46e9aae7bb5065a27a69e34ba3f2a09af17a5ce/vllm_omni/__init__.py:22: RuntimeWarning: Failed to import version from _version.py: No module named 'vllm_omni._version'
+This typically happens in development mode before building.
+Using fallback version 'dev'.
+  from .version import __version__, __version_tuple__  # isort:skip # noqa: F401
+Sequence parallelism is enabled (sp_size=4) but no transformer with _sp_plan found. SP hooks not applied. Consider adding _sp_plan to your transformer model.
+Sequence parallelism is enabled (sp_size=4) but no transformer with _sp_plan found. SP hooks not applied. Consider adding _sp_plan to your transformer model.
+Sequence parallelism is enabled (sp_size=4) but no transformer with _sp_plan found. SP hooks not applied. Consider adding _sp_plan to your transformer model.
+[transformers] The fast path is not available because one of the required library is not installed. Falling back to torch implementation. To install follow https://github.com/fla-org/flash-linear-attention#installation and https://github.com/Dao-AILab/causal-conv1d
+
+Loading weights:   0%|          | 0/850 [00:00<?, ?it/s]
+Loading weights:  31%|███▏      | 267/850 [00:00<00:00, 2668.36it/s]
+Loading weights:  64%|██████▍   | 548/850 [00:00<00:00, 2746.40it/s]
+Loading weights: 100%|██████████| 850/850 [00:00<00:00, 3156.52it/s]
+[transformers] [1mQwen3_5TextModel LOAD REPORT[0m from: /__modal/volumes/vo-irCBIvGrSbWdplQjvl6lSX/hub/models--sand-ai--MAGI-2-preview/snapshots/2dea51b64db47ee5b4402d36fd90829a0c58913b/text_encoder
+Key                                                | Status     |  | 
+---------------------------------------------------+------------+--+-
+model.visual.blocks.{0...26}.attn.qkv.bias         | UNEXPECTED |  | 
+model.visual.blocks.{0...26}.norm2.weight          | UNEXPECTED |  | 
+model.visual.blocks.{0...26}.mlp.linear_fc2.bias   | UNEXPECTED |  | 
+model.visual.blocks.{0...26}.attn.qkv.weight       | UNEXPECTED |  | 
+model.visual.blocks.{0...26}.mlp.linear_fc1.bias   | UNEXPECTED |  | 
+model.visual.blocks.{0...26}.mlp.linear_fc1.weight | UNEXPECTED |  | 
+model.visual.merger.linear_fc2.weight              | UNEXPECTED |  | 
+model.visual.blocks.{0...26}.attn.proj.bias        | UNEXPECTED |  | 
+model.visual.blocks.{0...26}.attn.proj.weight      | UNEXPECTED |  | 
+model.visual.blocks.{0...26}.mlp.linear_fc2.weight | UNEXPECTED |  | 
+model.visual.blocks.{0...26}.norm1.bias            | UNEXPECTED |  | 
+model.visual.blocks.{0...26}.norm2.bias            | UNEXPECTED |  | 
+model.visual.blocks.{0...26}.norm1.weight          | UNEXPECTED |  | 
+model.visual.merger.norm.weight                    | UNEXPECTED |  | 
+model.visual.merger.linear_fc1.bias                | UNEXPECTED |  | 
+model.visual.pos_embed.weight                      | UNEXPECTED |  | 
+model.visual.patch_embed.proj.bias                 | UNEXPECTED |  | 
+model.visual.merger.linear_fc1.weight              | UNEXPECTED |  | 
+model.visual.merger.norm.bias                      | UNEXPECTED |  | 
+lm_head.weight                                     | UNEXPECTED |  | 
+model.visual.merger.linear_fc2.bias                | UNEXPECTED |  | 
+model.visual.patch_embed.proj.weight               | UNEXPECTED |  | 
+
+Notes:
+- UNEXPECTED:	can be ignored when loading from different task/architecture; not ok if you expect identical arch.
+/usr/local/lib/python3.12/dist-packages/torch/nn/utils/weight_norm.py:144: FutureWarning: `torch.nn.utils.weight_norm` is deprecated in favor of `torch.nn.utils.parametrizations.weight_norm`.
+  WeightNorm.apply(module, name, dim)
+Sequence parallelism is enabled (sp_size=4) but no transformer with _sp_plan found. SP hooks not applied. Consider adding _sp_plan to your transformer model.
+
+Multi-thread loading shards:   0% Completed | 0/56 [00:00<?, ?it/s]
+
+Multi-thread loading shards:   2% Completed | 1/56 [00:00<00:11,  4.79it/s]
+
+Multi-thread loading shards:   4% Completed | 2/56 [00:00<00:10,  5.34it/s]
+
+Multi-thread loading shards:   5% Completed | 3/56 [00:00<00:09,  5.63it/s]
+
+Multi-thread loading shards:   7% Completed | 4/56 [00:00<00:09,  5.45it/s]
+
+Multi-thread loading shards:   9% Completed | 5/56 [00:00<00:09,  5.50it/s]
+
+Multi-thread loading shards:  11% Completed | 6/56 [00:01<00:09,  5.28it/s]
+
+Multi-thread loading shards:  12% Completed | 7/56 [00:01<00:09,  5.19it/s]
+
+Multi-thread loading shards:  14% Completed | 8/56 [00:01<00:09,  5.09it/s]
+
+Multi-thread loading shards:  16% Completed | 9/56 [00:01<00:09,  5.05it/s]
+
+Multi-thread loading shards:  18% Completed | 10/56 [00:01<00:08,  5.26it/s]
+
+Multi-thread loading shards:  20% Completed | 11/56 [00:02<00:08,  5.48it/s]
+
+Multi-thread loading shards:  21% Completed | 12/56 [00:02<00:08,  5.32it/s]
+
+Multi-thread loading shards:  23% Completed | 13/56 [00:02<00:08,  5.23it/s]
+
+Multi-thread loading shards:  25% Completed | 14/56 [00:02<00:08,  5.16it/s]
+
+Multi-thread loading shards:  27% Completed | 15/56 [00:02<00:07,  5.22it/s]
+
+Multi-thread loading shards:  29% Completed | 16/56 [00:03<00:07,  5.44it/s]
+
+Multi-thread loading shards:  30% Completed | 17/56 [00:03<00:06,  5.57it/s]
+
+Multi-thread loading shards:  32% Completed | 18/56 [00:03<00:06,  5.70it/s]
+
+Multi-thread loading shards:  34% Completed | 19/56 [00:03<00:06,  5.80it/s]
+
+Multi-thread loading shards:  36% Completed | 20/56 [00:03<00:06,  5.54it/s]
+
+Multi-thread loading shards:  38% Completed | 21/56 [00:03<00:06,  5.68it/s]
+
+Multi-thread loading shards:  39% Completed | 22/56 [00:04<00:06,  5.63it/s]
+
+Multi-thread loading shards:  41% Completed | 23/56 [00:04<00:05,  5.74it/s]
+
+Multi-thread loading shards:  43% Completed | 24/56 [00:04<00:05,  5.61it/s]
+
+Multi-thread loading shards:  45% Completed | 25/56 [00:04<00:05,  5.71it/s]
+
+Multi-thread loading shards:  46% Completed | 26/56 [00:04<00:05,  5.72it/s]
+
+Multi-thread loading shards:  48% Completed | 27/56 [00:04<00:05,  5.50it/s]
+
+Multi-thread loading shards:  50% Completed | 28/56 [00:05<00:04,  5.61it/s]
+
+Multi-thread loading shards:  52% Completed | 29/56 [00:05<00:04,  5.58it/s]
+
+Multi-thread loading shards:  54% Completed | 30/56 [00:05<00:04,  5.67it/s]
+
+Multi-thread loading shards:  55% Completed | 31/56 [00:05<00:04,  5.74it/s]
+
+Multi-thread loading shards:  57% Completed | 32/56 [00:05<00:04,  5.78it/s]
+
+Multi-thread loading shards:  59% Completed | 33/56 [00:06<00:04,  5.52it/s]
+
+Multi-thread loading shards:  61% Completed | 34/56 [00:06<00:03,  5.65it/s]
+
+Multi-thread loading shards:  62% Completed | 35/56 [00:06<00:03,  5.44it/s]
+
+Multi-thread loading shards:  64% Completed | 36/56 [00:06<00:03,  5.31it/s]
+
+Multi-thread loading shards:  66% Completed | 37/56 [00:06<00:03,  5.23it/s]
+
+Multi-thread loading shards:  68% Completed | 38/56 [00:06<00:03,  5.33it/s]
+
+Multi-thread loading shards:  70% Completed | 39/56 [00:07<00:03,  5.51it/s]
+
+Multi-thread loading shards:  71% Completed | 40/56 [00:07<00:02,  5.59it/s]
+
+Multi-thread loading shards:  73% Completed | 41/56 [00:07<00:02,  5.70it/s]
+
+Multi-thread loading shards:  75% Completed | 42/56 [00:07<00:02,  5.77it/s]
+
+Multi-thread loading shards:  77% Completed | 43/56 [00:07<00:02,  5.56it/s]
+
+Multi-thread loading shards:  79% Completed | 44/56 [00:08<00:02,  5.67it/s]
+
+Multi-thread loading shards:  80% Completed | 45/56 [00:08<00:02,  5.48it/s]
+
+Multi-thread loading shards:  82% Completed | 46/56 [00:08<00:01,  5.49it/s]
+
+Multi-thread loading shards:  84% Completed | 47/56 [00:08<00:01,  5.43it/s]
+
+Multi-thread loading shards:  86% Completed | 48/56 [00:08<00:01,  5.58it/s]
+
+Multi-thread loading shards:  88% Completed | 49/56 [00:08<00:01,  5.63it/s]
+
+Multi-thread loading shards:  89% Completed | 50/56 [00:09<00:01,  5.71it/s]
+
+Multi-thread loading shards:  91% Completed | 51/56 [00:09<00:00,  5.46it/s]
+
+Multi-thread loading shards:  93% Completed | 52/56 [00:09<00:00,  5.60it/s]
+
+Multi-thread loading shards:  95% Completed | 53/56 [00:09<00:00,  5.41it/s]
+
+Multi-thread loading shards:  96% Completed | 54/56 [00:09<00:00,  5.56it/s]
+
+Multi-thread loading shards:  98% Completed | 55/56 [00:10<00:00,  2.43it/s]
+
+Multi-thread loading shards: 100% Completed | 56/56 [00:11<00:00,  1.68it/s]
+
+Multi-thread loading shards: 100% Completed | 56/56 [00:11<00:00,  4.75it/s]
+
+{"event": "loaded", "arm": "3A", "load_s": 110.77242977199967}
+{"event": "begin", "id": "3A_0_t2va_272p", "phase": "warmup", "steps": 100}
+/usr/local/lib/python3.12/dist-packages/torch/_inductor/compile_fx.py:321: UserWarning: TensorFloat32 tensor cores for float32 matrix multiplication available but not enabled. Consider setting `torch.set_float32_matmul_precision('high')` for better performance.
+  warnings.warn(
+/usr/local/lib/python3.12/dist-packages/torch/_inductor/compile_fx.py:321: UserWarning: TensorFloat32 tensor cores for float32 matrix multiplication available but not enabled. Consider setting `torch.set_float32_matmul_precision('high')` for better performance.
+  warnings.warn(
+/usr/local/lib/python3.12/dist-packages/torch/_inductor/compile_fx.py:321: UserWarning: TensorFloat32 tensor cores for float32 matrix multiplication available but not enabled. Consider setting `torch.set_float32_matmul_precision('high')` for better performance.
+  warnings.warn(
+/usr/local/lib/python3.12/dist-packages/torch/_inductor/compile_fx.py:321: UserWarning: TensorFloat32 tensor cores for float32 matrix multiplication available but not enabled. Consider setting `torch.set_float32_matmul_precision('high')` for better performance.
+  warnings.warn(
+{"event": "vae_decode", "seconds": 0.5267271160000746, "shape": [1, 48, 32, 16, 28], "output_offload": true, "distributed": false, "async_implementation": false}
+{"event": "result", "id": "3A_0_t2va_272p", "arm": "3A", "phase": "warmup", "resolution": "272p", "task": "t2va", "steps": 100, "seed": 42, "generate_s": 117.20722997499979, "postprocess_encode_s": 0.9683755529995324, "offline_e2e_s": 118.17560552799932, "video_shape": [125, 256, 448, 3], "audio_shape": [441000, 2], "audio_rate": 44100, "video_sha256": "73c060221c2946c0074406447749999dcf247c68e54b689e1c2b3605d75cc0d6", "audio_sha256": "2314d91bf64c5fffa8a34edb6509e7b83b534cb1162def3711c5be789cb2f56a", "mp4_sha256": "034fe7fa6ef6a4250f42db3d650f32b7b8058d0c9ae1636139e47ef83f61213e", "mp4_bytes": 1243818, "stage_durations": {"magi2_preview_e2e": 116.97774970499995, "queue_wait_ms": 0.5802840005344478, "stage_0_gen_ms": 117205.34324645996}, "peak_memory_mb": 96636.0}
+{"event": "begin", "id": "3A_1_t2va_272p", "phase": "measured", "steps": 100}
+{"event": "vae_decode", "seconds": 0.33677730599993083, "shape": [1, 48, 32, 16, 28], "output_offload": true, "distributed": false, "async_implementation": false}
+{"event": "result", "id": "3A_1_t2va_272p", "arm": "3A", "phase": "measured", "resolution": "272p", "task": "t2va", "steps": 100, "seed": 42, "generate_s": 92.60844757399991, "postprocess_encode_s": 0.9105182299999797, "offline_e2e_s": 93.51896580399989, "video_shape": [125, 256, 448, 3], "audio_shape": [441000, 2], "audio_rate": 44100, "video_sha256": "73c060221c2946c0074406447749999dcf247c68e54b689e1c2b3605d75cc0d6", "audio_sha256": "2314d91bf64c5fffa8a34edb6509e7b83b534cb1162def3711c5be789cb2f56a", "mp4_sha256": "bb7d0d6538bd5734591d1ed9ad6ae68f1854373fc76e73dd8604230ba03a7c26", "mp4_bytes": 1244173, "stage_durations": {"magi2_preview_e2e": 92.39701777100072, "queue_wait_ms": 0.2509019996068673, "stage_0_gen_ms": 92607.41543769836}, "peak_memory_mb": 65974.0}
+{"event": "begin", "id": "3A_2_t2va_272p", "phase": "measured", "steps": 100}
+{"event": "vae_decode", "seconds": 0.33138477000011335, "shape": [1, 48, 32, 16, 28], "output_offload": true, "distributed": false, "async_implementation": false}
+{"event": "result", "id": "3A_2_t2va_272p", "arm": "3A", "phase": "measured", "resolution": "272p", "task": "t2va", "steps": 100, "seed": 42, "generate_s": 92.77360079199934, "postprocess_encode_s": 0.9247861450003256, "offline_e2e_s": 93.69838693699967, "video_shape": [125, 256, 448, 3], "audio_shape": [441000, 2], "audio_rate": 44100, "video_sha256": "73c060221c2946c0074406447749999dcf247c68e54b689e1c2b3605d75cc0d6", "audio_sha256": "2314d91bf64c5fffa8a34edb6509e7b83b534cb1162def3711c5be789cb2f56a", "mp4_sha256": "30144b25bd3cd5ede467d654db10d112f6d9fdd4a25c8cf0f058589067af280b", "mp4_bytes": 1244477, "stage_durations": {"magi2_preview_e2e": 92.5492679050003, "queue_wait_ms": 0.6051939999451861, "stage_0_gen_ms": 92772.23014831543}, "peak_memory_mb": 65962.0}
+{"event": "begin", "id": "3A_3_t2va_540p", "phase": "warmup", "steps": 100}
+{"event": "vae_decode", "seconds": 1.2141061709999121, "shape": [1, 48, 32, 32, 56], "output_offload": true, "distributed": false, "async_implementation": false}
+{"event": "result", "id": "3A_3_t2va_540p", "arm": "3A", "phase": "warmup", "resolution": "540p", "task": "t2va", "steps": 100, "seed": 42, "generate_s": 375.8845033870002, "postprocess_encode_s": 1.213695442000244, "offline_e2e_s": 377.09819882900047, "video_shape": [125, 512, 896, 3], "audio_shape": [441000, 2], "audio_rate": 44100, "video_sha256": "26af1f09726e0fc75c033e73953933e4a0bd4dfe369a6acb6b4534ed2b7ee74e", "audio_sha256": "7d2ca6e1c0d2e2651fb5748ae3caf93124c74fb36a654b4ce67edd90d2ccb3e9", "mp4_sha256": "200b1a8d7463f5d1b8f55620dee60da3ebf8865a96af9a59ade563a11df4f042", "mp4_bytes": 3154880, "stage_durations": {"magi2_preview_e2e": 375.13982704800037, "queue_wait_ms": 0.30865099961374654, "stage_0_gen_ms": 375883.43048095703}, "peak_memory_mb": 76378.0}
+{"event": "begin", "id": "3A_4_t2va_540p", "phase": "measured", "steps": 100}
