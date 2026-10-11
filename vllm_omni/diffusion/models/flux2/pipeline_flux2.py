@@ -1075,6 +1075,18 @@ class Flux2Pipeline(
         # For editing pipelines, we need to slice the output to remove condition latents
         output_slice = latents.size(1) if image_latents is not None else None
 
+        # Position IDs are invariant across denoising steps (unlike latents).
+        # Keep RoPE request-local so equal-shaped requests with different image
+        # coordinates, or positive/negative prompts, cannot share stale values.
+        latent_image_ids = latent_ids
+        if image_latents is not None:
+            latent_image_ids = torch.cat([latent_ids, image_latent_ids], dim=1)
+        positive_rotary_emb = negative_rotary_emb = None
+        if self.transformer.parallel_config.sequence_parallel_size == 1:
+            positive_rotary_emb = self.transformer.prepare_rotary_emb(latent_image_ids, text_ids)
+            if do_true_cfg:
+                negative_rotary_emb = self.transformer.prepare_rotary_emb(latent_image_ids, negative_text_ids)
+
         # 7. Denoising loop
         # We set the index here to remove DtoH sync, helpful especially during compilation.
         # Check out more details here: https://github.com/huggingface/diffusers/pull/11696
@@ -1088,11 +1100,9 @@ class Flux2Pipeline(
                 timestep = t.expand(latents.shape[0]).to(latents.dtype)
 
                 latent_model_input = latents.to(self.transformer.dtype)
-                latent_image_ids = latent_ids
 
                 if image_latents is not None:
                     latent_model_input = torch.cat([latents, image_latents], dim=1).to(self.transformer.dtype)
-                    latent_image_ids = torch.cat([latent_ids, image_latent_ids], dim=1)
 
                 positive_kwargs = {
                     "hidden_states": latent_model_input,
@@ -1101,6 +1111,7 @@ class Flux2Pipeline(
                     "encoder_hidden_states": prompt_embeds,
                     "txt_ids": text_ids,
                     "img_ids": latent_image_ids,
+                    "image_rotary_emb": positive_rotary_emb,
                     "joint_attention_kwargs": self.attention_kwargs,
                     "return_dict": False,
                 }
@@ -1112,6 +1123,7 @@ class Flux2Pipeline(
                         "encoder_hidden_states": negative_prompt_embeds,
                         "txt_ids": negative_text_ids,
                         "img_ids": latent_image_ids,
+                        "image_rotary_emb": negative_rotary_emb,
                         "joint_attention_kwargs": self.attention_kwargs,
                         "return_dict": False,
                     }
