@@ -1,5 +1,5 @@
 # SPDX-License-Identifier: Apache-2.0
-# SPDX-FileCopyrightText: Copyright contributors to the vLLM project
+# SPDX-FileCopyrightText: Copyright contributors to the vLLM-Omni project
 from collections.abc import Iterable
 from types import SimpleNamespace
 from typing import TYPE_CHECKING, Any
@@ -893,6 +893,31 @@ class Flux2Transformer2DModel(nn.Module):
     def dtype(self) -> torch.dtype:
         return next(self.parameters()).dtype
 
+    def prepare_rotary_emb(self, img_ids: torch.Tensor, txt_ids: torch.Tensor) -> tuple[torch.Tensor, torch.Tensor]:
+        """Prepare text/image RoPE, including the installed SP output hooks.
+
+        Callers may reuse the result within a request when SP is disabled and
+        position IDs do not change. With SP, keep this inside forward so its
+        hooks update the per-forward sharding context.
+        """
+        if img_ids.ndim == 3:
+            img_ids = img_ids[0]
+        if txt_ids.ndim == 3:
+            txt_ids = txt_ids[0]
+
+        if is_torch_npu_available():
+            txt_freqs_cos, txt_freqs_sin, img_freqs_cos, img_freqs_sin = self.rope_prepare(img_ids.cpu(), txt_ids.cpu())
+            txt_freqs_cos = txt_freqs_cos.npu()
+            txt_freqs_sin = txt_freqs_sin.npu()
+            img_freqs_cos = img_freqs_cos.npu()
+            img_freqs_sin = img_freqs_sin.npu()
+        else:
+            txt_freqs_cos, txt_freqs_sin, img_freqs_cos, img_freqs_sin = self.rope_prepare(img_ids, txt_ids)
+        return (
+            torch.cat([txt_freqs_cos, img_freqs_cos], dim=0),
+            torch.cat([txt_freqs_sin, img_freqs_sin], dim=0),
+        )
+
     def forward(
         self,
         hidden_states: torch.Tensor,
@@ -903,6 +928,7 @@ class Flux2Transformer2DModel(nn.Module):
         guidance: torch.Tensor | None = None,
         joint_attention_kwargs: dict[str, Any] | None = None,
         return_dict: bool = True,
+        image_rotary_emb: tuple[torch.Tensor, torch.Tensor] | None = None,
     ) -> torch.Tensor | Transformer2DModelOutput:
         joint_attention_kwargs = joint_attention_kwargs or {}
 
@@ -924,23 +950,11 @@ class Flux2Transformer2DModel(nn.Module):
         hidden_states = self.x_embedder(hidden_states)
         encoder_hidden_states = self.context_embedder(encoder_hidden_states)
 
-        if img_ids.ndim == 3:
-            img_ids = img_ids[0]
-        if txt_ids.ndim == 3:
-            txt_ids = txt_ids[0]
-
-        if is_torch_npu_available():
-            txt_freqs_cos, txt_freqs_sin, img_freqs_cos, img_freqs_sin = self.rope_prepare(img_ids.cpu(), txt_ids.cpu())
-            txt_freqs_cos = txt_freqs_cos.npu()
-            txt_freqs_sin = txt_freqs_sin.npu()
-            img_freqs_cos = img_freqs_cos.npu()
-            img_freqs_sin = img_freqs_sin.npu()
-        else:
-            txt_freqs_cos, txt_freqs_sin, img_freqs_cos, img_freqs_sin = self.rope_prepare(img_ids, txt_ids)
-        concat_rotary_emb = (
-            torch.cat([txt_freqs_cos, img_freqs_cos], dim=0),
-            torch.cat([txt_freqs_sin, img_freqs_sin], dim=0),
-        )
+        # SP output hooks must run on every forward, even if a caller supplies
+        # unsharded embeddings prepared outside the transformer.
+        concat_rotary_emb = image_rotary_emb
+        if concat_rotary_emb is None or sp_size > 1:
+            concat_rotary_emb = self.prepare_rotary_emb(img_ids, txt_ids)
 
         # Create separate masks for image and text portions for Ulysses SP joint attention
         hidden_states_mask = None
