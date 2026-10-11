@@ -1,0 +1,14 @@
+{
+  "skill": "/Users/cuzimi/.agents/skills/model-pr-history-knowledge/SKILL.md",
+  "query": "python3 scripts/query.py --framework vllm flux2 --limit 2",
+  "query_result": "No matching FLUX2 dossier; no cross-model PR is treated as direct implementation evidence.",
+  "local_history_inspected": {
+    "4ab1b4ff9cfc2ca233cccb5a4ba1f845288278fc": "PR 4645: SP padding mask behavior. Preserve existing SP forward path; do not reuse precomputed unsharded tensors under SP."
+  },
+  "scope": "Local main a46e9aae, no fetch or latest-upstream claim. Separate branch excludes MAGI changes.",
+  "native_test_command": "/private/tmp/flux2-rope-verify/bin/python -m pytest tests/diffusion/models/flux2/test_flux2_rotary_reuse.py -q",
+  "native_test_result": "Blocked during plugin import: No module named vllm",
+  "isolated_validation_command": "/private/tmp/flux2-rope-verify/bin/python /private/tmp/flux2-rope-validation/validate.py",
+  "validation_limits": "Extracted exact AST bodies; substitute consumer blocks and toy update. No production attention, full model, GPU, native imports, actual SP, CFG collectives, compilation, or E2E timing.",
+  "lifetime_boundary": "Weakrefs checked after extracted denoising function returns or unwinds; real pipeline locals remain until full forward returns, including VAE processing."
+}

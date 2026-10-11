@@ -1,0 +1,282 @@
+/workspace/baseline/vllm-omni-a46e9aae7bb5065a27a69e34ba3f2a09af17a5ce/vllm_omni/__init__.py:22: RuntimeWarning: Failed to import version from _version.py: No module named 'vllm_omni._version'
+This typically happens in development mode before building.
+Using fallback version 'dev'.
+  from .version import __version__, __version_tuple__  # isort:skip # noqa: F401
+
+Multi-thread loading shards:   0% Completed | 0/7 [00:00<?, ?it/s]
+
+Multi-thread loading shards:  14% Completed | 1/7 [00:02<00:14,  2.44s/it]
+
+Multi-thread loading shards:  29% Completed | 2/7 [00:05<00:12,  2.51s/it]
+
+Multi-thread loading shards:  43% Completed | 3/7 [00:07<00:09,  2.49s/it]
+
+Multi-thread loading shards:  57% Completed | 4/7 [00:10<00:07,  2.62s/it]
+
+Multi-thread loading shards:  71% Completed | 5/7 [00:12<00:05,  2.61s/it]
+
+Multi-thread loading shards:  86% Completed | 6/7 [00:15<00:02,  2.55s/it]
+
+Multi-thread loading shards: 100% Completed | 7/7 [00:16<00:00,  2.21s/it]
+
+Multi-thread loading shards: 100% Completed | 7/7 [00:16<00:00,  2.40s/it]
+
+
+Multi-thread loading shards:   0% Completed | 0/10 [00:00<?, ?it/s]
+
+Multi-thread loading shards:  10% Completed | 1/10 [00:01<00:10,  1.19s/it]
+
+Multi-thread loading shards:  20% Completed | 2/10 [00:02<00:09,  1.24s/it]
+
+Multi-thread loading shards:  30% Completed | 3/10 [00:03<00:08,  1.16s/it]
+
+Multi-thread loading shards:  40% Completed | 4/10 [00:04<00:06,  1.11s/it]
+
+Multi-thread loading shards:  50% Completed | 5/10 [00:05<00:05,  1.16s/it]
+
+Multi-thread loading shards:  60% Completed | 6/10 [00:07<00:04,  1.21s/it]
+
+Multi-thread loading shards:  70% Completed | 7/10 [00:08<00:03,  1.19s/it]
+
+Multi-thread loading shards:  80% Completed | 8/10 [00:09<00:02,  1.13s/it]
+
+Multi-thread loading shards:  90% Completed | 9/10 [00:10<00:01,  1.15s/it]
+
+Multi-thread loading shards: 100% Completed | 10/10 [00:11<00:00,  1.13s/it]
+
+Multi-thread loading shards: 100% Completed | 10/10 [00:11<00:00,  1.15s/it]
+
+[transformers] Kwargs passed to `processor.__call__` have to be in `processor_kwargs` dict, not in `**kwargs`
+
+  0%|          | 0/2 [00:00<?, ?it/s]
+ 50%|█████     | 1/2 [00:00<00:00,  3.30it/s]
+100%|██████████| 2/2 [00:00<00:00,  5.76it/s]
+{"event": "loaded", "arm": "3A", "seconds": 44.423906077999845}
+{"event": "begin", "id": "3A_0_t2i_fox", "phase": "warmup"}
+[transformers] Kwargs passed to `processor.__call__` have to be in `processor_kwargs` dict, not in `**kwargs`
+
+  0%|          | 0/32 [00:00<?, ?it/s]
+  3%|▎         | 1/32 [00:00<00:14,  2.16it/s]
+  9%|▉         | 3/32 [00:01<00:09,  3.07it/s]
+ 12%|█▎        | 4/32 [00:01<00:10,  2.66it/s]
+ 16%|█▌        | 5/32 [00:01<00:11,  2.43it/s]
+ 19%|█▉        | 6/32 [00:02<00:11,  2.32it/s]
+ 22%|██▏       | 7/32 [00:02<00:11,  2.23it/s]
+ 25%|██▌       | 8/32 [00:03<00:10,  2.19it/s]
+ 28%|██▊       | 9/32 [00:03<00:10,  2.15it/s]
+ 31%|███▏      | 10/32 [00:04<00:10,  2.13it/s]
+ 34%|███▍      | 11/32 [00:04<00:09,  2.12it/s]
+ 38%|███▊      | 12/32 [00:05<00:09,  2.10it/s]
+ 41%|████      | 13/32 [00:05<00:09,  2.10it/s]
+ 44%|████▍     | 14/32 [00:06<00:08,  2.09it/s]
+ 47%|████▋     | 15/32 [00:06<00:08,  2.09it/s]
+ 50%|█████     | 16/32 [00:07<00:07,  2.09it/s]
+ 53%|█████▎    | 17/32 [00:07<00:07,  2.08it/s]
+ 56%|█████▋    | 18/32 [00:08<00:06,  2.08it/s]
+ 59%|█████▉    | 19/32 [00:08<00:06,  2.08it/s]
+ 62%|██████▎   | 20/32 [00:09<00:05,  2.08it/s]
+ 66%|██████▌   | 21/32 [00:09<00:05,  2.08it/s]
+ 69%|██████▉   | 22/32 [00:10<00:04,  2.08it/s]
+ 72%|███████▏  | 23/32 [00:10<00:04,  2.08it/s]
+ 75%|███████▌  | 24/32 [00:11<00:03,  2.08it/s]
+ 78%|███████▊  | 25/32 [00:11<00:03,  2.08it/s]
+ 81%|████████▏ | 26/32 [00:12<00:02,  2.07it/s]
+ 84%|████████▍ | 27/32 [00:12<00:02,  2.07it/s]
+ 88%|████████▊ | 28/32 [00:13<00:01,  2.07it/s]
+ 91%|█████████ | 29/32 [00:13<00:01,  2.07it/s]
+ 94%|█████████▍| 30/32 [00:13<00:00,  2.07it/s]
+ 97%|█████████▋| 31/32 [00:14<00:00,  2.07it/s]
+100%|██████████| 32/32 [00:14<00:00,  2.07it/s]
+100%|██████████| 32/32 [00:14<00:00,  2.14it/s]
+{"event": "result", "id": "3A_0_t2i_fox", "arm": "3A", "phase": "warmup", "sample": {"id": "fox", "prompt": "A red fox standing in fresh snow beside a pine tree.", "seed": 42}, "scene": "t2i", "size": 1024, "steps": 32, "guidance_scale": 4.0, "reference_rgb_sha256": null, "negative_prompt": null, "workload_sha256": "d7efcdf84eadc08bbb9c72e0410e6e6707716618a92ef6bdea4da8cad7c1b127", "offline_e2e_s": 15.561861329000067, "rgb_sha256": "09217f475e4d90b7b71330a64314f4ac5e768fffe75f50c4e55d5f7b880ba1c3", "request_ids": ["0_c877ea88-0bd5-448a-8aa9-53e2425be27c"], "stage_durations": [{"queue_wait_ms": 0.33772300002965494, "stage_0_gen_ms": 15560.45937538147}], "peak_memory_mb": [111372.0]}
+{"event": "begin", "id": "3A_1_t2i_fox", "phase": "measured"}
+[transformers] Kwargs passed to `processor.__call__` have to be in `processor_kwargs` dict, not in `**kwargs`
+
+  0%|          | 0/32 [00:00<?, ?it/s]
+  6%|▋         | 2/32 [00:00<00:07,  3.81it/s]
+  9%|▉         | 3/32 [00:01<00:10,  2.79it/s]
+ 12%|█▎        | 4/32 [00:01<00:11,  2.50it/s]
+ 16%|█▌        | 5/32 [00:01<00:11,  2.32it/s]
+ 19%|█▉        | 6/32 [00:02<00:11,  2.24it/s]
+ 22%|██▏       | 7/32 [00:02<00:11,  2.18it/s]
+ 25%|██▌       | 8/32 [00:03<00:11,  2.15it/s]
+ 28%|██▊       | 9/32 [00:03<00:10,  2.12it/s]
+ 31%|███▏      | 10/32 [00:04<00:10,  2.10it/s]
+ 34%|███▍      | 11/32 [00:04<00:10,  2.09it/s]
+ 38%|███▊      | 12/32 [00:05<00:09,  2.09it/s]
+ 41%|████      | 13/32 [00:05<00:09,  2.08it/s]
+ 44%|████▍     | 14/32 [00:06<00:08,  2.08it/s]
+ 47%|████▋     | 15/32 [00:06<00:08,  2.07it/s]
+ 50%|█████     | 16/32 [00:07<00:07,  2.07it/s]
+ 53%|█████▎    | 17/32 [00:07<00:07,  2.07it/s]
+ 56%|█████▋    | 18/32 [00:08<00:06,  2.07it/s]
+ 59%|█████▉    | 19/32 [00:08<00:06,  2.07it/s]
+ 62%|██████▎   | 20/32 [00:09<00:05,  2.06it/s]
+ 66%|██████▌   | 21/32 [00:09<00:05,  2.07it/s]
+ 69%|██████▉   | 22/32 [00:10<00:04,  2.07it/s]
+ 72%|███████▏  | 23/32 [00:10<00:04,  2.07it/s]
+ 75%|███████▌  | 24/32 [00:11<00:03,  2.06it/s]
+ 78%|███████▊  | 25/32 [00:11<00:03,  2.06it/s]
+ 81%|████████▏ | 26/32 [00:12<00:02,  2.06it/s]
+ 84%|████████▍ | 27/32 [00:12<00:02,  2.06it/s]
+ 88%|████████▊ | 28/32 [00:13<00:01,  2.06it/s]
+ 91%|█████████ | 29/32 [00:13<00:01,  2.07it/s]
+ 94%|█████████▍| 30/32 [00:14<00:00,  2.06it/s]
+ 97%|█████████▋| 31/32 [00:14<00:00,  2.07it/s]
+100%|██████████| 32/32 [00:15<00:00,  2.07it/s]
+100%|██████████| 32/32 [00:15<00:00,  2.13it/s]
+{"event": "result", "id": "3A_1_t2i_fox", "arm": "3A", "phase": "measured", "sample": {"id": "fox", "prompt": "A red fox standing in fresh snow beside a pine tree.", "seed": 42}, "scene": "t2i", "size": 1024, "steps": 32, "guidance_scale": 4.0, "reference_rgb_sha256": null, "negative_prompt": null, "workload_sha256": "d7efcdf84eadc08bbb9c72e0410e6e6707716618a92ef6bdea4da8cad7c1b127", "offline_e2e_s": 15.614347229999794, "rgb_sha256": "09217f475e4d90b7b71330a64314f4ac5e768fffe75f50c4e55d5f7b880ba1c3", "request_ids": ["0_c870da2e-e2c6-42a9-9452-cab99fd3af8e"], "stage_durations": [{"queue_wait_ms": 0.19656000017675979, "stage_0_gen_ms": 15612.817525863647}], "peak_memory_mb": [111372.0]}
+{"event": "begin", "id": "3A_2_t2i_teapot", "phase": "measured"}
+[transformers] Kwargs passed to `processor.__call__` have to be in `processor_kwargs` dict, not in `**kwargs`
+
+  0%|          | 0/32 [00:00<?, ?it/s]
+  6%|▋         | 2/32 [00:00<00:07,  3.81it/s]
+  9%|▉         | 3/32 [00:01<00:10,  2.79it/s]
+ 12%|█▎        | 4/32 [00:01<00:11,  2.49it/s]
+ 16%|█▌        | 5/32 [00:01<00:11,  2.31it/s]
+ 19%|█▉        | 6/32 [00:02<00:11,  2.24it/s]
+ 22%|██▏       | 7/32 [00:02<00:11,  2.17it/s]
+ 25%|██▌       | 8/32 [00:03<00:11,  2.14it/s]
+ 28%|██▊       | 9/32 [00:03<00:10,  2.12it/s]
+ 31%|███▏      | 10/32 [00:04<00:10,  2.10it/s]
+ 34%|███▍      | 11/32 [00:04<00:10,  2.09it/s]
+ 38%|███▊      | 12/32 [00:05<00:09,  2.08it/s]
+ 41%|████      | 13/32 [00:05<00:09,  2.08it/s]
+ 44%|████▍     | 14/32 [00:06<00:08,  2.07it/s]
+ 47%|████▋     | 15/32 [00:06<00:08,  2.07it/s]
+ 50%|█████     | 16/32 [00:07<00:07,  2.07it/s]
+ 53%|█████▎    | 17/32 [00:07<00:07,  2.06it/s]
+ 56%|█████▋    | 18/32 [00:08<00:06,  2.06it/s]
+ 59%|█████▉    | 19/32 [00:08<00:06,  2.06it/s]
+ 62%|██████▎   | 20/32 [00:09<00:05,  2.06it/s]
+ 66%|██████▌   | 21/32 [00:09<00:05,  2.06it/s]
+ 69%|██████▉   | 22/32 [00:10<00:04,  2.06it/s]
+ 72%|███████▏  | 23/32 [00:10<00:04,  2.06it/s]
+ 75%|███████▌  | 24/32 [00:11<00:03,  2.06it/s]
+ 78%|███████▊  | 25/32 [00:11<00:03,  2.06it/s]
+ 81%|████████▏ | 26/32 [00:12<00:02,  2.06it/s]
+ 84%|████████▍ | 27/32 [00:12<00:02,  2.06it/s]
+ 88%|████████▊ | 28/32 [00:13<00:01,  2.06it/s]
+ 91%|█████████ | 29/32 [00:13<00:01,  2.06it/s]
+ 94%|█████████▍| 30/32 [00:14<00:00,  2.06it/s]
+ 97%|█████████▋| 31/32 [00:14<00:00,  2.06it/s]
+100%|██████████| 32/32 [00:15<00:00,  2.06it/s]
+100%|██████████| 32/32 [00:15<00:00,  2.12it/s]
+{"event": "result", "id": "3A_2_t2i_teapot", "arm": "3A", "phase": "measured", "sample": {"id": "teapot", "prompt": "A blue ceramic teapot on a wooden table in soft window light.", "seed": 123}, "scene": "t2i", "size": 1024, "steps": 32, "guidance_scale": 4.0, "reference_rgb_sha256": null, "negative_prompt": null, "workload_sha256": "b1c392951376b4ff81ff771146d56067f6d6246b9e4edb93c2d56d898d62fc0e", "offline_e2e_s": 15.647570378999944, "rgb_sha256": "f04b97c95f58ab4f0008906f451ef1b3325acb225061d968698f03690cf26a68", "request_ids": ["0_182e9423-9b4d-43d8-92c5-cc96318b8667"], "stage_durations": [{"queue_wait_ms": 0.16811999989840842, "stage_0_gen_ms": 15646.803379058838}], "peak_memory_mb": [111372.0]}
+{"event": "begin", "id": "3A_3_edit_cfg_fox", "phase": "warmup"}
+[transformers] Kwargs passed to `processor.__call__` have to be in `processor_kwargs` dict, not in `**kwargs`
+[transformers] Kwargs passed to `processor.__call__` have to be in `processor_kwargs` dict, not in `**kwargs`
+
+  0%|          | 0/32 [00:00<?, ?it/s]
+  3%|▎         | 1/32 [00:00<00:20,  1.54it/s]
+  6%|▋         | 2/32 [00:01<00:29,  1.03it/s]
+  9%|▉         | 3/32 [00:03<00:31,  1.07s/it]
+ 12%|█▎        | 4/32 [00:04<00:31,  1.12s/it]
+ 16%|█▌        | 5/32 [00:05<00:30,  1.15s/it]
+ 19%|█▉        | 6/32 [00:06<00:30,  1.16s/it]
+ 22%|██▏       | 7/32 [00:07<00:29,  1.18s/it]
+ 25%|██▌       | 8/32 [00:09<00:28,  1.18s/it]
+ 28%|██▊       | 9/32 [00:10<00:27,  1.19s/it]
+ 31%|███▏      | 10/32 [00:11<00:26,  1.19s/it]
+ 34%|███▍      | 11/32 [00:12<00:25,  1.19s/it]
+ 38%|███▊      | 12/32 [00:13<00:23,  1.20s/it]
+ 41%|████      | 13/32 [00:15<00:22,  1.20s/it]
+ 44%|████▍     | 14/32 [00:16<00:21,  1.20s/it]
+ 47%|████▋     | 15/32 [00:17<00:20,  1.20s/it]
+ 50%|█████     | 16/32 [00:18<00:19,  1.20s/it]
+ 53%|█████▎    | 17/32 [00:19<00:18,  1.20s/it]
+ 56%|█████▋    | 18/32 [00:21<00:16,  1.20s/it]
+ 59%|█████▉    | 19/32 [00:22<00:15,  1.20s/it]
+ 62%|██████▎   | 20/32 [00:23<00:14,  1.20s/it]
+ 66%|██████▌   | 21/32 [00:24<00:13,  1.20s/it]
+ 69%|██████▉   | 22/32 [00:25<00:12,  1.20s/it]
+ 72%|███████▏  | 23/32 [00:27<00:10,  1.20s/it]
+ 75%|███████▌  | 24/32 [00:28<00:09,  1.20s/it]
+ 78%|███████▊  | 25/32 [00:29<00:08,  1.20s/it]
+ 81%|████████▏ | 26/32 [00:30<00:07,  1.20s/it]
+ 84%|████████▍ | 27/32 [00:31<00:06,  1.20s/it]
+ 88%|████████▊ | 28/32 [00:33<00:04,  1.20s/it]
+ 91%|█████████ | 29/32 [00:34<00:03,  1.20s/it]
+ 94%|█████████▍| 30/32 [00:35<00:02,  1.20s/it]
+ 97%|█████████▋| 31/32 [00:36<00:01,  1.20s/it]
+100%|██████████| 32/32 [00:37<00:00,  1.20s/it]
+100%|██████████| 32/32 [00:37<00:00,  1.18s/it]
+{"event": "result", "id": "3A_3_edit_cfg_fox", "arm": "3A", "phase": "warmup", "sample": {"id": "fox", "prompt": "A red fox standing in fresh snow beside a pine tree.", "seed": 42}, "scene": "edit_cfg", "size": 1024, "steps": 32, "guidance_scale": 4.0, "reference_rgb_sha256": "cb0e455d8383638e39231042729681b0fbcf609536fd13b5d730733556aa7126", "negative_prompt": "blurry, distorted, low quality", "workload_sha256": "1a38f1b6217ff773cbaee6999ae986c6758cd32080e12c9357c4eb0b31d70fd9", "offline_e2e_s": 38.62244150099991, "rgb_sha256": "304c775ab21726a0bdd3f719cc7ee28da35e38ffb1d44a72e47f603ba4e95b1a", "request_ids": ["0_7261c5e5-934f-495c-9429-4db687d99e3b"], "stage_durations": [{"queue_wait_ms": 0.1735360001475783, "stage_0_gen_ms": 38621.031284332275}], "peak_memory_mb": [111372.0]}
+{"event": "begin", "id": "3A_4_edit_cfg_fox", "phase": "measured"}
+[transformers] Kwargs passed to `processor.__call__` have to be in `processor_kwargs` dict, not in `**kwargs`
+[transformers] Kwargs passed to `processor.__call__` have to be in `processor_kwargs` dict, not in `**kwargs`
+
+  0%|          | 0/32 [00:00<?, ?it/s]
+  3%|▎         | 1/32 [00:00<00:20,  1.53it/s]
+  6%|▋         | 2/32 [00:01<00:29,  1.02it/s]
+  9%|▉         | 3/32 [00:03<00:31,  1.08s/it]
+ 12%|█▎        | 4/32 [00:04<00:31,  1.12s/it]
+ 16%|█▌        | 5/32 [00:05<00:31,  1.15s/it]
+ 19%|█▉        | 6/32 [00:06<00:30,  1.17s/it]
+ 22%|██▏       | 7/32 [00:07<00:29,  1.18s/it]
+ 25%|██▌       | 8/32 [00:09<00:28,  1.19s/it]
+ 28%|██▊       | 9/32 [00:10<00:27,  1.19s/it]
+ 31%|███▏      | 10/32 [00:11<00:26,  1.19s/it]
+ 34%|███▍      | 11/32 [00:12<00:25,  1.19s/it]
+ 38%|███▊      | 12/32 [00:13<00:23,  1.20s/it]
+ 41%|████      | 13/32 [00:15<00:22,  1.20s/it]
+ 44%|████▍     | 14/32 [00:16<00:21,  1.20s/it]
+ 47%|████▋     | 15/32 [00:17<00:20,  1.20s/it]
+ 50%|█████     | 16/32 [00:18<00:19,  1.20s/it]
+ 53%|█████▎    | 17/32 [00:19<00:18,  1.20s/it]
+ 56%|█████▋    | 18/32 [00:21<00:16,  1.20s/it]
+ 59%|█████▉    | 19/32 [00:22<00:15,  1.20s/it]
+ 62%|██████▎   | 20/32 [00:23<00:14,  1.20s/it]
+ 66%|██████▌   | 21/32 [00:24<00:13,  1.20s/it]
+ 69%|██████▉   | 22/32 [00:25<00:12,  1.20s/it]
+ 72%|███████▏  | 23/32 [00:27<00:10,  1.20s/it]
+ 75%|███████▌  | 24/32 [00:28<00:09,  1.20s/it]
+ 78%|███████▊  | 25/32 [00:29<00:08,  1.20s/it]
+ 81%|████████▏ | 26/32 [00:30<00:07,  1.20s/it]
+ 84%|████████▍ | 27/32 [00:31<00:06,  1.20s/it]
+ 88%|████████▊ | 28/32 [00:33<00:04,  1.20s/it]
+ 91%|█████████ | 29/32 [00:34<00:03,  1.20s/it]
+ 94%|█████████▍| 30/32 [00:35<00:02,  1.20s/it]
+ 97%|█████████▋| 31/32 [00:36<00:01,  1.20s/it]
+100%|██████████| 32/32 [00:37<00:00,  1.20s/it]
+100%|██████████| 32/32 [00:37<00:00,  1.18s/it]
+{"event": "result", "id": "3A_4_edit_cfg_fox", "arm": "3A", "phase": "measured", "sample": {"id": "fox", "prompt": "A red fox standing in fresh snow beside a pine tree.", "seed": 42}, "scene": "edit_cfg", "size": 1024, "steps": 32, "guidance_scale": 4.0, "reference_rgb_sha256": "cb0e455d8383638e39231042729681b0fbcf609536fd13b5d730733556aa7126", "negative_prompt": "blurry, distorted, low quality", "workload_sha256": "1a38f1b6217ff773cbaee6999ae986c6758cd32080e12c9357c4eb0b31d70fd9", "offline_e2e_s": 38.6029424379999, "rgb_sha256": "304c775ab21726a0bdd3f719cc7ee28da35e38ffb1d44a72e47f603ba4e95b1a", "request_ids": ["0_24188d25-711a-486a-a18d-c43710f8fbf4"], "stage_durations": [{"queue_wait_ms": 0.17689899982542556, "stage_0_gen_ms": 38602.043867111206}], "peak_memory_mb": [111372.0]}
+{"event": "begin", "id": "3A_5_edit_cfg_teapot", "phase": "measured"}
+[transformers] Kwargs passed to `processor.__call__` have to be in `processor_kwargs` dict, not in `**kwargs`
+[transformers] Kwargs passed to `processor.__call__` have to be in `processor_kwargs` dict, not in `**kwargs`
+
+  0%|          | 0/32 [00:00<?, ?it/s]
+  3%|▎         | 1/32 [00:00<00:20,  1.54it/s]
+  6%|▋         | 2/32 [00:01<00:29,  1.03it/s]
+  9%|▉         | 3/32 [00:03<00:31,  1.08s/it]
+ 12%|█▎        | 4/32 [00:04<00:31,  1.12s/it]
+ 16%|█▌        | 5/32 [00:05<00:31,  1.15s/it]
+ 19%|█▉        | 6/32 [00:06<00:30,  1.17s/it]
+ 22%|██▏       | 7/32 [00:07<00:29,  1.18s/it]
+ 25%|██▌       | 8/32 [00:09<00:28,  1.19s/it]
+ 28%|██▊       | 9/32 [00:10<00:27,  1.19s/it]
+ 31%|███▏      | 10/32 [00:11<00:26,  1.19s/it]
+ 34%|███▍      | 11/32 [00:12<00:25,  1.20s/it]
+ 38%|███▊      | 12/32 [00:13<00:23,  1.20s/it]
+ 41%|████      | 13/32 [00:15<00:22,  1.20s/it]
+ 44%|████▍     | 14/32 [00:16<00:21,  1.20s/it]
+ 47%|████▋     | 15/32 [00:17<00:20,  1.20s/it]
+ 50%|█████     | 16/32 [00:18<00:19,  1.20s/it]
+ 53%|█████▎    | 17/32 [00:19<00:18,  1.20s/it]
+ 56%|█████▋    | 18/32 [00:21<00:16,  1.20s/it]
+ 59%|█████▉    | 19/32 [00:22<00:15,  1.20s/it]
+ 62%|██████▎   | 20/32 [00:23<00:14,  1.20s/it]
+ 66%|██████▌   | 21/32 [00:24<00:13,  1.20s/it]
+ 69%|██████▉   | 22/32 [00:25<00:12,  1.20s/it]
+ 72%|███████▏  | 23/32 [00:27<00:10,  1.20s/it]
+ 75%|███████▌  | 24/32 [00:28<00:09,  1.20s/it]
+ 78%|███████▊  | 25/32 [00:29<00:08,  1.20s/it]
+ 81%|████████▏ | 26/32 [00:30<00:07,  1.20s/it]
+ 84%|████████▍ | 27/32 [00:31<00:06,  1.20s/it]
+ 88%|████████▊ | 28/32 [00:33<00:04,  1.20s/it]
+ 91%|█████████ | 29/32 [00:34<00:03,  1.20s/it]
+ 94%|█████████▍| 30/32 [00:35<00:02,  1.20s/it]
+ 97%|█████████▋| 31/32 [00:36<00:01,  1.20s/it]
+100%|██████████| 32/32 [00:37<00:00,  1.20s/it]
+100%|██████████| 32/32 [00:37<00:00,  1.18s/it]
+{"event": "result", "id": "3A_5_edit_cfg_teapot", "arm": "3A", "phase": "measured", "sample": {"id": "teapot", "prompt": "A blue ceramic teapot on a wooden table in soft window light.", "seed": 123}, "scene": "edit_cfg", "size": 1024, "steps": 32, "guidance_scale": 4.0, "reference_rgb_sha256": "cb0e455d8383638e39231042729681b0fbcf609536fd13b5d730733556aa7126", "negative_prompt": "blurry, distorted, low quality", "workload_sha256": "ea7bdb3d7bd75f32d5602af3cb0a590315cb279801fd8f3a7b05143abd1014a9", "offline_e2e_s": 38.59241163700017, "rgb_sha256": "c26daea716e64fcfaa4c9d517d6bde9a360110ca63967b7b84c767e9617a486a", "request_ids": ["0_a00cf83f-e7df-4d90-b45f-5678f5c12766"], "stage_durations": [{"queue_wait_ms": 0.2107880000039586, "stage_0_gen_ms": 38591.18390083313}], "peak_memory_mb": [111372.0]}

@@ -1,0 +1,3 @@
+# Preserve raw FLUX.2 evidence bytes.
+flux2-rope-reuse/20261010/results/**/*.log whitespace=-blank-at-eol,-blank-at-eof
+flux2-rope-reuse/20261010/results/**/nvidia-smi.txt whitespace=-blank-at-eol

@@ -1,0 +1,6 @@
+{
+  "status": "failed_or_incomplete",
+  "error": "RuntimeError('diagA failed with exit 1; see saved log')",
+  "traceback": "Traceback (most recent call last):\n  File \"/root/modal_experiment.py\", line 273, in run\n    raise RuntimeError(f\"{arm} failed with exit {ret}; see saved log\")\nRuntimeError: diagA failed with exit 1; see saved log\n",
+  "elapsed_s": 183.855142949
+}

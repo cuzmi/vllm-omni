@@ -1,0 +1,278 @@
+/workspace/baseline/vllm-omni-a46e9aae7bb5065a27a69e34ba3f2a09af17a5ce-diagnostic/vllm_omni/__init__.py:22: RuntimeWarning: Failed to import version from _version.py: No module named 'vllm_omni._version'
+This typically happens in development mode before building.
+Using fallback version 'dev'.
+  from .version import __version__, __version_tuple__  # isort:skip # noqa: F401
+
+Multi-thread loading shards:   0% Completed | 0/7 [00:00<?, ?it/s]
+
+Multi-thread loading shards:  14% Completed | 1/7 [00:15<01:35, 15.91s/it]
+
+Multi-thread loading shards:  29% Completed | 2/7 [00:21<00:49,  9.89s/it]
+
+Multi-thread loading shards:  43% Completed | 3/7 [00:26<00:31,  7.78s/it]
+
+Multi-thread loading shards:  57% Completed | 4/7 [00:32<00:20,  6.81s/it]
+
+Multi-thread loading shards:  71% Completed | 5/7 [00:37<00:12,  6.22s/it]
+
+Multi-thread loading shards:  86% Completed | 6/7 [00:41<00:05,  5.68s/it]
+
+Multi-thread loading shards: 100% Completed | 7/7 [00:44<00:00,  4.79s/it]
+
+Multi-thread loading shards: 100% Completed | 7/7 [00:44<00:00,  6.42s/it]
+
+
+Multi-thread loading shards:   0% Completed | 0/10 [00:00<?, ?it/s]
+
+Multi-thread loading shards:  10% Completed | 1/10 [00:11<01:41, 11.31s/it]
+
+Multi-thread loading shards:  20% Completed | 2/10 [00:13<00:49,  6.23s/it]
+
+Multi-thread loading shards:  30% Completed | 3/10 [00:16<00:31,  4.51s/it]
+
+Multi-thread loading shards:  40% Completed | 4/10 [00:19<00:23,  3.93s/it]
+
+Multi-thread loading shards:  50% Completed | 5/10 [00:23<00:18,  3.79s/it]
+
+Multi-thread loading shards:  60% Completed | 6/10 [00:26<00:14,  3.61s/it]
+
+Multi-thread loading shards:  70% Completed | 7/10 [00:29<00:10,  3.46s/it]
+
+Multi-thread loading shards:  80% Completed | 8/10 [00:32<00:06,  3.34s/it]
+
+Multi-thread loading shards:  90% Completed | 9/10 [00:35<00:03,  3.29s/it]
+
+Multi-thread loading shards: 100% Completed | 10/10 [00:38<00:00,  3.23s/it]
+
+Multi-thread loading shards: 100% Completed | 10/10 [00:38<00:00,  3.88s/it]
+
+Error executing method 'execute_model'. This might cause issues in distributed execution.
+Traceback (most recent call last):
+  File "/workspace/baseline/vllm-omni-a46e9aae7bb5065a27a69e34ba3f2a09af17a5ce-diagnostic/vllm_omni/diffusion/worker/diffusion_worker.py", line 1886, in execute_method
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/baseline/vllm-omni-a46e9aae7bb5065a27a69e34ba3f2a09af17a5ce-diagnostic/vllm_omni/diffusion/worker/diffusion_worker.py", line 704, in execute_model
+    output = self.model_runner.execute_model(req, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/baseline/vllm-omni-a46e9aae7bb5065a27a69e34ba3f2a09af17a5ce-diagnostic/vllm_omni/diffusion/worker/diffusion_model_runner.py", line 968, in execute_model
+    runner_output = self._execute_request_list(
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/baseline/vllm-omni-a46e9aae7bb5065a27a69e34ba3f2a09af17a5ce-diagnostic/vllm_omni/diffusion/worker/diffusion_model_runner.py", line 876, in _execute_request_list
+    raw_outputs = self.pipeline.forward(batch)
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/experiment/instrumentation.py", line 38, in forward
+    case = json.loads((root / "current_case.json").read_text())
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/pathlib.py", line 1029, in read_text
+    with self.open(mode='r', encoding=encoding, errors=errors) as f:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/pathlib.py", line 1015, in open
+    return io.open(self, mode, buffering, encoding, errors, newline)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: '/results/flux2_rope_reuse/20261010T233109Z/current_case.json'
+Dummy run failed: Dummy run failed: [Errno 2] No such file or directory: '/results/flux2_rope_reuse/20261010T233109Z/current_case.json'
+[StageRuntime] Stage initialization failed; shutting down 0 initialized client(s)
+Traceback (most recent call last):
+  File "/workspace/baseline/vllm-omni-a46e9aae7bb5065a27a69e34ba3f2a09af17a5ce-diagnostic/vllm_omni/engine/stage_runtime.py", line 297, in initialize
+    initialized_clients = self._initialize_stage_replicas(stage_plans, self._stage_init_timeout)
+                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/baseline/vllm-omni-a46e9aae7bb5065a27a69e34ba3f2a09af17a5ce-diagnostic/vllm_omni/engine/stage_runtime.py", line 946, in _initialize_stage_replicas
+    raise primary_exc
+  File "/workspace/baseline/vllm-omni-a46e9aae7bb5065a27a69e34ba3f2a09af17a5ce-diagnostic/vllm_omni/engine/stage_runtime.py", line 907, in _init_group
+    client = self._initialize_replica(
+             ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/baseline/vllm-omni-a46e9aae7bb5065a27a69e34ba3f2a09af17a5ce-diagnostic/vllm_omni/engine/stage_runtime.py", line 1136, in _initialize_replica
+    return self._initialize_local_diffusion_replica(plan, stage_init_timeout)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/baseline/vllm-omni-a46e9aae7bb5065a27a69e34ba3f2a09af17a5ce-diagnostic/vllm_omni/engine/stage_runtime.py", line 1257, in _initialize_local_diffusion_replica
+    client, resources = launch_diffusion_stage_replica(
+                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/baseline/vllm-omni-a46e9aae7bb5065a27a69e34ba3f2a09af17a5ce-diagnostic/vllm_omni/engine/stage_engine_startup.py", line 1602, in launch_diffusion_stage_replica
+    client = initialize_diffusion_stage(
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/baseline/vllm-omni-a46e9aae7bb5065a27a69e34ba3f2a09af17a5ce-diagnostic/vllm_omni/engine/stage_init_utils.py", line 2045, in initialize_diffusion_stage
+    return create_diffusion_client(model, od_config, metadata, stage_init_timeout, use_inline)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/baseline/vllm-omni-a46e9aae7bb5065a27a69e34ba3f2a09af17a5ce-diagnostic/vllm_omni/diffusion/stage_diffusion_client.py", line 58, in create_diffusion_client
+    return InlineStageDiffusionClient(model, od_config, metadata)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/baseline/vllm-omni-a46e9aae7bb5065a27a69e34ba3f2a09af17a5ce-diagnostic/vllm_omni/diffusion/inline_stage_diffusion_client.py", line 70, in __init__
+    self._engine = DiffusionEngine.make_engine(self.od_config)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/baseline/vllm-omni-a46e9aae7bb5065a27a69e34ba3f2a09af17a5ce-diagnostic/vllm_omni/diffusion/diffusion_engine.py", line 1086, in make_engine
+    engine.run_startup_warmup()
+  File "/workspace/baseline/vllm-omni-a46e9aae7bb5065a27a69e34ba3f2a09af17a5ce-diagnostic/vllm_omni/diffusion/diffusion_engine.py", line 1297, in run_startup_warmup
+    self._dummy_run()
+  File "/workspace/baseline/vllm-omni-a46e9aae7bb5065a27a69e34ba3f2a09af17a5ce-diagnostic/vllm_omni/diffusion/diffusion_engine.py", line 1431, in _dummy_run
+    raise RuntimeError(f"Dummy run failed: {output.error}")
+RuntimeError: Dummy run failed: [Errno 2] No such file or directory: '/results/flux2_rope_reuse/20261010T233109Z/current_case.json'
+[OmniEngine] Orchestrator thread crashed
+Traceback (most recent call last):
+  File "/workspace/baseline/vllm-omni-a46e9aae7bb5065a27a69e34ba3f2a09af17a5ce-diagnostic/vllm_omni/engine/omni_engine_base.py", line 472, in _bootstrap_orchestrator
+    loop.run_until_complete(_run_orchestrator())
+  File "/usr/lib/python3.12/asyncio/base_events.py", line 687, in run_until_complete
+    return future.result()
+           ^^^^^^^^^^^^^^^
+  File "/workspace/baseline/vllm-omni-a46e9aae7bb5065a27a69e34ba3f2a09af17a5ce-diagnostic/vllm_omni/engine/omni_engine_base.py", line 445, in _run_orchestrator
+    self._initialize_stages(stage_init_timeout)
+  File "/workspace/baseline/vllm-omni-a46e9aae7bb5065a27a69e34ba3f2a09af17a5ce-diagnostic/vllm_omni/engine/omni_engine_base.py", line 392, in _initialize_stages
+    self._runtime.initialize()
+  File "/workspace/baseline/vllm-omni-a46e9aae7bb5065a27a69e34ba3f2a09af17a5ce-diagnostic/vllm_omni/engine/stage_runtime.py", line 316, in initialize
+    raise exc
+  File "/workspace/baseline/vllm-omni-a46e9aae7bb5065a27a69e34ba3f2a09af17a5ce-diagnostic/vllm_omni/engine/stage_runtime.py", line 297, in initialize
+    initialized_clients = self._initialize_stage_replicas(stage_plans, self._stage_init_timeout)
+                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/baseline/vllm-omni-a46e9aae7bb5065a27a69e34ba3f2a09af17a5ce-diagnostic/vllm_omni/engine/stage_runtime.py", line 946, in _initialize_stage_replicas
+    raise primary_exc
+  File "/workspace/baseline/vllm-omni-a46e9aae7bb5065a27a69e34ba3f2a09af17a5ce-diagnostic/vllm_omni/engine/stage_runtime.py", line 907, in _init_group
+    client = self._initialize_replica(
+             ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/baseline/vllm-omni-a46e9aae7bb5065a27a69e34ba3f2a09af17a5ce-diagnostic/vllm_omni/engine/stage_runtime.py", line 1136, in _initialize_replica
+    return self._initialize_local_diffusion_replica(plan, stage_init_timeout)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/baseline/vllm-omni-a46e9aae7bb5065a27a69e34ba3f2a09af17a5ce-diagnostic/vllm_omni/engine/stage_runtime.py", line 1257, in _initialize_local_diffusion_replica
+    client, resources = launch_diffusion_stage_replica(
+                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/baseline/vllm-omni-a46e9aae7bb5065a27a69e34ba3f2a09af17a5ce-diagnostic/vllm_omni/engine/stage_engine_startup.py", line 1602, in launch_diffusion_stage_replica
+    client = initialize_diffusion_stage(
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/baseline/vllm-omni-a46e9aae7bb5065a27a69e34ba3f2a09af17a5ce-diagnostic/vllm_omni/engine/stage_init_utils.py", line 2045, in initialize_diffusion_stage
+    return create_diffusion_client(model, od_config, metadata, stage_init_timeout, use_inline)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/baseline/vllm-omni-a46e9aae7bb5065a27a69e34ba3f2a09af17a5ce-diagnostic/vllm_omni/diffusion/stage_diffusion_client.py", line 58, in create_diffusion_client
+    return InlineStageDiffusionClient(model, od_config, metadata)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/baseline/vllm-omni-a46e9aae7bb5065a27a69e34ba3f2a09af17a5ce-diagnostic/vllm_omni/diffusion/inline_stage_diffusion_client.py", line 70, in __init__
+    self._engine = DiffusionEngine.make_engine(self.od_config)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/baseline/vllm-omni-a46e9aae7bb5065a27a69e34ba3f2a09af17a5ce-diagnostic/vllm_omni/diffusion/diffusion_engine.py", line 1086, in make_engine
+    engine.run_startup_warmup()
+  File "/workspace/baseline/vllm-omni-a46e9aae7bb5065a27a69e34ba3f2a09af17a5ce-diagnostic/vllm_omni/diffusion/diffusion_engine.py", line 1297, in run_startup_warmup
+    self._dummy_run()
+  File "/workspace/baseline/vllm-omni-a46e9aae7bb5065a27a69e34ba3f2a09af17a5ce-diagnostic/vllm_omni/diffusion/diffusion_engine.py", line 1431, in _dummy_run
+    raise RuntimeError(f"Dummy run failed: {output.error}")
+RuntimeError: Dummy run failed: [Errno 2] No such file or directory: '/results/flux2_rope_reuse/20261010T233109Z/current_case.json'
+Exception in thread orchestrator:
+Traceback (most recent call last):
+  File "/usr/lib/python3.12/threading.py", line 1073, in _bootstrap_inner
+    self.run()
+  File "/usr/lib/python3.12/threading.py", line 1010, in run
+    self._target(*self._args, **self._kwargs)
+  File "/workspace/baseline/vllm-omni-a46e9aae7bb5065a27a69e34ba3f2a09af17a5ce-diagnostic/vllm_omni/engine/omni_engine_base.py", line 472, in _bootstrap_orchestrator
+    loop.run_until_complete(_run_orchestrator())
+  File "/usr/lib/python3.12/asyncio/base_events.py", line 687, in run_until_complete
+    return future.result()
+           ^^^^^^^^^^^^^^^
+  File "/workspace/baseline/vllm-omni-a46e9aae7bb5065a27a69e34ba3f2a09af17a5ce-diagnostic/vllm_omni/engine/omni_engine_base.py", line 445, in _run_orchestrator
+    self._initialize_stages(stage_init_timeout)
+  File "/workspace/baseline/vllm-omni-a46e9aae7bb5065a27a69e34ba3f2a09af17a5ce-diagnostic/vllm_omni/engine/omni_engine_base.py", line 392, in _initialize_stages
+    self._runtime.initialize()
+  File "/workspace/baseline/vllm-omni-a46e9aae7bb5065a27a69e34ba3f2a09af17a5ce-diagnostic/vllm_omni/engine/stage_runtime.py", line 316, in initialize
+    raise exc
+  File "/workspace/baseline/vllm-omni-a46e9aae7bb5065a27a69e34ba3f2a09af17a5ce-diagnostic/vllm_omni/engine/stage_runtime.py", line 297, in initialize
+    initialized_clients = self._initialize_stage_replicas(stage_plans, self._stage_init_timeout)
+                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/baseline/vllm-omni-a46e9aae7bb5065a27a69e34ba3f2a09af17a5ce-diagnostic/vllm_omni/engine/stage_runtime.py", line 946, in _initialize_stage_replicas
+    raise primary_exc
+  File "/workspace/baseline/vllm-omni-a46e9aae7bb5065a27a69e34ba3f2a09af17a5ce-diagnostic/vllm_omni/engine/stage_runtime.py", line 907, in _init_group
+    client = self._initialize_replica(
+             ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/baseline/vllm-omni-a46e9aae7bb5065a27a69e34ba3f2a09af17a5ce-diagnostic/vllm_omni/engine/stage_runtime.py", line 1136, in _initialize_replica
+    return self._initialize_local_diffusion_replica(plan, stage_init_timeout)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/baseline/vllm-omni-a46e9aae7bb5065a27a69e34ba3f2a09af17a5ce-diagnostic/vllm_omni/engine/stage_runtime.py", line 1257, in _initialize_local_diffusion_replica
+    client, resources = launch_diffusion_stage_replica(
+                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/baseline/vllm-omni-a46e9aae7bb5065a27a69e34ba3f2a09af17a5ce-diagnostic/vllm_omni/engine/stage_engine_startup.py", line 1602, in launch_diffusion_stage_replica
+    client = initialize_diffusion_stage(
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/baseline/vllm-omni-a46e9aae7bb5065a27a69e34ba3f2a09af17a5ce-diagnostic/vllm_omni/engine/stage_init_utils.py", line 2045, in initialize_diffusion_stage
+    return create_diffusion_client(model, od_config, metadata, stage_init_timeout, use_inline)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/baseline/vllm-omni-a46e9aae7bb5065a27a69e34ba3f2a09af17a5ce-diagnostic/vllm_omni/diffusion/stage_diffusion_client.py", line 58, in create_diffusion_client
+    return InlineStageDiffusionClient(model, od_config, metadata)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/baseline/vllm-omni-a46e9aae7bb5065a27a69e34ba3f2a09af17a5ce-diagnostic/vllm_omni/diffusion/inline_stage_diffusion_client.py", line 70, in __init__
+    self._engine = DiffusionEngine.make_engine(self.od_config)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/baseline/vllm-omni-a46e9aae7bb5065a27a69e34ba3f2a09af17a5ce-diagnostic/vllm_omni/diffusion/diffusion_engine.py", line 1086, in make_engine
+    engine.run_startup_warmup()
+  File "/workspace/baseline/vllm-omni-a46e9aae7bb5065a27a69e34ba3f2a09af17a5ce-diagnostic/vllm_omni/diffusion/diffusion_engine.py", line 1297, in run_startup_warmup
+    self._dummy_run()
+  File "/workspace/baseline/vllm-omni-a46e9aae7bb5065a27a69e34ba3f2a09af17a5ce-diagnostic/vllm_omni/diffusion/diffusion_engine.py", line 1431, in _dummy_run
+    raise RuntimeError(f"Dummy run failed: {output.error}")
+RuntimeError: Dummy run failed: [Errno 2] No such file or directory: '/results/flux2_rope_reuse/20261010T233109Z/current_case.json'
+[rank0]: Traceback (most recent call last):
+[rank0]:   File "/usr/lib/python3.12/threading.py", line 1073, in _bootstrap_inner
+[rank0]:     self.run()
+[rank0]:   File "/usr/lib/python3.12/threading.py", line 1010, in run
+[rank0]:     self._target(*self._args, **self._kwargs)
+[rank0]:   File "/workspace/baseline/vllm-omni-a46e9aae7bb5065a27a69e34ba3f2a09af17a5ce-diagnostic/vllm_omni/engine/omni_engine_base.py", line 472, in _bootstrap_orchestrator
+[rank0]:     loop.run_until_complete(_run_orchestrator())
+[rank0]:   File "/usr/lib/python3.12/asyncio/base_events.py", line 687, in run_until_complete
+[rank0]:     return future.result()
+[rank0]:            ^^^^^^^^^^^^^^^
+[rank0]:   File "/workspace/baseline/vllm-omni-a46e9aae7bb5065a27a69e34ba3f2a09af17a5ce-diagnostic/vllm_omni/engine/omni_engine_base.py", line 445, in _run_orchestrator
+[rank0]:     self._initialize_stages(stage_init_timeout)
+[rank0]:   File "/workspace/baseline/vllm-omni-a46e9aae7bb5065a27a69e34ba3f2a09af17a5ce-diagnostic/vllm_omni/engine/omni_engine_base.py", line 392, in _initialize_stages
+[rank0]:     self._runtime.initialize()
+[rank0]:   File "/workspace/baseline/vllm-omni-a46e9aae7bb5065a27a69e34ba3f2a09af17a5ce-diagnostic/vllm_omni/engine/stage_runtime.py", line 316, in initialize
+[rank0]:     raise exc
+[rank0]:   File "/workspace/baseline/vllm-omni-a46e9aae7bb5065a27a69e34ba3f2a09af17a5ce-diagnostic/vllm_omni/engine/stage_runtime.py", line 297, in initialize
+[rank0]:     initialized_clients = self._initialize_stage_replicas(stage_plans, self._stage_init_timeout)
+[rank0]:                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[rank0]:   File "/workspace/baseline/vllm-omni-a46e9aae7bb5065a27a69e34ba3f2a09af17a5ce-diagnostic/vllm_omni/engine/stage_runtime.py", line 946, in _initialize_stage_replicas
+[rank0]:     raise primary_exc
+[rank0]:   File "/workspace/baseline/vllm-omni-a46e9aae7bb5065a27a69e34ba3f2a09af17a5ce-diagnostic/vllm_omni/engine/stage_runtime.py", line 907, in _init_group
+[rank0]:     client = self._initialize_replica(
+[rank0]:              ^^^^^^^^^^^^^^^^^^^^^^^^^
+[rank0]:   File "/workspace/baseline/vllm-omni-a46e9aae7bb5065a27a69e34ba3f2a09af17a5ce-diagnostic/vllm_omni/engine/stage_runtime.py", line 1136, in _initialize_replica
+[rank0]:     return self._initialize_local_diffusion_replica(plan, stage_init_timeout)
+[rank0]:            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[rank0]:   File "/workspace/baseline/vllm-omni-a46e9aae7bb5065a27a69e34ba3f2a09af17a5ce-diagnostic/vllm_omni/engine/stage_runtime.py", line 1257, in _initialize_local_diffusion_replica
+[rank0]:     client, resources = launch_diffusion_stage_replica(
+[rank0]:                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[rank0]:   File "/workspace/baseline/vllm-omni-a46e9aae7bb5065a27a69e34ba3f2a09af17a5ce-diagnostic/vllm_omni/engine/stage_engine_startup.py", line 1602, in launch_diffusion_stage_replica
+[rank0]:     client = initialize_diffusion_stage(
+[rank0]:              ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[rank0]:   File "/workspace/baseline/vllm-omni-a46e9aae7bb5065a27a69e34ba3f2a09af17a5ce-diagnostic/vllm_omni/engine/stage_init_utils.py", line 2045, in initialize_diffusion_stage
+[rank0]:     return create_diffusion_client(model, od_config, metadata, stage_init_timeout, use_inline)
+[rank0]:            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[rank0]:   File "/workspace/baseline/vllm-omni-a46e9aae7bb5065a27a69e34ba3f2a09af17a5ce-diagnostic/vllm_omni/diffusion/stage_diffusion_client.py", line 58, in create_diffusion_client
+[rank0]:     return InlineStageDiffusionClient(model, od_config, metadata)
+[rank0]:            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[rank0]:   File "/workspace/baseline/vllm-omni-a46e9aae7bb5065a27a69e34ba3f2a09af17a5ce-diagnostic/vllm_omni/diffusion/inline_stage_diffusion_client.py", line 70, in __init__
+[rank0]:     self._engine = DiffusionEngine.make_engine(self.od_config)
+[rank0]:                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[rank0]:   File "/workspace/baseline/vllm-omni-a46e9aae7bb5065a27a69e34ba3f2a09af17a5ce-diagnostic/vllm_omni/diffusion/diffusion_engine.py", line 1086, in make_engine
+[rank0]:     engine.run_startup_warmup()
+[rank0]:   File "/workspace/baseline/vllm-omni-a46e9aae7bb5065a27a69e34ba3f2a09af17a5ce-diagnostic/vllm_omni/diffusion/diffusion_engine.py", line 1297, in run_startup_warmup
+[rank0]:     self._dummy_run()
+[rank0]:   File "/workspace/baseline/vllm-omni-a46e9aae7bb5065a27a69e34ba3f2a09af17a5ce-diagnostic/vllm_omni/diffusion/diffusion_engine.py", line 1431, in _dummy_run
+[rank0]:     raise RuntimeError(f"Dummy run failed: {output.error}")
+[rank0]: RuntimeError: Dummy run failed: [Errno 2] No such file or directory: '/results/flux2_rope_reuse/20261010T233109Z/current_case.json'
+
+[rank0]: The above exception was the direct cause of the following exception:
+
+[rank0]: Traceback (most recent call last):
+[rank0]:   File "/experiment/benchmark.py", line 149, in <module>
+[rank0]:     main()
+[rank0]:   File "/experiment/benchmark.py", line 49, in main
+[rank0]:     omni = Omni(
+[rank0]:            ^^^^^
+[rank0]:   File "/workspace/baseline/vllm-omni-a46e9aae7bb5065a27a69e34ba3f2a09af17a5ce-diagnostic/vllm_omni/entrypoints/omni_base.py", line 215, in __init__
+[rank0]:     self.engine = self._create_engine(
+[rank0]:                   ^^^^^^^^^^^^^^^^^^^^
+[rank0]:   File "/workspace/baseline/vllm-omni-a46e9aae7bb5065a27a69e34ba3f2a09af17a5ce-diagnostic/vllm_omni/entrypoints/omni.py", line 33, in _create_engine
+[rank0]:     return AsyncOmniEngine(**engine_kwargs)
+[rank0]:            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[rank0]:   File "/workspace/baseline/vllm-omni-a46e9aae7bb5065a27a69e34ba3f2a09af17a5ce-diagnostic/vllm_omni/engine/omni_engine_base.py", line 327, in __init__
+[rank0]:     self._wait_for_orchestrator_init(startup_future, startup_timeout)
+[rank0]:   File "/workspace/baseline/vllm-omni-a46e9aae7bb5065a27a69e34ba3f2a09af17a5ce-diagnostic/vllm_omni/engine/omni_engine_base.py", line 530, in _wait_for_orchestrator_init
+[rank0]:     startup_future.result(
+[rank0]:   File "/usr/lib/python3.12/concurrent/futures/_base.py", line 456, in result
+[rank0]:     return self.__get_result()
+[rank0]:            ^^^^^^^^^^^^^^^^^^^
+[rank0]:   File "/usr/lib/python3.12/concurrent/futures/_base.py", line 401, in __get_result
+[rank0]:     raise self._exception
+[rank0]: RuntimeError: Orchestrator initialization failed: Dummy run failed: [Errno 2] No such file or directory: '/results/flux2_rope_reuse/20261010T233109Z/current_case.json'

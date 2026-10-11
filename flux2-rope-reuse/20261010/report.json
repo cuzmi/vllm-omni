@@ -1,0 +1,123 @@
+{
+  "conclusion_zh": "真模型正确性及复用路径通过；本轮未证实稳定的端到端加速。差异低于同版本重复运行漂移，不建议按已证明收益的性能优化宣传或优先推进。",
+  "successful_run": "20261010T233514Z",
+  "modal_app": "https://modal.com/apps/simon-weijie/main/ap-LTmfnBjLHPnGQUFgKwGqns",
+  "summary": {
+    "valid": true,
+    "claim_scope": "small offline eager-mode pilot; descriptive only",
+    "scenarios": {
+      "t2i": {
+        "seconds_by_arm": {
+          "0A": [
+            15.742573343999993,
+            15.746124995000002
+          ],
+          "1B": [
+            15.737291254999946,
+            15.763001454999994
+          ],
+          "2B": [
+            15.58249845599994,
+            15.615259604000016
+          ],
+          "3A": [
+            15.614347229999794,
+            15.647570378999944
+          ]
+        },
+        "median_seconds_by_arm": {
+          "0A": 15.744349169499998,
+          "1B": 15.75014635499997,
+          "2B": 15.598879029999978,
+          "3A": 15.630958804499869
+        },
+        "baseline_median_s": 15.695071861499969,
+        "candidate_median_s": 15.67627542949998,
+        "relative_latency_reduction": 0.001197600888091177,
+        "baseline_drift": -0.00720197219836749,
+        "candidate_drift": -0.009604185357425021
+      },
+      "edit_cfg": {
+        "seconds_by_arm": {
+          "0A": [
+            38.66666088599999,
+            38.71033473699998
+          ],
+          "1B": [
+            38.66398751600002,
+            38.639824858
+          ],
+          "2B": [
+            38.57952556999999,
+            38.599109884000086
+          ],
+          "3A": [
+            38.6029424379999,
+            38.59241163700017
+          ]
+        },
+        "median_seconds_by_arm": {
+          "0A": 38.688497811499985,
+          "1B": 38.65190618700001,
+          "2B": 38.58931772700004,
+          "3A": 38.597677037500034
+        },
+        "baseline_median_s": 38.634801661999944,
+        "candidate_median_s": 38.61946737100004,
+        "relative_latency_reduction": 0.0003969035776100194,
+        "baseline_drift": -0.002347487732463849,
+        "candidate_drift": -0.0016192852093028787
+      }
+    }
+  },
+  "correctness": {
+    "diagnostic_requests": 8,
+    "diagnostic_size": 512,
+    "diagnostic_steps": 4,
+    "rope_and_each_step_latents": "bit exact across baseline/candidate and repetitions",
+    "timed_requests": 16,
+    "timed_size": 1024,
+    "timed_steps": 32,
+    "full_size_rgb": "bit exact across all arms for each matched sample",
+    "warmup_requests": 8,
+    "archived_png_hashes_verified": 32
+  },
+  "four_grid": {
+    "省掉什么成本": "请求内重复生成 RoPE；4 步真模型检查中普通路径 4→1、CFG 路径 8→2。编辑输入的位置 ID 拼接也移至循环外。",
+    "在什么条件下成立": "本轮单 H200、BF16、eager、SP=TP=1、无量化/offload/额外缓存；同一请求的位置 ID 不变。",
+    "付出什么代价": "请求内持有 RoPE 张量至 pipeline 返回，增加临时存活内存；512² 文生图诊断峰值 allocated 增加 1.5 MiB，编辑诊断主峰未变。不能据此推断其他尺寸峰值。",
+    "用什么对照验证": "固定源码差异、镜像、模型 revision、提示词和 seed；先真实中间结果检查，再同卡独立进程 ABBA；最终 latency 仅描述性差异，均小于 A/A 或 B/B 漂移。"
+  },
+  "cost": {
+    "recorded_gpu_execution_seconds_including_failed_attempt": 1469.667218827,
+    "recorded_gpu_execution_minutes": 24.494453647116664,
+    "requested_resource_rate_usd_per_second": 0.00193412,
+    "execution_cost_at_requested_resource_rates_usd": 2.842512761277677,
+    "approximate_total_compute_usd": "about 3; not an invoice",
+    "note": "Additional CPU preparation, startup/cleanup, CPU bursts and retention are not captured by loop elapsed. No account credits assumed. Storage excluded.",
+    "source": "https://modal.com/pricing"
+  },
+  "failure_provenance": [
+    {
+      "run": "20261010T233109Z",
+      "classification": "harness startup probe bug, not model correctness failure",
+      "detail": "Probe assumed a request ID existed during framework initialization dummy run. Fixed by bypassing diagnostics during initialization and clearing case metadata before every fresh process.",
+      "elapsed_s": 183.855142949
+    }
+  ],
+  "limits": [
+    "Tiny fixed synthetic workload; no image-quality dataset score or statistical non-inferiority claim",
+    "No compiled mode, multi-GPU SP, NPU or concurrency validation",
+    "Dispatch counts establish reuse; no profiler kernel-time attribution collected",
+    "No kernel count reduction may be presented as end-to-end speedup"
+  ],
+  "local_verification": [
+    "Harness Ruff and Python syntax checks passed",
+    "Synthetic harness gate rejected latent mismatch",
+    "Synthetic startup/request hook checks passed",
+    "All 32 saved PNG hashes match recorded pixels",
+    "Local source and harness hashes match the executed snapshot"
+  ],
+  "gpu_state": "Modal container list returned empty after completion",
+  "git_state": "perf/flux2-request-rope-reuse retained; source and unit test changes uncommitted; no push"
+}

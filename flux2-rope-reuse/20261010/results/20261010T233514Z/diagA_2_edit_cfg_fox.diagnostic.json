@@ -1,0 +1,320 @@
+{
+  "id": "diagA_2_edit_cfg_fox",
+  "latents": [
+    {
+      "shape": [
+        1,
+        1024,
+        128
+      ],
+      "dtype": "torch.bfloat16",
+      "sha256": "9076d692831cbe00697cfe245d54081130a1cb800fcf676f317a05234c9f5a5d"
+    },
+    {
+      "shape": [
+        1,
+        1024,
+        128
+      ],
+      "dtype": "torch.bfloat16",
+      "sha256": "39ded23d6a2cbaab74daed9d0a183fe6e7a0691bce5ad31329e635c923beb7db"
+    },
+    {
+      "shape": [
+        1,
+        1024,
+        128
+      ],
+      "dtype": "torch.bfloat16",
+      "sha256": "e42bf81b50818451767922a03658c2001ff2c59cf05491227234237332860440"
+    },
+    {
+      "shape": [
+        1,
+        1024,
+        128
+      ],
+      "dtype": "torch.bfloat16",
+      "sha256": "48f97c34b1c0ccd2be114600e23a776e8f6ad7373f15e2d2604c89b08c5b722f"
+    }
+  ],
+  "rope": [
+    [
+      {
+        "shape": [
+          512,
+          64
+        ],
+        "dtype": "torch.float64",
+        "sha256": "746d4ec700d2c709e8bcc3b58885abc6c908d152ddd830b311702c75f94b648e"
+      },
+      {
+        "shape": [
+          512,
+          64
+        ],
+        "dtype": "torch.float64",
+        "sha256": "562df59014b9ab94084d2a84595d3b1b7f5544be17e328eeb95ebcb9265d9081"
+      },
+      {
+        "shape": [
+          2048,
+          64
+        ],
+        "dtype": "torch.float64",
+        "sha256": "e9069d686f228312c788b4583e5612eadbfb380b99d6e9d41171ac9a085c4b08"
+      },
+      {
+        "shape": [
+          2048,
+          64
+        ],
+        "dtype": "torch.float64",
+        "sha256": "845363f077ba0d370f5b246410c9317b608c2290514313ee702aea1eaf6ccb87"
+      }
+    ],
+    [
+      {
+        "shape": [
+          512,
+          64
+        ],
+        "dtype": "torch.float64",
+        "sha256": "746d4ec700d2c709e8bcc3b58885abc6c908d152ddd830b311702c75f94b648e"
+      },
+      {
+        "shape": [
+          512,
+          64
+        ],
+        "dtype": "torch.float64",
+        "sha256": "562df59014b9ab94084d2a84595d3b1b7f5544be17e328eeb95ebcb9265d9081"
+      },
+      {
+        "shape": [
+          2048,
+          64
+        ],
+        "dtype": "torch.float64",
+        "sha256": "e9069d686f228312c788b4583e5612eadbfb380b99d6e9d41171ac9a085c4b08"
+      },
+      {
+        "shape": [
+          2048,
+          64
+        ],
+        "dtype": "torch.float64",
+        "sha256": "845363f077ba0d370f5b246410c9317b608c2290514313ee702aea1eaf6ccb87"
+      }
+    ],
+    [
+      {
+        "shape": [
+          512,
+          64
+        ],
+        "dtype": "torch.float64",
+        "sha256": "746d4ec700d2c709e8bcc3b58885abc6c908d152ddd830b311702c75f94b648e"
+      },
+      {
+        "shape": [
+          512,
+          64
+        ],
+        "dtype": "torch.float64",
+        "sha256": "562df59014b9ab94084d2a84595d3b1b7f5544be17e328eeb95ebcb9265d9081"
+      },
+      {
+        "shape": [
+          2048,
+          64
+        ],
+        "dtype": "torch.float64",
+        "sha256": "e9069d686f228312c788b4583e5612eadbfb380b99d6e9d41171ac9a085c4b08"
+      },
+      {
+        "shape": [
+          2048,
+          64
+        ],
+        "dtype": "torch.float64",
+        "sha256": "845363f077ba0d370f5b246410c9317b608c2290514313ee702aea1eaf6ccb87"
+      }
+    ],
+    [
+      {
+        "shape": [
+          512,
+          64
+        ],
+        "dtype": "torch.float64",
+        "sha256": "746d4ec700d2c709e8bcc3b58885abc6c908d152ddd830b311702c75f94b648e"
+      },
+      {
+        "shape": [
+          512,
+          64
+        ],
+        "dtype": "torch.float64",
+        "sha256": "562df59014b9ab94084d2a84595d3b1b7f5544be17e328eeb95ebcb9265d9081"
+      },
+      {
+        "shape": [
+          2048,
+          64
+        ],
+        "dtype": "torch.float64",
+        "sha256": "e9069d686f228312c788b4583e5612eadbfb380b99d6e9d41171ac9a085c4b08"
+      },
+      {
+        "shape": [
+          2048,
+          64
+        ],
+        "dtype": "torch.float64",
+        "sha256": "845363f077ba0d370f5b246410c9317b608c2290514313ee702aea1eaf6ccb87"
+      }
+    ],
+    [
+      {
+        "shape": [
+          512,
+          64
+        ],
+        "dtype": "torch.float64",
+        "sha256": "746d4ec700d2c709e8bcc3b58885abc6c908d152ddd830b311702c75f94b648e"
+      },
+      {
+        "shape": [
+          512,
+          64
+        ],
+        "dtype": "torch.float64",
+        "sha256": "562df59014b9ab94084d2a84595d3b1b7f5544be17e328eeb95ebcb9265d9081"
+      },
+      {
+        "shape": [
+          2048,
+          64
+        ],
+        "dtype": "torch.float64",
+        "sha256": "e9069d686f228312c788b4583e5612eadbfb380b99d6e9d41171ac9a085c4b08"
+      },
+      {
+        "shape": [
+          2048,
+          64
+        ],
+        "dtype": "torch.float64",
+        "sha256": "845363f077ba0d370f5b246410c9317b608c2290514313ee702aea1eaf6ccb87"
+      }
+    ],
+    [
+      {
+        "shape": [
+          512,
+          64
+        ],
+        "dtype": "torch.float64",
+        "sha256": "746d4ec700d2c709e8bcc3b58885abc6c908d152ddd830b311702c75f94b648e"
+      },
+      {
+        "shape": [
+          512,
+          64
+        ],
+        "dtype": "torch.float64",
+        "sha256": "562df59014b9ab94084d2a84595d3b1b7f5544be17e328eeb95ebcb9265d9081"
+      },
+      {
+        "shape": [
+          2048,
+          64
+        ],
+        "dtype": "torch.float64",
+        "sha256": "e9069d686f228312c788b4583e5612eadbfb380b99d6e9d41171ac9a085c4b08"
+      },
+      {
+        "shape": [
+          2048,
+          64
+        ],
+        "dtype": "torch.float64",
+        "sha256": "845363f077ba0d370f5b246410c9317b608c2290514313ee702aea1eaf6ccb87"
+      }
+    ],
+    [
+      {
+        "shape": [
+          512,
+          64
+        ],
+        "dtype": "torch.float64",
+        "sha256": "746d4ec700d2c709e8bcc3b58885abc6c908d152ddd830b311702c75f94b648e"
+      },
+      {
+        "shape": [
+          512,
+          64
+        ],
+        "dtype": "torch.float64",
+        "sha256": "562df59014b9ab94084d2a84595d3b1b7f5544be17e328eeb95ebcb9265d9081"
+      },
+      {
+        "shape": [
+          2048,
+          64
+        ],
+        "dtype": "torch.float64",
+        "sha256": "e9069d686f228312c788b4583e5612eadbfb380b99d6e9d41171ac9a085c4b08"
+      },
+      {
+        "shape": [
+          2048,
+          64
+        ],
+        "dtype": "torch.float64",
+        "sha256": "845363f077ba0d370f5b246410c9317b608c2290514313ee702aea1eaf6ccb87"
+      }
+    ],
+    [
+      {
+        "shape": [
+          512,
+          64
+        ],
+        "dtype": "torch.float64",
+        "sha256": "746d4ec700d2c709e8bcc3b58885abc6c908d152ddd830b311702c75f94b648e"
+      },
+      {
+        "shape": [
+          512,
+          64
+        ],
+        "dtype": "torch.float64",
+        "sha256": "562df59014b9ab94084d2a84595d3b1b7f5544be17e328eeb95ebcb9265d9081"
+      },
+      {
+        "shape": [
+          2048,
+          64
+        ],
+        "dtype": "torch.float64",
+        "sha256": "e9069d686f228312c788b4583e5612eadbfb380b99d6e9d41171ac9a085c4b08"
+      },
+      {
+        "shape": [
+          2048,
+          64
+        ],
+        "dtype": "torch.float64",
+        "sha256": "845363f077ba0d370f5b246410c9317b608c2290514313ee702aea1eaf6ccb87"
+      }
+    ]
+  ],
+  "pipeline_source": "/workspace/baseline/vllm-omni-a46e9aae7bb5065a27a69e34ba3f2a09af17a5ce-diagnostic/vllm_omni/diffusion/models/flux2/pipeline_flux2.py",
+  "transformer_source": "/workspace/baseline/vllm-omni-a46e9aae7bb5065a27a69e34ba3f2a09af17a5ce-diagnostic/vllm_omni/diffusion/models/flux2/flux2_transformer.py",
+  "transformer_dtype": "torch.bfloat16",
+  "peak_allocated_bytes": 112573042176,
+  "peak_reserved_bytes": 113002938368
+}

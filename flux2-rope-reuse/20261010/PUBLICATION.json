@@ -1,0 +1,23 @@
+{
+  "archive_date": "2026-10-10",
+  "timezone": "America/New_York",
+  "source_commit": "4ed516bfc510528c0b5bd6e45e8fd2b3ce6b92f2",
+  "source_url": "https://github.com/cuzmi/vllm-omni/tree/4ed516bfc510528c0b5bd6e45e8fd2b3ce6b92f2",
+  "baseline_commit": "a46e9aae7bb5065a27a69e34ba3f2a09af17a5ce",
+  "source_branch": "perf/flux2-request-rope-reuse",
+  "results_branch": "codex/pr-results",
+  "results_path": "flux2-rope-reuse/20261010",
+  "execution_snapshot_note": "Raw manifests/report preserve the uncommitted state at execution; published production file bytes match those hashes. No GPU rerun during publication.",
+  "successful_run": "20261010T233514Z",
+  "failed_attempt": "20261010T233109Z",
+  "excluded": [
+    "active_run.json",
+    "results/*/current_case.json",
+    "__pycache__",
+    "credentials",
+    "model weights"
+  ],
+  "remote_files_commit": "5afc61aaffeeb164adf620fd009b37886e7bab10",
+  "reproduction_url": "https://github.com/cuzmi/RemoteFiles/tree/5afc61aaffeeb164adf620fd009b37886e7bab10/modal_vllm_omni/flux2_rope_reuse",
+  "evidence_policy": "Reports, raw measurements, diagnostics, logs and output images only; no drivers, source copies, patches or credentials."
+}

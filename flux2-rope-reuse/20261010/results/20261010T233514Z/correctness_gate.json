@@ -1,0 +1,6 @@
+{
+  "passed": true,
+  "requests": 8,
+  "latent_contract": "bit exact",
+  "rope_dispatch_verified": true
+}

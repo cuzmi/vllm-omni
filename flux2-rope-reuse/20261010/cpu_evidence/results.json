@@ -1,0 +1,218 @@
+{
+  "baseline_sha": "a46e9aae7bb5065a27a69e34ba3f2a09af17a5ce",
+  "torch": "2.13.0",
+  "diffusers": "0.40.0",
+  "device": "cpu",
+  "source_hashes": {
+    "vllm_omni/diffusion/models/flux2/flux2_transformer.py": "fa233ea70a42defc6a7495d8f913742008a2a27655e504d3c94476ec9c110094",
+    "vllm_omni/diffusion/models/flux2/pipeline_flux2.py": "e8abe6807d679f6b84c8469c42ea50cc315126cf2cc116172e03fef3a1962751",
+    "tests/diffusion/models/flux2/test_flux2_rotary_reuse.py": "8156f173431eda6c94c047b7aa1e969d2962793fa1cbb8b52af06ada85529661"
+  },
+  "native_vllm_import_tested": false,
+  "production_attention_tested": false,
+  "gpu_or_model_e2e_tested": false,
+  "distributed_sp_tested": false,
+  "native_test_blocker": "tests.helpers.fixtures.config requires missing vllm",
+  "unit_tests_passed": 10,
+  "cases": [
+    {
+      "edit": false,
+      "cfg": false,
+      "dtype": "torch.float32",
+      "sp_dispatch_only": 1,
+      "requests": 2,
+      "steps_per_request": 32,
+      "baseline_rope_calls": 64,
+      "optimized_rope_calls": 2,
+      "all_step_outputs_bit_exact": true
+    },
+    {
+      "edit": false,
+      "cfg": false,
+      "dtype": "torch.float32",
+      "sp_dispatch_only": 2,
+      "requests": 2,
+      "steps_per_request": 32,
+      "baseline_rope_calls": 64,
+      "optimized_rope_calls": 64,
+      "all_step_outputs_bit_exact": true
+    },
+    {
+      "edit": false,
+      "cfg": false,
+      "dtype": "torch.bfloat16",
+      "sp_dispatch_only": 1,
+      "requests": 2,
+      "steps_per_request": 32,
+      "baseline_rope_calls": 64,
+      "optimized_rope_calls": 2,
+      "all_step_outputs_bit_exact": true
+    },
+    {
+      "edit": false,
+      "cfg": false,
+      "dtype": "torch.bfloat16",
+      "sp_dispatch_only": 2,
+      "requests": 2,
+      "steps_per_request": 32,
+      "baseline_rope_calls": 64,
+      "optimized_rope_calls": 64,
+      "all_step_outputs_bit_exact": true
+    },
+    {
+      "edit": false,
+      "cfg": true,
+      "dtype": "torch.float32",
+      "sp_dispatch_only": 1,
+      "requests": 2,
+      "steps_per_request": 32,
+      "baseline_rope_calls": 128,
+      "optimized_rope_calls": 4,
+      "all_step_outputs_bit_exact": true
+    },
+    {
+      "edit": false,
+      "cfg": true,
+      "dtype": "torch.float32",
+      "sp_dispatch_only": 2,
+      "requests": 2,
+      "steps_per_request": 32,
+      "baseline_rope_calls": 128,
+      "optimized_rope_calls": 128,
+      "all_step_outputs_bit_exact": true
+    },
+    {
+      "edit": false,
+      "cfg": true,
+      "dtype": "torch.bfloat16",
+      "sp_dispatch_only": 1,
+      "requests": 2,
+      "steps_per_request": 32,
+      "baseline_rope_calls": 128,
+      "optimized_rope_calls": 4,
+      "all_step_outputs_bit_exact": true
+    },
+    {
+      "edit": false,
+      "cfg": true,
+      "dtype": "torch.bfloat16",
+      "sp_dispatch_only": 2,
+      "requests": 2,
+      "steps_per_request": 32,
+      "baseline_rope_calls": 128,
+      "optimized_rope_calls": 128,
+      "all_step_outputs_bit_exact": true
+    },
+    {
+      "edit": true,
+      "cfg": false,
+      "dtype": "torch.float32",
+      "sp_dispatch_only": 1,
+      "requests": 2,
+      "steps_per_request": 32,
+      "baseline_rope_calls": 64,
+      "optimized_rope_calls": 2,
+      "all_step_outputs_bit_exact": true
+    },
+    {
+      "edit": true,
+      "cfg": false,
+      "dtype": "torch.float32",
+      "sp_dispatch_only": 2,
+      "requests": 2,
+      "steps_per_request": 32,
+      "baseline_rope_calls": 64,
+      "optimized_rope_calls": 64,
+      "all_step_outputs_bit_exact": true
+    },
+    {
+      "edit": true,
+      "cfg": false,
+      "dtype": "torch.bfloat16",
+      "sp_dispatch_only": 1,
+      "requests": 2,
+      "steps_per_request": 32,
+      "baseline_rope_calls": 64,
+      "optimized_rope_calls": 2,
+      "all_step_outputs_bit_exact": true
+    },
+    {
+      "edit": true,
+      "cfg": false,
+      "dtype": "torch.bfloat16",
+      "sp_dispatch_only": 2,
+      "requests": 2,
+      "steps_per_request": 32,
+      "baseline_rope_calls": 64,
+      "optimized_rope_calls": 64,
+      "all_step_outputs_bit_exact": true
+    },
+    {
+      "edit": true,
+      "cfg": true,
+      "dtype": "torch.float32",
+      "sp_dispatch_only": 1,
+      "requests": 2,
+      "steps_per_request": 32,
+      "baseline_rope_calls": 128,
+      "optimized_rope_calls": 4,
+      "all_step_outputs_bit_exact": true
+    },
+    {
+      "edit": true,
+      "cfg": true,
+      "dtype": "torch.float32",
+      "sp_dispatch_only": 2,
+      "requests": 2,
+      "steps_per_request": 32,
+      "baseline_rope_calls": 128,
+      "optimized_rope_calls": 128,
+      "all_step_outputs_bit_exact": true
+    },
+    {
+      "edit": true,
+      "cfg": true,
+      "dtype": "torch.bfloat16",
+      "sp_dispatch_only": 1,
+      "requests": 2,
+      "steps_per_request": 32,
+      "baseline_rope_calls": 128,
+      "optimized_rope_calls": 4,
+      "all_step_outputs_bit_exact": true
+    },
+    {
+      "edit": true,
+      "cfg": true,
+      "dtype": "torch.bfloat16",
+      "sp_dispatch_only": 2,
+      "requests": 2,
+      "steps_per_request": 32,
+      "baseline_rope_calls": 128,
+      "optimized_rope_calls": 128,
+      "all_step_outputs_bit_exact": true
+    }
+  ],
+  "lifetime_cases": [
+    {
+      "mode": "normal",
+      "rope_references_released": true,
+      "executed_steps": 4
+    },
+    {
+      "mode": "interrupt",
+      "rope_references_released": true,
+      "executed_steps": 2
+    },
+    {
+      "mode": "exception",
+      "rope_references_released": true,
+      "executed_steps": 2
+    }
+  ],
+  "rope_memory_example": {
+    "image_tokens": 4096,
+    "text_tokens": 512,
+    "dtype": "torch.float64",
+    "retained_bytes_per_branch": 4718592
+  }
+}

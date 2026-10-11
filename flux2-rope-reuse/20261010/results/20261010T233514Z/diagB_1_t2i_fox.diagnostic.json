@@ -1,0 +1,82 @@
+{
+  "id": "diagB_1_t2i_fox",
+  "latents": [
+    {
+      "shape": [
+        1,
+        1024,
+        128
+      ],
+      "dtype": "torch.bfloat16",
+      "sha256": "aa3f478f4937fa117f212a7ab897e853e98ef7684d607bdfeedc4bfa9eaf6850"
+    },
+    {
+      "shape": [
+        1,
+        1024,
+        128
+      ],
+      "dtype": "torch.bfloat16",
+      "sha256": "bc25ddfe09fd98df6d03d59dd4443c690b5e7558ffd5af2e00b33eb90912836d"
+    },
+    {
+      "shape": [
+        1,
+        1024,
+        128
+      ],
+      "dtype": "torch.bfloat16",
+      "sha256": "eb425d17126ea2eefe9c544b9435ede908c9a537162f259a38aebed273909fb3"
+    },
+    {
+      "shape": [
+        1,
+        1024,
+        128
+      ],
+      "dtype": "torch.bfloat16",
+      "sha256": "dcf44f3354eea84d9a2ef32fef0096f91239d1d727ee32a526b4f34e3597797a"
+    }
+  ],
+  "rope": [
+    [
+      {
+        "shape": [
+          512,
+          64
+        ],
+        "dtype": "torch.float64",
+        "sha256": "746d4ec700d2c709e8bcc3b58885abc6c908d152ddd830b311702c75f94b648e"
+      },
+      {
+        "shape": [
+          512,
+          64
+        ],
+        "dtype": "torch.float64",
+        "sha256": "562df59014b9ab94084d2a84595d3b1b7f5544be17e328eeb95ebcb9265d9081"
+      },
+      {
+        "shape": [
+          1024,
+          64
+        ],
+        "dtype": "torch.float64",
+        "sha256": "a7670dfb7ab138d940e69dc60fd0f513ccd2d5e283de9e8d3d47f1dbdb6b6594"
+      },
+      {
+        "shape": [
+          1024,
+          64
+        ],
+        "dtype": "torch.float64",
+        "sha256": "59d533f11a5d827d6bff0989baa679335c3d55398d4660c99c56da93f0e51e43"
+      }
+    ]
+  ],
+  "pipeline_source": "/workspace/candidate/vllm-omni-a46e9aae7bb5065a27a69e34ba3f2a09af17a5ce-diagnostic/vllm_omni/diffusion/models/flux2/pipeline_flux2.py",
+  "transformer_source": "/workspace/candidate/vllm-omni-a46e9aae7bb5065a27a69e34ba3f2a09af17a5ce-diagnostic/vllm_omni/diffusion/models/flux2/flux2_transformer.py",
+  "transformer_dtype": "torch.bfloat16",
+  "peak_allocated_bytes": 112491858944,
+  "peak_reserved_bytes": 113005035520
+}

@@ -1,0 +1,96 @@
+/workspace/candidate/vllm-omni-a46e9aae7bb5065a27a69e34ba3f2a09af17a5ce-diagnostic/vllm_omni/__init__.py:22: RuntimeWarning: Failed to import version from _version.py: No module named 'vllm_omni._version'
+This typically happens in development mode before building.
+Using fallback version 'dev'.
+  from .version import __version__, __version_tuple__  # isort:skip # noqa: F401
+
+Multi-thread loading shards:   0% Completed | 0/7 [00:00<?, ?it/s]
+
+Multi-thread loading shards:  14% Completed | 1/7 [00:03<00:22,  3.72s/it]
+
+Multi-thread loading shards:  29% Completed | 2/7 [00:06<00:16,  3.28s/it]
+
+Multi-thread loading shards:  43% Completed | 3/7 [00:09<00:12,  3.11s/it]
+
+Multi-thread loading shards:  57% Completed | 4/7 [00:12<00:09,  3.02s/it]
+
+Multi-thread loading shards:  71% Completed | 5/7 [00:15<00:05,  2.90s/it]
+
+Multi-thread loading shards:  86% Completed | 6/7 [00:18<00:02,  2.90s/it]
+
+Multi-thread loading shards: 100% Completed | 7/7 [00:20<00:00,  2.65s/it]
+
+Multi-thread loading shards: 100% Completed | 7/7 [00:20<00:00,  2.89s/it]
+
+
+Multi-thread loading shards:   0% Completed | 0/10 [00:00<?, ?it/s]
+
+Multi-thread loading shards:  10% Completed | 1/10 [00:01<00:13,  1.48s/it]
+
+Multi-thread loading shards:  20% Completed | 2/10 [00:02<00:11,  1.39s/it]
+
+Multi-thread loading shards:  30% Completed | 3/10 [00:04<00:09,  1.37s/it]
+
+Multi-thread loading shards:  40% Completed | 4/10 [00:05<00:08,  1.35s/it]
+
+Multi-thread loading shards:  50% Completed | 5/10 [00:06<00:06,  1.40s/it]
+
+Multi-thread loading shards:  60% Completed | 6/10 [00:08<00:05,  1.42s/it]
+
+Multi-thread loading shards:  70% Completed | 7/10 [00:09<00:04,  1.38s/it]
+
+Multi-thread loading shards:  80% Completed | 8/10 [00:10<00:02,  1.35s/it]
+
+Multi-thread loading shards:  90% Completed | 9/10 [00:12<00:01,  1.41s/it]
+
+Multi-thread loading shards: 100% Completed | 10/10 [00:13<00:00,  1.37s/it]
+
+Multi-thread loading shards: 100% Completed | 10/10 [00:13<00:00,  1.38s/it]
+
+[transformers] Kwargs passed to `processor.__call__` have to be in `processor_kwargs` dict, not in `**kwargs`
+
+  0%|          | 0/2 [00:00<?, ?it/s]
+ 50%|█████     | 1/2 [00:00<00:00,  2.11it/s]
+100%|██████████| 2/2 [00:00<00:00,  3.83it/s]
+{"event": "loaded", "arm": "diagB", "seconds": 52.639390660000004}
+{"event": "begin", "id": "diagB_0_t2i_fox", "phase": "diagnostic"}
+[transformers] Kwargs passed to `processor.__call__` have to be in `processor_kwargs` dict, not in `**kwargs`
+
+  0%|          | 0/4 [00:00<?, ?it/s]
+ 25%|██▌       | 1/4 [00:00<00:00,  6.73it/s]
+ 50%|█████     | 2/4 [00:00<00:00,  6.61it/s]
+ 75%|███████▌  | 3/4 [00:00<00:00,  6.64it/s]
+100%|██████████| 4/4 [00:00<00:00,  6.61it/s]
+100%|██████████| 4/4 [00:00<00:00,  6.62it/s]
+{"event": "result", "id": "diagB_0_t2i_fox", "arm": "diagB", "phase": "diagnostic", "sample": {"id": "fox", "prompt": "A red fox standing in fresh snow beside a pine tree.", "seed": 42}, "scene": "t2i", "size": 512, "steps": 4, "guidance_scale": 4.0, "reference_rgb_sha256": null, "negative_prompt": null, "workload_sha256": "9a5dcb4a4c249fb186b305f83a75941d03a6022edafdf70dbce39783484a18fd", "offline_e2e_s": 0.7284453989999804, "rgb_sha256": "a6d298402c5c778a138767af2c5cf5b9f6656ddc15141abbda462a6f0c06ea94", "request_ids": ["0_1247dc9c-c874-4762-9aea-c643408642b0"], "stage_durations": [{"queue_wait_ms": 0.4535200000077566, "stage_0_gen_ms": 726.891040802002}], "peak_memory_mb": [107770.0]}
+{"event": "begin", "id": "diagB_1_t2i_fox", "phase": "diagnostic"}
+[transformers] Kwargs passed to `processor.__call__` have to be in `processor_kwargs` dict, not in `**kwargs`
+
+  0%|          | 0/4 [00:00<?, ?it/s]
+ 25%|██▌       | 1/4 [00:00<00:00,  6.69it/s]
+ 50%|█████     | 2/4 [00:00<00:00,  6.63it/s]
+ 75%|███████▌  | 3/4 [00:00<00:00,  6.62it/s]
+100%|██████████| 4/4 [00:00<00:00,  6.62it/s]
+100%|██████████| 4/4 [00:00<00:00,  6.62it/s]
+{"event": "result", "id": "diagB_1_t2i_fox", "arm": "diagB", "phase": "diagnostic", "sample": {"id": "fox", "prompt": "A red fox standing in fresh snow beside a pine tree.", "seed": 42}, "scene": "t2i", "size": 512, "steps": 4, "guidance_scale": 4.0, "reference_rgb_sha256": null, "negative_prompt": null, "workload_sha256": "9a5dcb4a4c249fb186b305f83a75941d03a6022edafdf70dbce39783484a18fd", "offline_e2e_s": 0.6870152019999978, "rgb_sha256": "a6d298402c5c778a138767af2c5cf5b9f6656ddc15141abbda462a6f0c06ea94", "request_ids": ["0_0fca33a0-8731-4974-bd37-c03958c860c0"], "stage_durations": [{"queue_wait_ms": 0.25743599999827893, "stage_0_gen_ms": 685.8587265014648}], "peak_memory_mb": [107770.0]}
+{"event": "begin", "id": "diagB_2_edit_cfg_fox", "phase": "diagnostic"}
+[transformers] Kwargs passed to `processor.__call__` have to be in `processor_kwargs` dict, not in `**kwargs`
+[transformers] Kwargs passed to `processor.__call__` have to be in `processor_kwargs` dict, not in `**kwargs`
+
+  0%|          | 0/4 [00:00<?, ?it/s]
+ 25%|██▌       | 1/4 [00:00<00:01,  2.01it/s]
+ 50%|█████     | 2/4 [00:01<00:01,  1.93it/s]
+ 75%|███████▌  | 3/4 [00:01<00:00,  1.94it/s]
+100%|██████████| 4/4 [00:02<00:00,  1.92it/s]
+100%|██████████| 4/4 [00:02<00:00,  1.93it/s]
+{"event": "result", "id": "diagB_2_edit_cfg_fox", "arm": "diagB", "phase": "diagnostic", "sample": {"id": "fox", "prompt": "A red fox standing in fresh snow beside a pine tree.", "seed": 42}, "scene": "edit_cfg", "size": 512, "steps": 4, "guidance_scale": 4.0, "reference_rgb_sha256": "cb0e455d8383638e39231042729681b0fbcf609536fd13b5d730733556aa7126", "negative_prompt": "blurry, distorted, low quality", "workload_sha256": "4472552f8db105e2ed1b5f236e1b1ab519e947d4191a2928caae5e5faab910ba", "offline_e2e_s": 2.239181954000003, "rgb_sha256": "3cffda8b8e3ac95053d74d6784881a0968179d49022ca1dc612417e58eda66f8", "request_ids": ["0_5a5778b3-705c-48aa-b799-ef3358047cbf"], "stage_durations": [{"queue_wait_ms": 0.29061399999363857, "stage_0_gen_ms": 2237.95223236084}], "peak_memory_mb": [107770.0]}
+{"event": "begin", "id": "diagB_3_edit_cfg_fox", "phase": "diagnostic"}
+[transformers] Kwargs passed to `processor.__call__` have to be in `processor_kwargs` dict, not in `**kwargs`
+[transformers] Kwargs passed to `processor.__call__` have to be in `processor_kwargs` dict, not in `**kwargs`
+
+  0%|          | 0/4 [00:00<?, ?it/s]
+ 25%|██▌       | 1/4 [00:00<00:01,  2.01it/s]
+ 50%|█████     | 2/4 [00:01<00:01,  1.93it/s]
+ 75%|███████▌  | 3/4 [00:01<00:00,  1.95it/s]
+100%|██████████| 4/4 [00:02<00:00,  1.92it/s]
+100%|██████████| 4/4 [00:02<00:00,  1.93it/s]
+{"event": "result", "id": "diagB_3_edit_cfg_fox", "arm": "diagB", "phase": "diagnostic", "sample": {"id": "fox", "prompt": "A red fox standing in fresh snow beside a pine tree.", "seed": 42}, "scene": "edit_cfg", "size": 512, "steps": 4, "guidance_scale": 4.0, "reference_rgb_sha256": "cb0e455d8383638e39231042729681b0fbcf609536fd13b5d730733556aa7126", "negative_prompt": "blurry, distorted, low quality", "workload_sha256": "4472552f8db105e2ed1b5f236e1b1ab519e947d4191a2928caae5e5faab910ba", "offline_e2e_s": 2.2157206849999795, "rgb_sha256": "3cffda8b8e3ac95053d74d6784881a0968179d49022ca1dc612417e58eda66f8", "request_ids": ["0_8ad3274c-c546-4872-9d6d-3b409417a838"], "stage_durations": [{"queue_wait_ms": 0.2979740000057518, "stage_0_gen_ms": 2214.5204544067383}], "peak_memory_mb": [107770.0]}

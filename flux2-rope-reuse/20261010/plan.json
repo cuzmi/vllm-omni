@@ -1,0 +1,93 @@
+{
+  "base": "a46e9aae7bb5065a27a69e34ba3f2a09af17a5ce",
+  "branch": "perf/flux2-request-rope-reuse",
+  "candidate": "base plus frozen patch; uncommitted",
+  "patch_sha256": "2eb9932a90884d29ec426477712e61eb9fce0f33977f5636b86eb15974d3269c",
+  "source_hashes": {
+    "vllm_omni/diffusion/models/flux2/flux2_transformer.py": {
+      "baseline": "eb4a77fd5137c91908d7ead2910b41f8dacef8df016b9e45cf51e1817fd1d805",
+      "candidate": "fa233ea70a42defc6a7495d8f913742008a2a27655e504d3c94476ec9c110094"
+    },
+    "vllm_omni/diffusion/models/flux2/pipeline_flux2.py": {
+      "baseline": "0600b6455cd5e8911e020cd982efaddeff2db3aec5c88c1d77bf389e76f4e097",
+      "candidate": "e8abe6807d679f6b84c8469c42ea50cc315126cf2cc116172e03fef3a1962751"
+    }
+  },
+  "image": "vllm/vllm-omni@sha256:a61aed4961263c1ad4aa8108a78af151a0781eca98513db39354d3ecaee30f99",
+  "model": "black-forest-labs/FLUX.2-dev",
+  "model_revision": "26afe3a78bb242c0a8bb181dcc8937bb16e5c66c",
+  "workspace": "simon-weijie",
+  "gpu": "one H200",
+  "cpu": 8,
+  "memory_mib": 262144,
+  "gpu_timeout_s": 2700,
+  "prepare_timeout_s": 3600,
+  "overall_authorized_budget_usd": 25,
+  "estimated_first_round_max_compute_usd": 6.0,
+  "pricing_note": "Approximate compute only using published per-second rates checked in this session; excludes long-term volume retention; stop after first round, no automatic retry",
+  "runtime": {
+    "precision": "bfloat16",
+    "quantization": null,
+    "offload": false,
+    "enforce_eager": true,
+    "SP": 1,
+    "TP": 1,
+    "CFG_parallel": 1,
+    "cache_backend": "none",
+    "concurrency": 1
+  },
+  "diagnostic": {
+    "size": 512,
+    "steps": 4,
+    "scenarios": [
+      "t2i",
+      "single_image_edit_with_cfg"
+    ],
+    "repetitions_per_arm_per_scene": 2,
+    "total_requests": 8,
+    "contract": "bit-exact RoPE, every post-scheduler latent, and final RGB; A/A nondeterminism blocks performance claims",
+    "dispatch": "baseline 4/8 vs candidate 1/2 rope_prepare calls per request"
+  },
+  "timing": {
+    "size": 1024,
+    "steps": 32,
+    "order": [
+      "0A",
+      "1B",
+      "2B",
+      "3A"
+    ],
+    "fresh_process_per_arm": true,
+    "samples_per_scenario_per_arm": 2,
+    "scenarios": [
+      "t2i",
+      "single_image_edit_with_cfg"
+    ],
+    "total_measured_requests": 16,
+    "warmup_requests": 8,
+    "metric": "wall time immediately before Omni.generate through extract_images_from_outputs; excludes load, warmup, output hashes, PNG encoding and writes",
+    "profile": false,
+    "full_size_correctness": "bit-exact matched RGB hashes across all four arms",
+    "noise": "A/A and B/B arm drift plus per-request spread; no significance or non-inferiority claim from this pilot"
+  },
+  "stop_rules": [
+    "model access denied",
+    "source/config mismatch",
+    "OOM or any request/runtime failure",
+    "diagnostic mismatch/nonfinite/wrong dispatch",
+    "GPU allocation timeout",
+    "incomplete ABBA cannot be reported as full comparison"
+  ],
+  "scope_limits": [
+    "No multi-GPU SP validation",
+    "No CUDA graph/compiled-mode claim",
+    "Synthetic fixed prompts/editing fixture; not image-quality dataset benchmark",
+    "No HTTP serving or concurrency claim",
+    "Small pilot cannot establish small speedup beyond noise"
+  ],
+  "skills": [
+    "/Users/cuzimi/.agents/skills/llm-serving-auto-benchmark/references/paired-validation.md",
+    "/Users/cuzimi/.agents/skills/llm-torch-profiler-analysis/SKILL.md"
+  ],
+  "status": "prepared; no GPU run yet"
+}
