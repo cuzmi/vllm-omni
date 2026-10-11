@@ -1,13 +1,13 @@
 # SPDX-License-Identifier: Apache-2.0
 # SPDX-FileCopyrightText: Copyright contributors to the vLLM-Omni project
 
-from types import SimpleNamespace
 from unittest.mock import Mock
 
 import pytest
 import torch
 from torch import nn
 
+from vllm_omni.diffusion.data import DiffusionParallelConfig
 from vllm_omni.diffusion.models.flux2.flux2_transformer import (
     Flux2PosEmbed,
     Flux2RopePrepare,
@@ -22,7 +22,7 @@ def _rope_model():
     # position preparation contract and forward dispatch.
     model = Flux2Transformer2DModel.__new__(Flux2Transformer2DModel)
     nn.Module.__init__(model)
-    model.parallel_config = SimpleNamespace(sequence_parallel_size=1)
+    model.parallel_config = DiffusionParallelConfig()
     model.rope_prepare = Flux2RopePrepare(Flux2PosEmbed(theta=2000, axes_dim=(2, 2, 2, 2)))
     return model
 
@@ -108,7 +108,7 @@ def test_forward_reuses_prepared_rope_without_changing_outputs(dtype):
 
 def test_sequence_parallel_does_not_bypass_rope_hooks():
     model = _forward_model()
-    model.parallel_config.sequence_parallel_size = 2
+    model.parallel_config = DiffusionParallelConfig(ulysses_degree=2)
     calls = []
     handle = model.rope_prepare.register_forward_hook(lambda *args: calls.append(1))
     model(
