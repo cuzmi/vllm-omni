@@ -1,16 +1,18 @@
 # SPDX-License-Identifier: Apache-2.0
-# SPDX-FileCopyrightText: Copyright contributors to the vLLM project
+# SPDX-FileCopyrightText: Copyright contributors to the vLLM-Omni project
 
 # ruff: noqa: N803
 
 """Fused GroupNorm + SiLU operator.
 
-This operator fuses GroupNorm followed by SiLU activation into a single kernel,
-reducing memory traffic and kernel launch overhead. The implementation uses
+This operator fuses GroupNorm followed by SiLU activation, avoiding a full-size
+normalized intermediate. Small inputs use one kernel; large groups use parallel
+partial statistics, finalization, and normalization/SiLU kernels. The implementation uses
 Triton for CUDA/ROCm compatibility, and falls back to native PyTorch ops when
 Triton is unavailable (NPU, CPU, ...), so callers never need a platform check.
 
-Measured against eager ``F.silu(F.group_norm(...))`` on one L20X, bf16, 32
+The original single-kernel path was measured against eager
+``F.silu(F.group_norm(...))`` on one L20X, bf16, 32
 groups: 1.1-1.5x at the DiT ResBlock's activation sizes, where both paths are
 dominated by launch overhead, and 2.2-2.9x at the VAE's decode-resolution
 activations, where the saved memory traffic is what pays.
@@ -129,6 +131,74 @@ def _group_norm_silu_kernel(
             tl.store(out_ptr + base + offsets, out_val, mask=mask)
 
 
+@triton.jit
+def _gn_partial_kernel(X, P, M: tl.constexpr, PARTS: tl.constexpr, BLOCK: tl.constexpr):
+    group = tl.program_id(0).to(tl.int64)
+    part = tl.program_id(1)
+    offsets = part * BLOCK + tl.arange(0, BLOCK)
+    valid = offsets < M
+    # Center on a common group anchor before summation. All partials use the
+    # same anchor, preserving stability on large-offset, low-variance inputs.
+    anchor = tl.load(X + group * M).to(tl.float32)
+    values = tl.load(X + group * M + offsets, valid, other=0).to(tl.float32)
+    values = tl.where(valid, values - anchor, 0.0)
+    count = tl.minimum(BLOCK, M - part * BLOCK)
+    mean = tl.sum(values, 0) / count
+    delta = tl.where(valid, values - mean, 0.0)
+    m2 = tl.sum(delta * delta, 0)
+    tl.store(P + (group * PARTS + part) * 2, mean)
+    tl.store(P + (group * PARTS + part) * 2 + 1, m2)
+
+
+@triton.jit
+def _gn_finish_kernel(
+    P, S, M: tl.constexpr, PARTS: tl.constexpr, BLOCK: tl.constexpr, REDUCE: tl.constexpr, EPS: tl.constexpr
+):
+    group = tl.program_id(0).to(tl.int64)
+    part = tl.arange(0, REDUCE)
+    valid = part < PARTS
+    count = tl.where(valid, tl.minimum(BLOCK, M - part * BLOCK), 0)
+    means = tl.load(P + (group * PARTS + part) * 2, valid, other=0)
+    m2 = tl.load(P + (group * PARTS + part) * 2 + 1, valid, other=0)
+    mean = tl.sum(means * count, 0) / M
+    var = tl.sum(m2 + (means - mean) * (means - mean) * count, 0) / M
+    tl.store(S + group * 2, mean)
+    tl.store(S + group * 2 + 1, tl.rsqrt(var + EPS))
+
+
+@triton.jit
+def _gn_apply_kernel(X, W, B, S, Y, M: tl.constexpr, SPATIAL: tl.constexpr, GROUPS: tl.constexpr, BLOCK: tl.constexpr):
+    group = tl.program_id(0).to(tl.int64)
+    offsets = tl.program_id(1) * BLOCK + tl.arange(0, BLOCK)
+    valid = offsets < M
+    channel = (group % GROUPS) * (M // SPATIAL) + offsets // SPATIAL
+    anchor = tl.load(X + group * M).to(tl.float32)
+    mean = tl.load(S + group * 2)
+    rstd = tl.load(S + group * 2 + 1)
+    x = tl.load(X + group * M + offsets, valid, other=0).to(tl.float32)
+    w = tl.load(W + channel, valid, other=0).to(tl.float32)
+    b = tl.load(B + channel, valid, other=0).to(tl.float32)
+    y = ((x - anchor) - mean) * rstd * w + b
+    y = y * tl.sigmoid(y)
+    tl.store(Y + group * M + offsets, y, valid)
+
+
+def _split_group_norm_silu(x, weight, bias, num_groups, eps, out):
+    batch, channels, spatial = x.shape
+    group_elements = channels // num_groups * spatial
+    block = 2048
+    parts = triton.cdiv(group_elements, block)
+    partials = torch.empty((batch * num_groups, parts, 2), device=x.device, dtype=torch.float32)
+    stats = torch.empty((batch * num_groups, 2), device=x.device, dtype=torch.float32)
+    _gn_partial_kernel[(batch * num_groups, parts)](x, partials, group_elements, parts, block, num_warps=4)
+    _gn_finish_kernel[(batch * num_groups,)](
+        partials, stats, group_elements, parts, block, triton.next_power_of_2(parts), eps, num_warps=4
+    )
+    _gn_apply_kernel[(batch * num_groups, parts)](
+        x, weight, bias, stats, out, group_elements, spatial, num_groups, block, num_warps=4
+    )
+
+
 def fused_group_norm_silu(
     x: torch.Tensor,
     weight: torch.Tensor,
@@ -138,8 +208,9 @@ def fused_group_norm_silu(
 ) -> torch.Tensor:
     """
     Fused GroupNorm + SiLU activation.
-    Computes SiLU(GroupNorm(x, num_groups, weight, bias, eps)) in a single Triton kernel,
-    avoiding intermediate tensors and reducing memory traffic and launch overhead.
+    Computes SiLU(GroupNorm(x, num_groups, weight, bias, eps)) with Triton,
+    avoiding a full-size normalized intermediate. Large groups use parallel
+    partial reductions; small inputs retain the single-launch path.
 
     - x: (N, C, *spatial), any spatial rank.
     - weight, bias: per-channel parameters, shape (C,).
@@ -184,6 +255,20 @@ def fused_group_norm_silu(
     if torch.is_autocast_enabled(x_flat.device.type):
         out_dtype = torch.float32
     out_flat = torch.empty_like(x_flat, dtype=out_dtype)
+
+    # Large groups leave too few independent programs in the serial path.
+    # Extra launches regress small eager blocks despite faster device execution;
+    # retain the original path below 8M elements and with many independent groups.
+    # The experimental threshold was validated on H200, including VAE autocast.
+    if (
+        x_flat.is_cuda
+        and not torch.version.hip
+        and B * num_groups <= 64
+        and x_flat.numel() >= 8388608
+        and C // num_groups * spatial_size <= 16777216
+    ):
+        _split_group_norm_silu(x_flat, weight, bias, num_groups, eps, out_flat)
+        return out_flat.reshape(orig_shape)
 
     # Only B*num_groups programs are launched, which is well under the SM count
     # for typical diffusion batches. A memory-bound kernel can still saturate
